@@ -2,6 +2,7 @@
 
 # This Is the Readme for our code!
 
+I guess the hashtag just makes a heading
 <<<<<<< HEAD
 >>>>>>> 754ecb0ce02e5a2a6a126f79c16142bfd5f9e09e
 
