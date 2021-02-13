@@ -14,10 +14,9 @@ app.listen(port, () => console.log(`listening on port ${port}!`));
 
 */
 
-const http = require('http');
 
-const hostname = '0.0.0.0';
-const port = process.env.port || 8080;
+
+const http = require('http');
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -25,6 +24,7 @@ const server = http.createServer((req, res) => {
   res.end('Hello World');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+const port = process.env.port || 8080;
+server.listen(port, () => {
+    console.log("Sever console log.")
 });
