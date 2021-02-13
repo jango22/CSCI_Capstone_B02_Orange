@@ -4,6 +4,7 @@ FIXING THE DOCUMENT
 #astrid's comment
 #Andrews Comment
 #yasmin's Comment
+#christine's comment
 
 
 Pretend im writing HTML
