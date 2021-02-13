@@ -35,8 +35,8 @@ server.listen(port, () => {
 <p>Click the button labeled "Log Time" to store the time you pressed the button.</p>
 
 <button onclick="LodCurrentTime()">Log Time</button>
-
-<button onclick="lblTime"></button>
+<p>Time the button was clicked last:</p>
+<p id="lblTime">Never</p>
 
 <script>
     function LogCurrentTime() {
@@ -51,4 +51,4 @@ server.listen(port, () => {
 </script>
 
 </body>
-</html>
+</html
