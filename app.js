@@ -22,8 +22,9 @@ const app = express();
 
 const server = http.createServer((req, res) => {
   res.statusCode = 301;
-  //res.setHeader('Content-Type', 'text/plain');
-  //res.end('Hello World This did not redirect');
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World This did not redirect' + window.location.href);
+
   res.redirect('/html')
   });
 
