@@ -19,43 +19,36 @@
 
     };
 function printme() {
-  if (!getCookie(document.getElementById("lblTime"))) {
-    setCookie(document.getElementById("lblTime"), true, 1);
+  if (!getCookie(time) {
+    setCookie(time, true, 1);
     LogCurrentTime();
   }
 
 }
 
-function setCookie(cname, cvalue, exdays) {
+function setCookie(time, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   var expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  document.cookie = time + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
+  if (document.getElementById(lblTime).innHTML = "Never")
+  {
+    return "";
   }
-  return "";
+  else {
+      cname = time;
+  }
 }
 
 function checkCookie() {
-  var user = getCookie("username");
-  if (user != "") {
-    alert("Welcome again " + user);
+  var check = document.getElementById("lblTime").innerHTML;
+  if (check != "Never") {
+    alert("Welcome again last time button clicked was:" + check);
   } else {
-    user = prompt("Please enter your name:", "");
-    if (user != "" && user != null) {
-      setCookie("username", user, 365);
+    user = prompt("Please push the button", "");
     }
   }
 }
