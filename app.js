@@ -19,15 +19,19 @@ const http = require('http');
 const express = require('express');
 const app = express();
 
-var realurl = string('window.location.href');
+var realurl = "string";
+
 console.log(realurl)
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World This did not redirect');
+  
+  //window.location.href = realurl;
 
-  //res.redirect('/html')window.location.href
+  res.end('Hello World This did not redirect' + realurl);
+  res.redirect('/html');
   });
+
 
 const port = process.env.port || 8080;
 server.listen(port, () => {

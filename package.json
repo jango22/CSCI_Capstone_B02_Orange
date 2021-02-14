@@ -1,18 +1,17 @@
 {
-    "name": "my-app",
-    "version": "0.0.1",
-    "private": true,
-    
-    "dependencies": {
-      "ejs": "latest",
-      "aws-sdk": "latest",
-      "express": "latest",
-      "body-parser": "latest"
-    },
-    "engine": {
-        "node": "12.20.2"
-    },
-    "scripts": {
-      "start": "node app.js"
-    }
+  "name": "my-app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "aws-sdk": "latest",
+    "body-parser": "latest",
+    "ejs": "latest",
+    "express": "^4.17.1"
+  },
+  "engine": {
+    "node": "12.20.2"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
+}
