@@ -19,11 +19,12 @@ const http = require('http');
 const express = require('express');
 const app = express();
 
+var realurl = window.location.href;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World This did not redirect');
+  res.end('Hello World This did not redirect' + realurl);
 
   //res.redirect('/html')window.location.href
   });
