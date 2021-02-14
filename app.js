@@ -24,7 +24,7 @@ var realurl = window.location.href;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World This did not redirect' + realurl);
+  res.end('Hello World This did not redirect');
 
   //res.redirect('/html')window.location.href
   });
