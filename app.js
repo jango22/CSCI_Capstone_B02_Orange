@@ -23,9 +23,9 @@ const app = express();
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World This did not redirect' + window.location.href);
+  res.end('Hello World This did not redirect');
 
-  //res.redirect('/html')
+  //res.redirect('/html')window.location.href
   });
 
 const port = process.env.port || 8080;
