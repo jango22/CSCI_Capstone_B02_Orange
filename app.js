@@ -21,11 +21,11 @@ const app = express();
 
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 301;
+  res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello World This did not redirect' + window.location.href);
 
-  res.redirect('/html')
+  //res.redirect('/html')
   });
 
 const port = process.env.port || 8080;
