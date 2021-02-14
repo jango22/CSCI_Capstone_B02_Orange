@@ -19,8 +19,8 @@
 
     };
 function printme() {
-  if (!getCookie(document.getElementById("lblTime").innerHTML = time)) {
-    setCookie(document.getElementById("lblTime").innerHTML = time;, true, 1);
+  if (!getCookie(document.getElementById("lblTime"))) {
+    setCookie(document.getElementById("lblTime"), true, 1);
     LogCurrentTime();
   }
 
