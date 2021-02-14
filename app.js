@@ -20,7 +20,7 @@ const express = require('express');
 const app = express();
 
 var realurl = window.location.href;
-
+console.log(realurl)
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
