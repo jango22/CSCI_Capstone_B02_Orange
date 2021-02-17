@@ -40,7 +40,7 @@ server.listen(port, () => {
 
 var Connection = require('tedious').Connection;  
     var config = {  
-        server: 'aa96jyhrersobx.cps316w6axpe.us-east-1.rds.amazonaws.com,1433',  //endpoint and port
+        server: 'aa96jyhrersobx.cps316w6axpe.us-east-1.rds.amazonaws.com,1433',  
         authentication: {
             type: 'default',
             options: {
@@ -51,7 +51,7 @@ var Connection = require('tedious').Connection;
         options: {
             // If you are on Microsoft Azure, you need encryption:
             encrypt: true,
-            database: 'CSCI299B02'  //DB Identifier
+            database: 'CSCI299B02'  
         }
     };  
     var connection = new Connection(config);  
