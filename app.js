@@ -41,7 +41,7 @@ server.listen(port, () => {
 const mysql = require('mysql');
 
 const con = mysql.createConnection({
-    host: "csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com",
+    host: "csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com,8080",
     user: "orangeteamadmin",
     password: "AevhKutuIA7luKby4JZV"
 });
