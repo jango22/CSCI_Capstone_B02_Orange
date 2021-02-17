@@ -51,7 +51,7 @@ var Connection = require('tedious').Connection;
         options: {
             // If you are on Microsoft Azure, you need encryption:
             encrypt: true,
-            database: 'CSCI299B02'  
+            database: 'csci2999b02'  
         }
     };  
     var connection = new Connection(config);  
