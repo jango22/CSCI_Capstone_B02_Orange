@@ -40,7 +40,7 @@ server.listen(port, () => {
 
 var Connection = require('tedious').Connection;  
     var config = {  
-        server: 'csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com',  
+        server: 'csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com,8080',  
         authentication: {
             type: 'default',
             options: {
