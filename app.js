@@ -38,29 +38,16 @@ server.listen(port, () => {
     console.log("Sever console log.")
 });
 
-/*
-var Connection = require('tedious').Connection;  
-    var config = {  
-        server: 'csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com,3000',  
-        authentication: {
-            type: 'default',
-            options: {
-                userName: 'orangeteam', 
-                password: 'capstone02'  
-            }
-        },
-        options: {
-            // If you are on Microsoft Azure, you need encryption:
-            encrypt: true,
-            database: 'csci2999b02'  
-        }
-    };  
-    var connection = new Connection(config);  
-    connection.on('connect', function(err) {  
-        // If no error, then good to proceed.
-        console.log("Connected");  
-    });
-    
-    connection.connect(); 
-   */
+const mysql = require('mysql');
 
+const con = mysql.createConnection({
+    host: "csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com,1433",
+    user: "orangeteamadmin",
+    password: "AevhKutuIA7luKby4JZV"
+});
+
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    con.end();
+});
