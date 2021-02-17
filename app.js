@@ -40,7 +40,7 @@ server.listen(port, () => {
 
 var Connection = require('tedious').Connection;  
     var config = {  
-        server: 'Capstoneclass-env-1.eba-waeucf93.us-east-1.elasticbeanstalk.com',  
+        server: 'capstoneclass-env-1.eba-waeucf93.us-east-1.elasticbeanstalk.com',  
         authentication: {
             type: 'default',
             options: {
