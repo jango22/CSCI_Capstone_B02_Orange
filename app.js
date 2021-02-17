@@ -18,6 +18,7 @@ app.listen(port, () => console.log(`listening on port ${port}!`));
 const http = require('http');
 const express = require('express');
 const app = express();
+const mysql = require('mysql');
 
 var realurl = "string";
 
@@ -38,12 +39,12 @@ server.listen(port, () => {
     console.log("Sever console log.")
 });
 
-const mysql = require('mysql');
+
 
 const con = mysql.createConnection({
     host: "csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com,8080",
-    user: "orangeteamadmin",
-    password: "AevhKutuIA7luKby4JZV"
+    user: "orangeteam",
+    password: "capstone02"
 });
 
 con.connect(function(err) {
