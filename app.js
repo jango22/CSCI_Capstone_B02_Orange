@@ -18,7 +18,6 @@ app.listen(port, () => console.log(`listening on port ${port}!`));
 const http = require('http');
 const express = require('express');
 const app = express();
-const mysql = require('mysql');
 
 var realurl = "string";
 
@@ -41,14 +40,16 @@ server.listen(port, () => {
 
 
 
-const con = mysql.createConnection({
-    host: "csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com,1433",
-    user: "orangeteam",
-    password: "capstone02"
-});
+var sql = require(‘mssql’);
 
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-    con.end();
-});
+var config = {
+
+user: “orangeteamadmin”,
+
+password: “AevhKutuIA7luKby4JZV”,
+
+server: “csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com,1433”,
+
+database: “csci2999b02”
+
+}
