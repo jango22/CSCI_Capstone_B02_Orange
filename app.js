@@ -40,18 +40,18 @@ server.listen(port, () => {
 
 var Connection = require('tedious').Connection;  
     var config = {  
-        server: 'aa96jyhrersobx.cps316w6axpe.us-east-1.rds.amazonaws.com,1433',  //update me
+        server: 'aa96jyhrersobx.cps316w6axpe.us-east-1.rds.amazonaws.com,1433',  //endpoint and port
         authentication: {
             type: 'default',
             options: {
-                userName: 'orangeteam', //update me
-                password: 'capstone02'  //update me
+                userName: 'orangeteam', 
+                password: 'capstone02'  
             }
         },
         options: {
             // If you are on Microsoft Azure, you need encryption:
             encrypt: true,
-            database: 'CSCI299B02'  //update me
+            database: 'CSCI299B02'  //DB Identifier
         }
     };  
     var connection = new Connection(config);  
