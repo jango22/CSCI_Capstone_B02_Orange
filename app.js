@@ -40,7 +40,7 @@ server.listen(port, () => {
 
 var Connection = require('express').Connection;  
     var config = {  
-        server: 'csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com,1433',  
+        server: 'csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com',  
         authentication: {
             type: 'default',
             options: {
