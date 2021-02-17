@@ -18,6 +18,7 @@ app.listen(port, () => console.log(`listening on port ${port}!`));
 const http = require('http');
 const express = require('express');
 const app = express();
+const mysql = require('mysql');
 
 var realurl = "string";
 
@@ -38,29 +39,16 @@ server.listen(port, () => {
     console.log("Sever console log.")
 });
 
-/*
-var Connection = require('tedious').Connection;  
-    var config = {  
-        server: 'csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com,3000',  
-        authentication: {
-            type: 'default',
-            options: {
-                userName: 'orangeteam', 
-                password: 'capstone02'  
-            }
-        },
-        options: {
-            // If you are on Microsoft Azure, you need encryption:
-            encrypt: true,
-            database: 'csci2999b02'  
-        }
-    };  
-    var connection = new Connection(config);  
-    connection.on('connect', function(err) {  
-        // If no error, then good to proceed.
-        console.log("Connected");  
-    });
-    
-    connection.connect(); 
-   */
 
+
+const con = mysql.createConnection({
+    host: "csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com,1433",
+    user: "orangeteam",
+    password: "capstone02"
+});
+
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    con.end();
+});
