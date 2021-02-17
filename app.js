@@ -38,6 +38,7 @@ server.listen(port, () => {
     console.log("Sever console log.")
 });
 
+/*
 var Connection = require('tedious').Connection;  
     var config = {  
         server: 'csci2999b02.cps316w6axpe.us-east-1.rds.amazonaws.com,3000',  
@@ -60,4 +61,6 @@ var Connection = require('tedious').Connection;
         console.log("Connected");  
     });
     
-    connection.connect();
+    connection.connect(); 
+   */
+
