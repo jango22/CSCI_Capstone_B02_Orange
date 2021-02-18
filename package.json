@@ -6,7 +6,8 @@
     "aws-sdk": "latest",
     "body-parser": "latest",
     "ejs": "latest",
-    "express": "^4.17.1"
+    "express": "latest",
+    "tarn": "latest"
   },
   "engine": {
     "node": "12.20.2"
