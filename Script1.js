@@ -1,4 +1,4 @@
-var sql = require(‘mssql’);
+var sql = require('mssql');
 
 var config = {
 
@@ -9,7 +9,7 @@ var app = express();
 
 app.get('/', function (req, res) {
    
-    var sql = require("mssql");
+    var sql = require('mssql');
 
     // config for your database
     var config = {
