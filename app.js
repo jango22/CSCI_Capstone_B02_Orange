@@ -22,14 +22,15 @@ const app = express();
 var realurl = "string";
 
 console.log(realurl)
+
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   
   //window.location.href = realurl;
 
-  res.end('Hello World');
-  res.redirect('/html');
+  //res.end('Hello World');
+  return res.redirect('/html');
   });
 
 
