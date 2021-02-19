@@ -29,12 +29,8 @@ const server = http.createServer((req, res) => {
   
   //window.location.href = realurl;
 
-  //res.end('Hello World');
+  res.end('Hello World');
   //res.redirect('/html');
-
-  res.send({
-    redirectTo: '/html'
-  });
 
   });
 
