@@ -6,9 +6,11 @@
     "aws-sdk": "latest",
     "body-parser": "latest",
     "ejs": "latest",
-    "express": "latest",
+    "express": "^4.17.1",
+    "mssql": "^6.3.1",
+    "pug": "^3.0.0",
     "tarn": "latest",
-    "mssql": "latest"
+    "tedious": "^11.0.4"
   },
   "engine": {
     "node": "12.20.2"
