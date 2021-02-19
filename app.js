@@ -30,7 +30,12 @@ const server = http.createServer((req, res) => {
   //window.location.href = realurl;
 
   //res.end('Hello World');
-  return res.redirect('/html');
+  //res.redirect('/html');
+
+  res.send({
+    redirectTo: '/html'
+  });
+
   });
 
 
