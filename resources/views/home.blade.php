@@ -11,7 +11,7 @@
 			
 		<header>
 		
-		<img src = "{{ asset('storage/img/ndolt.png') }}" height ="100" width ="100" title="Logo" alt="Logo">
+		<img src = "{{ asset('storage/img/logo.png') }}" height ="100" width ="100" title="Logo" alt="Logo">
 		<h1>Nuts &#38; Dolts</h1>
 		
 		  </div>
