@@ -1,0 +1,57 @@
+header h1{
+	margin:auto;
+	text-align:center;
+}
+	
+nav {
+	background-color:#00AA55;
+}
+
+nav ul{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	overflow: hidden;
+
+}
+
+nav li{
+	display:inline;
+	float: right;
+	padding:10px;
+}
+
+nav a{
+	display:inline-block;
+	text-align:center;
+	padding:14px;
+	border-radius:5px;
+	text-decoration:none;
+	font-weight:bold;
+	
+}
+
+nav a:link{
+	color:#FFFFFF;
+	
+}
+
+nav a:visited{
+	color:#ffffff;	
+}
+
+nav a:hover{
+	background-color:#42733f;
+}
+form{
+	padding:10px;
+	margin-bottom:10px;
+}
+
+#wrapper{
+	width:85%;
+	margin-right:auto;
+	margin-left:auto;
+	background-color:#FFFFFF;
+	opacity:97%;
+}

@@ -13,11 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+
 Route::any('/', function () {
     return view('button');
+});
+Route::any('/home', function () {
+    return view('home');
+});
+
+//default PHP routes
+Route::get('/welcome', function () {
+    return view('welcome');
 });
 Route::get('/info', function () {
     return view('info');

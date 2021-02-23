@@ -7,6 +7,8 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
+<!-- Test Comment -->
+
 <body>
     
 <h2>Click the Button!</h2>
@@ -29,7 +31,6 @@
     if(isset($_POST['click'])){
         date_default_timezone_set('EST');
         $datetime = date("m/d/Y h:i:s a");
-        //$datetime = strval(date("m/d/Y h:i:s a"));
         $conn->query("INSERT INTO BUTTON2 (TimePressed) VALUES ('$datetime');");
     }
 
