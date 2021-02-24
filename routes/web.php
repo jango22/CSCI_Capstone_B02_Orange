@@ -15,10 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::any('/', function () {
+    return view('home');
+});
+Route::any('/button', function () {
     return view('button');
 });
-Route::any('/home', function () {
-    return view('home');
+Route::any('/add', function () {
+    return view('add');
 });
 
 //default PHP routes
