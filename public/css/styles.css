@@ -9,6 +9,10 @@ header img{
 	float:left;
 
 }
+.titlebar {
+	padding-bottom:2%;
+}
+
 img.feature {
 	display: block;
 	float: left;
