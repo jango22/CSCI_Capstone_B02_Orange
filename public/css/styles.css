@@ -7,8 +7,17 @@ header img{
 	width: 80px;
 	display:block;
 	float:left;
-	
+
 }
+img.feature {
+	display: block;
+	float: left;
+	margin-right: 20px;
+	max-width: 100%;
+	height: auto;
+
+}
+
 nav {
 	background-color:#00AA55;
 }
