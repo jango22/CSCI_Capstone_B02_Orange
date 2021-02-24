@@ -2,7 +2,13 @@ header h1{
 	margin:auto;
 	text-align:center;
 }
+header img{
+	height: 80px;
+	width: 80px;
+	display:block;
+	float:left;
 	
+}
 nav {
 	background-color:#00AA55;
 }
