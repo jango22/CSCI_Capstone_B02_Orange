@@ -4,21 +4,21 @@
 	<title>Home</title>
 			<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 		    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+<header>
 		<div class="jumbotron-fluid">
 		<div class="container">
 		
 			<!--Banner for website-->	
 			
-		<header>
-		
 		<img src = "https://i.imgur.com/uVymdir.png" height ="100" width ="100" title="Logo" alt="Logo">
 		<h1>Nuts &#38; Dolts</h1>
 		
 		  </div>
 		  </div>
 		  
-	</header>
-	
 	<!--Navigation Bar-->
 			<nav>
 	<ul>
@@ -29,19 +29,19 @@
 	</ul>
 			</nav>
 			
-			<div id="wrapper">
+</header>	  
+	
+	<div class="content" id="wrapper">
 	<!--Main Body for Website-->
-</head>
-	<body>
 		<main class="flex">
 			<div class="container">
 	<h3>Welcome to our homepage!</h3>
-	
+			</div>
+		</main>
+	</div>
 	
   
-	</body>
-	</div>
-	</div>
 <footer>
 </footer>
+</body>
 </html>
