@@ -5,32 +5,60 @@
     <meta charset="utf-8">
     <title>Add a Product</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        var msg = '{{Session::get('alert')}}';
+        var exist = '{{Session::has('alert')}}';
+        if(exist){
+            alert(msg);
+        }
+    </script>
+    <style>
+        h2 {text-indent: 10px;}
+    </style>
 </head>
 
 <body>
-@if(session()->has('successmessage'))
-    <div class="alert alert-success alert-dismissable fade show" role="alert">
-        {{ session('successmessage') }}
-    </div>
-@endif
 
 <h2>Add a Product to Inventory</h2>
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
 @csrf
-    <strong>Name:</strong></br>
-    <input type="text" name="name"><br><br>
+    <div class="form-group row">
+        <label for="nameid" class="col-sm-1 col-form-label">Name</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="name" id="nameid" maxlength="255" required>
+        </div>
+    </div>
 
-    <strong>SKU:</strong></br>
-    <input type="number" name="SKU"><br><br>
+    <div class="form-group row">
+        <label for="SKUid" class="col-sm-1 col-form-label">SKU</label>
+        <div class="col-sm-3">
+            <input type="number" class="form-control" name="SKU" id="SKUid" max="9999999999" required>
+        </div>
+    </div>
 
-    <strong>Price:</strong></br>
-    <input type="number" name="price"><br><br>
+    <div class="form-group row">
+        <label for="priceid" class="col-sm-1 col-form-label">Price</label>
+        <div class="col-sm-3">
+            <input type="number" class="form-control" name="price" id="priceid" max="9999999999" required>
+        </div>
+    </div>
 
-    <strong>Description:</strong></br>
-    <textarea name="desc" rows="12" cols="50"></textarea><br><br>
-
-    <button name="submit">Submit</button>
+    <div class="form-group row">
+        <label for="descid" class="col-sm-1 col-form-label">Desc</label>
+        <div class="col-sm-3">
+            <textarea name="desc" class="form-control" rows="6" id="descid" maxlength="255" required></textarea>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="descid" class="col-sm-1 col-form-label"></label>
+        <div class="offset-sm-3 col-sm-9 indent">
+            <button type="submit" name="submit" class="btn btn-primary">Add Product</button>
+        </div>
+    </div>
 </form>
 <br>
 
@@ -50,11 +78,35 @@
         $price = $_POST['price'];
         $desc = $_POST['desc'];
 
+        //Check for duplicate name
+        $sql = $conn->query("SELECT Name FROM INVENTORY;");
+        $names = $sql->fetchAll(PDO::FETCH_COLUMN);
+        $sql = $conn->query("SELECT ProductSKU FROM INVENTORY;");
+        $SKUs = $sql->fetchAll(PDO::FETCH_COLUMN);
+        if (in_array($name, $names)) {
+            $msg = "The name '$name' is already taken. Please choose a different one.";
+            echo "<div class='alert alert-danger alert-dismissable fade in' role='alert'>
+                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                    $msg
+                </div>";
+        }
+        //Check for duplicate SKU
+        elseif (in_array($SKU, $SKUs)) {
+            $msg = "The product SKU '$SKU' is already taken. Please choose a different one.";
+            echo "<div class='alert alert-danger alert-dismissable fade in' role='alert'>
+                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                    $msg
+                </div>";
+        } 
         //Insert values into INVENTORY table
-        $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc) VALUES ('$name', $SKU, $price, '$desc');");
-
-        //Send success message to user
-        return redirect()->route('add')->with('successmessage','Added to inventory successfully.');
+        else {
+            $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc) VALUES ('$name', $SKU, $price, '$desc');");
+            $msg = "Added to inventory successfully.";
+            echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
+                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                    $msg
+                </div>";
+        }
     }
 ?>
 

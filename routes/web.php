@@ -22,7 +22,7 @@ Route::any('/button', function () {
 });
 Route::any('/add', function () {
     return view('add');
-})->name('add');
+});
 
 //default PHP routes
 Route::get('/welcome', function () {

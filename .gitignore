@@ -2,4 +2,5 @@
 .DS_Store
 .DS_Store
 vendor/**
+vendorOLD/**
 workspace.code-workspace
