@@ -55,6 +55,8 @@
 
     </form>
     <?php
+    error_reporting(E_ALL);
+ini_set('display_errors', 1);
         $servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
         $username = "orangeadmin";
         $password = "capstone02";
