@@ -1,7 +1,7 @@
 <?php
         if (isset($_POST["message"])) {
         mail("nutsandboltsb02@gmail.com", "Here is the subject line",
-        $_POST["insert your message here"]. "From: nandbCustComplaint@gmail.com");
+        $_POST["insert your message here"], "From: nandbCustComplaint@gmail.com");
         }
   ?>
 <!DOCTYPE html>
@@ -50,7 +50,7 @@
 	    <p>Contact Us <br>Phone Number: 383-295-5524 <br>Email: nutsandboltsb02@gmail.com <br>Located at: 5469 South Ridsweth Rd, Marion OH, 39455 </p>
         <h2>Send e-mail to nutsandboltsb02@gmail.com:</h2>
     
-    <form method="post" action="subscriberform.php">
+    <form method="post">
 
 
         <textarea name="message"></textarea>
