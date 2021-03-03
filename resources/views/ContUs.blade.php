@@ -41,7 +41,7 @@
 		<main class="flex">
 			<div class="container">
 	<h3>Where to Find Us?</h3>
-	<p>We are always open for any issues you have! Our numbers is always open!</p>
+	<p>We are always open for any issues you have! Our phone line is always open!</p>
 	<p>Contact Us <br>Phone Number: 383-295-5524 <br>Email: customerservice@nutsandbolts.com <br>Located at: 5469 South Ridsweth Rd, Marion OH, 39455 </p>
 	</div>
 	
