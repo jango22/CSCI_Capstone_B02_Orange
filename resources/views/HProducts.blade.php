@@ -19,7 +19,7 @@
 		</div>
 		<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
 			<a href="/HProducts" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Products</a>
-			<a href="/ContUs" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact Us</a>
+			<a href="/Contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact Us</a>
 			<a href="/FAQ" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FAQ</a>
 		</div>
 		<br> <br>
