@@ -24,13 +24,11 @@
 		</div>
 		<br> <br>
 		<title>HardCode Products</title>
-
-		<div class="jumbotron-fluid container">
+        <div class="jumbotron-fluid container">
 			<header>
-				<img class="feature" src = "https://i.imgur.com/uVymdir.png" height ="100" width ="100" title="Logo" alt="Logo">
+				<img src="https://i.imgur.com/uVymdir.png" height="150" width="150" title="Logo" alt="Logo" class="center">
 			</header>
 		</div>
-
 </head>
 
 <body style="background-color:lightgray;">
