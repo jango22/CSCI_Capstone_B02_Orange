@@ -28,7 +28,7 @@
 
 		<div class="jumbotron-fluid container">
 			<header>
-				<img src="pics/ndolt.png" height="150" width="150" title="Logo" alt="Logo" class="center">
+				<img src="https://i.imgur.com/uVymdir.png" height="150" width="150" title="Logo" alt="Logo" class="center">
 			</header>
 		</div>
 
