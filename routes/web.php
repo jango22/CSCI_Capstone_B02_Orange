@@ -28,6 +28,11 @@ Route::any('/HProducts', function () {
 });
 
 
+Route::any('/Contact', function () {
+    return view('ContUs');
+});
+
+
 Route::any('/FAQ', function () {
     return view('FAQ');
 });

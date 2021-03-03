@@ -24,7 +24,7 @@
 	<ul>
 	<li><a href="HomePg.html">Home</a></li>
 	<li><a href="/HProducts">HardCode Products</a></li>
-	<li><a href="ContUs.html">Contact Us</a></li>
+	<li><a href="/Contact">Contact Us</a></li>
 	<li><a href="FAQ.html">FAQ</a></li>
 	</ul>
 			</nav>
