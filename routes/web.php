@@ -26,6 +26,13 @@ Route::any('/add', function () {
 Route::any('/HProducts', function () {
     return view('HProducts');
 });
+
+
+Route::any('/FAQ', function () {
+    return view('FAQ');
+});
+
+
 //default PHP routes
 Route::get('/welcome', function () {
     return view('welcome');
