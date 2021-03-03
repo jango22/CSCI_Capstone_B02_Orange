@@ -44,15 +44,15 @@
 	    <p>Contact Us <br>Phone Number: 383-295-5524 <br>Email: nutsandboltsb02@gmail.com <br>Located at: 5469 South Ridsweth Rd, Marion OH, 39455 </p>
         <h2>Send e-mail to nutsandboltsb02@gmail.com:</h2>
 
-    <form action="mailto:nutsandboltsb02@gmail.com" method="post" enctype="text/plain">
-    Name:<br>
-    <input type="text" name="name"><br>
-    E-mail:<br>
-    <input type="text" name="mail"><br>
-    Comment:<br>
-    <input type="text" name="comment" size="50"><br><br>
-    <input type="submit" value="Send">
-    <input type="reset" value="Reset">
+    <form method="post" action="subscriberform.php">
+
+
+        <textarea name="message"></textarea>
+
+
+        <input type="submit">
+
+
     </form>
 	</div>
 	</div>
