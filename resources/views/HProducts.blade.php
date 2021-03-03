@@ -10,17 +10,17 @@
 		<div class="w3-top">
 			<div class="w3-bar w3-green w3-card">
 				<a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-				<a href="HomePg.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-				<a href="HProducts.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
-				<a href="ContUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
-				<a href="FAQ.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
+				<a href="/HomePg" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+				<a href="/HProducts" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
+				<a href="/ContUs" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
+				<a href="/FAQ." class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
 				<a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
 			</div>
 		</div>
 		<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-			<a href="HProducts.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Products</a>
-			<a href="ContUs.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact Us</a>
-			<a href="FAQ.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FAQ</a>
+			<a href="/HProducts" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Products</a>
+			<a href="/ContUs" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact Us</a>
+			<a href="/FAQ" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FAQ</a>
 		</div>
 		<br> <br>
 		<title>HardCode Products</title>
@@ -42,7 +42,7 @@
 			<input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Search for products .." title="Type in a name">
 			<ul id="myUL" class="w3-ul w3-card-4" style="background-color:lightgray">
 				<li class="w3-bar w3-hover-blue">
-						<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">×</span>
+						<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">Ã—</span>
 						<img src="https://i.imgur.com/N6Vx3Or.jpg" class="w3-bar-item w3-hide-small" style="width: 125px; height: 125px; ">
 						<div class="w3-bar-item w3-left">
 							<h3>Hammer</h3>
@@ -51,7 +51,7 @@
 						</div>
 				</li>
 				<li class="w3-bar w3-hover-red">
-						<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">×</span>
+						<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">Ã—</span>
 						<img src="https://i.imgur.com/mFOndyT.jpeg" class="w3-bar-item w3-hide-small" style="width: 125px; height: 125px; ">
 						<div class="w3-bar-item" style="float:left;">
 							<h3>Glue</h3>
@@ -60,7 +60,7 @@
 						</div>
 				</li>
 				<li class="w3-bar w3-hover-green">
-					<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">×</span>
+					<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">Ã—</span>
 					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQexuifPTPeYz2hKSAbtGBhgU6NSGrQrtbh7w&usqp=CAU" class="w3-bar-item w3-hide-small" style="width:125px; height:125px;">
 					<div class="w3-bar-item">
 						<h3>Light Bulb</h3>
@@ -71,7 +71,7 @@
 				</li>
 				<li class="w3-bar w3-hover-yellow">
 					
-					<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">×</span>
+					<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">Ã—</span>
 					<img src="https://www.mccoys.com/images/8ecf916f-26e1-4a1a-9579-535c2d4c5943/400" class="w3-bar-item w3-hide-small" style="width:125px; height:125px;">
 					<div class="w3-bar-item">
 						<h3>Just a 2x4</h3>
