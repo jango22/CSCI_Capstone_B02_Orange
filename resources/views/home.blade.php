@@ -14,7 +14,7 @@
 			<!--Banner for website-->	
 			
 		<img class="feature" src = "https://i.imgur.com/uVymdir.png" height ="100" width ="100" title="Logo" alt="Logo">
-		<h1>Nuts &#38; Dolts</h1>
+		<h1>Nuts &#38; Bolts</h1>
 		
 		  </div>
 		  </div>
