@@ -43,7 +43,7 @@
 	    <p>We are always open for any issues you have! Our phone line is always open!</p>
 	    <p>Contact Us <br>Phone Number: 383-295-5524 <br>Email: nutsandboltsb02@gmail.com <br>Located at: 5469 South Ridsweth Rd, Marion OH, 39455 </p>
         <h2>Send e-mail to nutsandboltsb02@gmail.com:</h2>
-
+    
     <form method="post" action="subscriberform.php">
 
 
@@ -54,11 +54,13 @@
 
 
     </form>
-	</div>
-	</div>
- 	</main>
     <?php
-
+        $servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
+        $username = "orangeadmin";
+        $password = "capstone02";
+        $dbname = "OrangeDB";
+        $port = "1433";
+        $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
 
         if($_POST["message"]) {
 
@@ -73,6 +75,10 @@
 
 
     ?>
+	</div>
+	</div>
+ 	</main>
+    
  </body>
 <footer>
 </footer>
