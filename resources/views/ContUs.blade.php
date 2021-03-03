@@ -11,6 +11,7 @@ ini_set('display_errors', 1);
         mail("nutsandboltsb02@gmail.com", "Here is the subject line",
         $_POST["insert your message here"]. "From: nandbCustComplaint@gmail.com");
         }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
