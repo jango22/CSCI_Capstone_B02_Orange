@@ -62,7 +62,7 @@
         $port = "1433";
         $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
 
-        if($_POST["message"]) {
+        if (isset($_POST["message"])) {
 
 
         mail("your@email.address", "Here is the subject line",
