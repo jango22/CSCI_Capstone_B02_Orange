@@ -28,28 +28,28 @@
     <div class="form-group row">
         <label for="nameid" class="col-sm-1 col-form-label">Name</label>
         <div class="col-sm-3">
-            <input type="text" class="form-control" name="name" id="nameid" maxlength="255" required>
+            <input type="text" class="form-control" name="name" id="nameid" placeholder="Product Name" maxlength="255" required>
         </div>
     </div>
 
     <div class="form-group row">
         <label for="SKUid" class="col-sm-1 col-form-label">SKU</label>
         <div class="col-sm-3">
-            <input type="number" class="form-control" name="SKU" id="SKUid" min="0" max="9999999999" required>
+            <input type="number" class="form-control" name="SKU" id="SKUid" placeholder="Product SKU" min="0" max="9999999999" required>
         </div>
     </div>
 
     <div class="form-group row">
         <label for="priceid" class="col-sm-1 col-form-label">Price</label>
         <div class="col-sm-3">
-            <input type="number" step="0.01" class="form-control" name="price" id="priceid" min="0" max="9999999999" required>
+            <input type="number" step="0.01" class="form-control" name="price" placeholder="Price" id="priceid" min="0" max="9999999999" required>
         </div>
     </div>
 
     <div class="form-group row">
         <label for="descid" class="col-sm-1 col-form-label">Desc</label>
         <div class="col-sm-3">
-            <textarea name="desc" class="form-control" rows="6" id="descid" maxlength="255" required></textarea>
+            <textarea name="desc" class="form-control" rows="6" id="descid" placeholder="Description" maxlength="255" required></textarea>
         </div>
     </div>
     
