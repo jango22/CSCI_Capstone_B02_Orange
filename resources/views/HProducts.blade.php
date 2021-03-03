@@ -13,7 +13,7 @@
 				<a href="/HomePg" class="w3-bar-item w3-button w3-padding-large">HOME</a>
 				<a href="/HProducts" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
 				<a href="/ContUs" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
-				<a href="/FAQ." class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
+				<a href="/FAQ" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
 				<a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
 			</div>
 		</div>
