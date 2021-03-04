@@ -25,3 +25,8 @@
 <IfModule mod_headers.c>
     Header always append X-Frame-Options SAMEORIGIN
 </IfModule>
+# Prevent htaccess
+<Files ~ "^.ht">
+    Order allow,deny
+    Deny from all
+</Files>
