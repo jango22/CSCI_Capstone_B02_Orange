@@ -23,6 +23,7 @@
 
 # Prevent click jacking
 <IfModule mod_headers.c>
+    Header set X-Frame deny
     Header always append X-Frame-Options SAMEORIGIN
 </IfModule>
 # Prevent htaccess
