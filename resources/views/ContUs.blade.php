@@ -12,17 +12,17 @@
 		<div class="w3-top">
 			<div class="w3-bar w3-green w3-card">
 				<a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-				<a href="HomePg.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-				<a href="HProducts.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
-				<a href="ContUs.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
-				<a href="FAQ.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
+				<a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+				<a href="/HProducts" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
+				<a href="/Contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
+				<a href="/FAQ" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
 				<a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
 			</div>
 		</div>
 		<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-			<a href="HProducts.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Products</a>
-			<a href="ContUs.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact Us</a>
-			<a href="FAQ.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FAQ</a>
+			<a href="/HProducts" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Products</a>
+			<a href="/Contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact Us</a>
+			<a href="/FAQ" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FAQ</a>
 		</div>
 		<br> <br>
 		<title>HardCode Products</title>
