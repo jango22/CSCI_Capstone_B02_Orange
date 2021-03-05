@@ -46,7 +46,7 @@
         <h2>Send e-mail to nutsandboltsb02@gmail.com:</h2>
     
     <form method="post">
-
+        {{ csrf_field() }}
 
         <textarea name="message"></textarea>
 
