@@ -8,7 +8,7 @@
     
         if (isset($_POST["message"])) {
         mail("nutsandboltsb02@gmail.com", "Here is the subject line",
-        $_POST["insert your message here"], "From: nandbCustComplaint@gmail.com");
+        $_POST["message"], "From: nandbCustComplaint@gmail.com");
         }
     ?>
 <!DOCTYPE html>
