@@ -52,7 +52,7 @@
 
 
         <input type="submit">
-
+        <input type="hidden" name="button_pressed" value="1" />
 
     </form>
    <?php
@@ -65,8 +65,8 @@
     
     //mail code
     $message = $POST_["message"];
-        if (isset($_POST["message"])) {
-        mail("nutsandboltsb02@gmail.com", "Here is the subject line",
+        if (isset($_POST["button_pressed"])) {
+        mail("nutsandboltsb02@gmail.com", "Customer Complaint",
         $message, "From: nandbCustComplaint@gmail.com");
         }
     ?>
