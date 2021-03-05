@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<div class="w3-top">
-			<div class="w3-bar w3-green w3-card">
+			<div class="w3-bar w3-red w3-card">
 				<a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
 				<a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
 				<a href="/HProducts" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
