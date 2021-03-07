@@ -112,14 +112,6 @@ $(document).on(function(){
 
 
 <?php
-    //Connect to database
-    $servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
-    $username = "orangeadmin";
-    $password = "capstone02";
-    $dbname = "OrangeDB";
-    $port = "1433";
-    $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password); 
-
     //Get values from POST
     if(isset($_POST['submit'])){
         $name = $_POST['name'];
