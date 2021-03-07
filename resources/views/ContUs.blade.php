@@ -44,31 +44,7 @@
 	    <p>Contact Us <br>Phone Number: 383-295-5524 <br>Email: nutsandboltsb02@gmail.com <br>Located at: 5469 South Ridsweth Rd, Marion OH, 39455 </p>
         <h2>Send e-mail to nutsandboltsb02@gmail.com:</h2>
     
-    <form method="post">
-        {{ csrf_field() }}
-
-        <textarea name="message"></textarea>
-
-
-        <input type="submit">
-        <input type="hidden" name="button_pressed" value="1" />
-
-    </form>
-   <?php
-    $servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
-    $username = "orangeadmin";
-    $password = "capstone02";
-    $dbname = "OrangeDB";
-    $port = "1433";
-    $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password); 
     
-    //mail code
-    $message = $POST_["message"];
-        if (isset($_POST["button_pressed"])) {
-        mail("nutsandboltsb02@gmail.com", "Customer Complaint",
-        $message, "From: nandbCustComplaint@gmail.com");
-        }
-    ?>
 	</div>
 	</div>
  	</main>
