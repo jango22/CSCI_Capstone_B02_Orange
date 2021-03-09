@@ -1,7 +1,3 @@
-html {
- background: url("https://i.imgur.com/mQmQM8f.jpg") no-repeat center fixed; 
- background-size: cover;   
-}
 header h1{
 	margin:auto;
 	text-align:center;
@@ -61,6 +57,10 @@ form{
 }
 * {
   box-sizing: border-box;
+}
+.div1 {
+ background: url("https://i.imgur.com/mQmQM8f.jpg") no-repeat center fixed; 
+ background-size: contain;     
 }
 .menu {
   float:left;
