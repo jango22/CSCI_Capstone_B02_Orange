@@ -16,7 +16,10 @@ nav ul{
 }
 
 body {
-	background-image: url("https://i.imgur.com/mQmQM8f.jpg")
+	background-image: url("https://i.imgur.com/mQmQM8f.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
 }
 
 nav li{
