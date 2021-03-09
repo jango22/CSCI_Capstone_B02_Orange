@@ -50,8 +50,8 @@
         <textarea name="message"></textarea>
 
 
-        <input type="submit">
-        <input type="hidden" name="button_pressed" value="1" />
+        <input type="submit" name="button1"
+                class="button" value="Button1" />
 
     </form>
    <?php
@@ -62,18 +62,12 @@
     $port = "1433";
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password); 
     
-    //mail code
-    $message = $POST_["message"];
-           if(!empty[$message]) {           
-            if ($_POST["button_pressed"]) {            
-                mail("nutsandboltsb02@gmail.com", "Customer Complaint",
-                $message, "From: nandbCustComplaint@gmail.com");          
-            }            
-           }
-        else 
-        {
-            echo "message field blank
-        }
+    if(array_key_exists('button1', $_POST)) { 
+            button1(); 
+        } 
+        function button1() { 
+            echo "This is Button1 that is selected"; 
+        } 
     ?>
 	</div>
 	</div>
