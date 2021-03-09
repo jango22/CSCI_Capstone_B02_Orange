@@ -34,10 +34,12 @@
 
 	<body>
 		<main class="flex">
-			<div class="container">
+			<div class="w3-container">
             <br>
             <br>
-	<h3>Whats a Nuts and Bolts?</h3>
+	        <div class="w3-card-4">
+				<h2 class="w3-center">Whats a Nuts and Bolts</h2>
+			</div>
   
                 
           <!-- FQA START HERE -->
