@@ -1,10 +1,4 @@
 <?php
-[mail function]
-; 
-SMTP = smtp.secureserver.net
-
-; 
-sendmail_from = nandbCustComplaint@gmail.com
 
 return [
 
@@ -90,7 +84,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'nandbCustComplaint@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
