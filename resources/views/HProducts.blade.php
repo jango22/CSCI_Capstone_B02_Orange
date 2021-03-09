@@ -23,6 +23,7 @@
 			<a href="/Contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact Us</a>
 			<a href="/FAQ" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FAQ</a>
 		</div>
+        <br> <br>
 		<div class="jumbotron-fluid container">
 			<header>
 				<img src="https://i.imgur.com/uVymdir.png" height="150" width="150" title="Logo" alt="Logo" class="center">
