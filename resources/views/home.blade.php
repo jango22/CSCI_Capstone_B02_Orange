@@ -61,8 +61,6 @@
   </div>
 </div>
 
-<div style="text-align:center;padding:10px;margin-top:7px;">© copyright w3schools.com</div>
-
 </body>
   
 <footer>
