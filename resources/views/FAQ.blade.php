@@ -37,7 +37,7 @@
 			<div class="w3-container">
             <br>
             <br>
-	        <div class="w3-card-4">
+	        <div class="w3-card-4 w3-gray-blue">
 				<h2 class="w3-center">Whats a Nuts and Bolts</h2>
 			</div>
   
