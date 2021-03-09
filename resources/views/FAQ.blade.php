@@ -55,9 +55,10 @@
   
   <div class="w3-card column middle">
     <h2>Main Content</h2>
-    <p>Nuts and Bolts is a company founded in 2021 by a team of highly intelligent, extremely successful, good looking hardware enthusiasts. On a snowy winter day, this team (Consisting of Yasmin, Andrew, Chitra, Nathan, Mas, Christine, Astrid, and Abdirizak)
+    <p>     Nuts and Bolts is a company founded in 2021 by a team of highly intelligent, extremely successful, good looking hardware enthusiasts. On a snowy winter day, this team (Consisting of Yasmin, Andrew, Chitra, Nathan, Mas, Christine, Astrid, and Abdirizak)
        decided, enough is enough, today is the day we build the company the world deserves.</p>
-    <p> They bickered, debated, and ultimately conlcuded that the website should be named "Nuts and Bolts" (somehow this name was chosen even though all 8 members disagreed) and should be a place anyone from all reaches can access and purchase parts and pieces for their project.</p>
+    <br>
+    <p>     They bickered, debated, and ultimately conlcuded that the website should be named "Nuts and Bolts" (somehow this name was chosen even though all 8 members disagreed) and should be a place anyone from all reaches can access and purchase parts and pieces for their project.</p>
   </div>
   
   <div class="w3-card column side">
