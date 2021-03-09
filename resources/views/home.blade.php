@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="w3-dark-gray" lang="en">
 <head>
 	
     
@@ -28,6 +28,9 @@
 </head>	  
 <body style="font-family:Verdana;color:#aaaaaa;">
 <div class="jumbotron-fluid container">
+        <br>
+        <br>
+        <br>
 	<header>
 		Nuts and Bolts Homepage
 	</header>
