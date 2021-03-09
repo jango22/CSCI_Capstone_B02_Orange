@@ -27,14 +27,18 @@
 		
 </head>	  
 <body style="font-family:Verdana;color:#aaaaaa;">
-<title>HardCode Products</title>
+<div class="jumbotron-fluid container">
+	<header>
+		<img src="https://i.imgur.com/uVymdir.png" height="150" width="150" title="Logo" alt="Logo" class="center">
+	</header>
+		</div>
 <div class="w3-blue-gray" style="padding:15px;text-align:center;">
   <h1>Featured Products</h1>
 </div>
 
 <div style="overflow:auto">
   <div class="menu">
-    <a class="w3-blue-gray" href="#">PRoduct 1</a> <p> Price </p>
+    <a class="w3-blue-gray" href="#">Product 1</a> <p> Price </p>
     <a class="w3-blue-gray" href="#">Product 2</a> <p> Price </p>
     <a class="w3-blue-gray" href="#">Product 3</a> <p> Price </p>
     <a class="w3-blue-gray" href="#">Product 4</a> <p> Price </p>
