@@ -64,9 +64,15 @@
     
     //mail code
     $message = $POST_["message"];
-        if (isset($_POST["button_pressed"])) {
-        mail("nutsandboltsb02@gmail.com", "Customer Complaint",
-        $message, "From: nandbCustComplaint@gmail.com");
+           if(!empty[$message]) {           
+            if ($_POST["button_pressed) {            
+                mail("nutsandboltsb02@gmail.com", "Customer Complaint",
+                $message, "From: nandbCustComplaint@gmail.com");          
+            }            
+           }
+        else 
+        {
+            echo "message field blank
         }
     ?>
 	</div>
