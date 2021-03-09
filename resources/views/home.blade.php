@@ -29,7 +29,7 @@
 </head>	  
 <body style="font-family:Verdana;color:#aaaaaa;">
 
-<div style="background-color:green;padding:15px;text-align:center;">
+<div style="background-color:w3-green;padding:15px;text-align:center;">
   <h1>Featured Products</h1>
 </div>
 
