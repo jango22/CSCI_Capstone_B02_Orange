@@ -59,7 +59,7 @@
   
   <div class="w3-card column side">
     <h2>Store Hours</h2>
-    <p>We're literally open 24/7. What more could you want. 4am early riser? we'll be there. 9pm on thanksgiving and your table broke? We got you.</p>
+    <p>We're literally open 24/7. What more could you want. 4am early riser? We'll be there. 9pm on Thanksgiving and your table broke? We got you.</p>
   </div>
 </div>              
                                
