@@ -32,6 +32,9 @@
 		Nuts and Bolts Homepage
 	</header>
 		</div>
+        <br>
+        <br>
+        <br>
 <div class="w3-blue-gray" style="padding:15px;text-align:center;">
   <h1>Featured Products</h1>
 </div>
