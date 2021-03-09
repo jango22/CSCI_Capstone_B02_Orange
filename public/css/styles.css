@@ -82,6 +82,10 @@ form{
 * {
   box-sizing: border-box;
 }
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
 .div1 {
  background: url("https://i.imgur.com/mQmQM8f.jpg") no-repeat center fixed; 
  background-size: contain;     
