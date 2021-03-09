@@ -51,13 +51,13 @@
   </div>
 
   <div class="main">
-    <h2>Lorum Ipsum</h2>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    <h2>Welcome to Nuts and Bolts homepage!</h2>
+    <p>In order to purchase and use our site as a customer we require you to create an account and login! All you need is a username and password to get rolling! Enjoy!</p>
   </div>
 
   <div class="right">
     <h2>About</h2>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+    <p>Nuts and Bolts is a small town, local company based in rural Ohio. All orders must be finalized by credit card. We offer shipping out of state VIA UPS at a flat rate of 14.99.</p>
   </div>
 </div>
 
