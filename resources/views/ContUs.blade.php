@@ -55,23 +55,37 @@
 
     </form>
    <?php
-    $servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
-    $username = "orangeadmin";
-    $password = "capstone02";
-    $dbname = "OrangeDB";
-    $port = "1433";
-    $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password); 
     
-    if(array_key_exists('button1', $_POST)) { 
-            button1(); 
-        } 
-        function button1() { 
-            $message = $_POST["message"];
- 
-            mail("nutsandboltsb02@gmail.com", "Customer Complaint",
-            $message, "From: nandbCustComplaint@gmail.com");
+    
+if(array_key_exists('button1', $_POST)) { 
+   button1(); 
+  } 
+function button1() { 
+    require('./PHPMailer/class.phpmailer.php');
+    $mail=new PHPMailer();
+    $mail->CharSet = 'UTF-8';
 
-        } 
+    $body = 'This is the message';
+
+    $mail->IsSMTP();
+    $mail->Host       = 'smtp.gmail.com';
+
+    $mail->SMTPSecure = 'tls';
+    $mail->Port       = 587;
+    $mail->SMTPDebug  = 1;
+    $mail->SMTPAuth   = true;
+
+    $mail->Username   = 'nutsandboltsb02@gmail.com';
+    $mail->Password   = 'Capstone02';
+
+    $mail->SetFrom('nandbCustComplaint@gmail.com', $name);
+    $mail->Subject    = 'TEST';
+    $mail->MsgHTML($body);
+
+    $mail->AddAddress('nandbCustComplaint@gmail.com', 'title1');
+
+    $mail->send();
+} 
     ?>
 	</div>
 	</div>
