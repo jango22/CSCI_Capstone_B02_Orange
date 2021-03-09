@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="background-color: rgba(195,195,195);" lang="en">
+<html style="background-color: rgba(195,195,195);" lang="en">
 <head>
 	
     
