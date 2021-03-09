@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="w3-dark-gray" lang="en">
+<html class="background-color: background-color:rgba(195,195,195);" lang="en">
 <head>
 	
     
