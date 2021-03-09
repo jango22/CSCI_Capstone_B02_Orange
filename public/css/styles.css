@@ -1,3 +1,7 @@
+html {
+ background: url("https://i.imgur.com/mQmQM8f.jpg") no-repeat center fixed; 
+ background-size: contain; 
+}
 header h1{
 	margin:auto;
 	text-align:center;
