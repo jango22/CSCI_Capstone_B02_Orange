@@ -61,7 +61,7 @@ if(array_key_exists('button1', $_POST)) {
    button1(); 
   } 
 function button1() { 
-    require('config/php.mail');
+    require('/config/mail.php');
     $mail=new PHPMailer();
     $mail->CharSet = 'UTF-8';
 
