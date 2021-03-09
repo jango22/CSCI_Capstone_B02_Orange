@@ -24,11 +24,10 @@
 			<a href="/Contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact Us</a>
 			<a href="/FAQ" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FAQ</a>
 		</div>
-		<br> <br><br> <br>
-		<title>HardCode Products</title>
+		
 </head>	  
 <body style="font-family:Verdana;color:#aaaaaa;">
-
+<title>HardCode Products</title>
 <div style="background-color:w3-green;padding:15px;text-align:center;">
   <h1>Featured Products</h1>
 </div>
