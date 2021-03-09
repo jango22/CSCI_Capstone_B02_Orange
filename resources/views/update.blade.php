@@ -109,12 +109,9 @@
 <br>
 
 <?php
-<<<<<<< Updated upstream
-=======
     //Connect to database
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password); 
 
->>>>>>> Stashed changes
     //Get values from POST
     if(isset($_POST['submit'])){
         $name = $_POST['name'];
