@@ -28,7 +28,7 @@
 <body style="background-color:lightgray;">
 	<main class="flex"  id="wrapper" style="background-color:lightgray">
 		<div class="w3-container">
-			<div class="w3-card-4 w3-orange">
+			<div class="w3-card-4 w3-blue-gray">
 				<h2 class="w3-center">Products List</h2>
 			</div>
 			<input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Search for products .." title="Type in a name">
