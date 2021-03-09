@@ -1,3 +1,7 @@
+html {
+ background: url("https://i.imgur.com/mQmQM8f.jpg") no-repeat center fixed; 
+ background-size: cover;   
+}
 header h1{
 	margin:auto;
 	text-align:center;
@@ -15,12 +19,7 @@ nav ul{
 
 }
 
-body {
-	background-image: url("https://i.imgur.com/mQmQM8f.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
 
-}
 
 nav li{
 	display:inline;
