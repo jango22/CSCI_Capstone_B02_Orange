@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>   
+    <title>HardCode Products</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,7 +23,11 @@
 			<a href="/Contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact Us</a>
 			<a href="/FAQ" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FAQ</a>
 		</div>
-		
+		<div class="jumbotron-fluid container">
+			<header>
+				<img src="https://i.imgur.com/uVymdir.png" height="150" width="150" title="Logo" alt="Logo" class="center">
+			</header>
+		</div>
 </head>
 
 <body style="background-color:lightgray;">
