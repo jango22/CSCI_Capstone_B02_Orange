@@ -196,6 +196,6 @@ return [
     |
     */
 
-    'same_site' => 'lax' 'HttpOnly',
+    'same_site' => 'lax',
 
 ];
