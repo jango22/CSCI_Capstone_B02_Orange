@@ -66,7 +66,11 @@
             button1(); 
         } 
         function button1() { 
-            echo "This is Button1 that is selected"; 
+            $message = $POST_["message"];
+ 
+            mail("nutsandboltsb02@gmail.com", "Customer Complaint",
+            $message, "From: nandbCustComplaint@gmail.com");
+
         } 
     ?>
 	</div>
