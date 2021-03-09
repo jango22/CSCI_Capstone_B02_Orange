@@ -27,8 +27,11 @@
 </head>	
 <body>
 			
-			<div >	
+			<div>	
 <main class="flex">
+<br>
+<br>
+<br>
 		<div class="content container" id="wrapper">
      <h1>Contact Us</h1>      
 	<h3>Where to Find Us?</h3>
