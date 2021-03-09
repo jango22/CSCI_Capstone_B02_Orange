@@ -37,7 +37,7 @@
 			<div class="container">
             <br>
             <br>
-	<h3>FAQ</h3>
+	<h3>Whats a Nuts and Bolts?</h3>
   
                 
           <!-- FQA START HERE -->
