@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<h2> Nults and Bolts Homepage </h2>
+	
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -29,7 +29,7 @@
 <body style="font-family:Verdana;color:#aaaaaa;">
 <div class="jumbotron-fluid container">
 	<header>
-		<img src="https://i.imgur.com/uVymdir.png" height="150" width="150" title="Logo" alt="Logo" class="center">
+		Nuts and Bolts Homepage
 	</header>
 		</div>
 <div class="w3-blue-gray" style="padding:15px;text-align:center;">
