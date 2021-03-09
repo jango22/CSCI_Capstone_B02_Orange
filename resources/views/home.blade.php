@@ -31,9 +31,9 @@
         <br>
         <br>
         <br>
-	<header>
-		Nuts and Bolts Homepage
-	</header>
+	
+		<h1 style="text-align:center;">Nuts and Bolts Homepage</h1>
+
 		</div>
         <br>
         <br>
