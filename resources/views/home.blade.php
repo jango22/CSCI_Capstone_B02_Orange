@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<div class="w3-top">
-			<div class="w3-bar w3-green w3-card">
+			<div class="w3-bar w3-blue-gray w3-card">
 				<a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
 				<a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
 				<a href="/HProducts" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
@@ -28,16 +28,16 @@
 </head>	  
 <body style="font-family:Verdana;color:#aaaaaa;">
 <title>HardCode Products</title>
-<div class="w3-slateblue" style="padding:15px;text-align:center;">
+<div class="w3-blue-gray" style="padding:15px;text-align:center;">
   <h1>Featured Products</h1>
 </div>
 
 <div style="overflow:auto">
   <div class="menu">
-    <a href="#">PRoduct 1</a> <p> Price </p>
-    <a href="#">Product 2</a> <p> Price </p>
-    <a href="#">Product 3</a> <p> Price </p>
-    <a href="#">Product 4</a> <p> Price </p>
+    <a class="w3-blue-gray" href="#">PRoduct 1</a> <p> Price </p>
+    <a class="w3-blue-gray" href="#">Product 2</a> <p> Price </p>
+    <a class="w3-blue-gray" href="#">Product 3</a> <p> Price </p>
+    <a class="w3-blue-gray" href="#">Product 4</a> <p> Price </p>
   </div>
 
   <div class="main">
