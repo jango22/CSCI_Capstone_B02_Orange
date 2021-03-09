@@ -32,7 +32,7 @@
 			<div id="w3-wrapper">
 	<!--Main Body for Website-->
 
-	<body>
+	<bodystyle="color:white;">
 		<main class="flex">
 			<div class="w3-container">
             <br>
