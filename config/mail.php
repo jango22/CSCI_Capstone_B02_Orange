@@ -1,4 +1,10 @@
 <?php
+[mail function]
+; 
+SMTP = smtp.secureserver.net
+
+; 
+sendmail_from = nandbCustComplaint@gmail.com
 
 return [
 
