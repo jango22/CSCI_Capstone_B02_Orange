@@ -28,7 +28,7 @@
 </head>	  
 <body style="font-family:Verdana;color:#aaaaaa;">
 <title>HardCode Products</title>
-<div style="background-color:w3-green;padding:15px;text-align:center;">
+<div class="w3-slateblue" style="padding:15px;text-align:center;">
   <h1>Featured Products</h1>
 </div>
 
