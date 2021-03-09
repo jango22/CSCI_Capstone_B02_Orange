@@ -82,8 +82,6 @@
 		</div>
 </body>
 
-<footer>
-</footer>
 <script>
     function tableSearch() {
         var input, filter, ul, li, a, i, txtValue;
