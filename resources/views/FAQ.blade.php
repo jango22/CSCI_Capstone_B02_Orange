@@ -39,7 +39,7 @@
             <br>
             <br>
             <br>
-	        <div class="w3-card-4 w3-gray-blue">
+	        <div class="w3-gray-blue">
 				<h2 class="w3-center">Whats a Nuts and Bolts</h2>
 			</div>
   
@@ -47,13 +47,13 @@
           <!-- FQA START HERE -->
                 
      <div class="row">
-  <div class="w3-card column side">
+  <div class="column side">
     <h2>FAQ</h2>
     <p>How is it possible you stay open for 24/7/365?</p>
     <p>Honestly I have no idea. It just works.</p>
   </div>
   
-  <div class="w3-card column middle">
+  <div class="column middle">
     <h2>Main Content</h2>
     <p>     Nuts and Bolts is a company founded in 2021 by a team of highly intelligent, extremely successful, good looking hardware enthusiasts. On a snowy winter day, this team (Consisting of Yasmin, Andrew, Chitra, Nathan, Mas, Christine, Astrid, and Abdirizak)
        decided, enough is enough, today is the day we build the company the world deserves.</p>
@@ -61,7 +61,7 @@
     <p>     They bickered, debated, and ultimately conlcuded that the website should be named "Nuts and Bolts" (somehow this name was chosen even though all 8 members disagreed) and should be a place anyone from all reaches can access and purchase parts and pieces for their project.</p>
   </div>
   
-  <div class="w3-card column side">
+  <div class="column side">
     <h2>Store Hours</h2>
     <p>We're literally open 24/7. What more could you want. 4am early riser? We'll be there. 9pm on Thanksgiving and your table broke? We got you.</p>
   </div>
