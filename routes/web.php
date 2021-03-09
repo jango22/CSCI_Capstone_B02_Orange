@@ -32,6 +32,14 @@ Route::get('/info', function () {
 Route::any('/', function () {
     return view('home');
 });
+//Products
+Route::any('/products', function () {
+    return view('products');
+});
+//Products (Hardcoded)
+Route::any('/HProducts', function () {
+    return view('HProducts');
+});
 //FAQ
 Route::any('/FAQ', function () {
     return view('FAQ');
@@ -40,10 +48,6 @@ Route::any('/FAQ', function () {
 Route::any('/Contact', function () {
     return view('ContUs');
 });
-//Products (Hardcoded)
-Route::any('/HProducts', function () {
-    return view('HProducts');
-});
 
 
 /* Pages that only employees can see */
@@ -51,6 +55,7 @@ Route::any('/HProducts', function () {
 Route::any('/add', function () {
     return view('add');
 });
+//Update Products
 Route::any('/update', function () {
     return view('update');
 });

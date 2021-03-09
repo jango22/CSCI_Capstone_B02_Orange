@@ -61,6 +61,7 @@
         $searchSKU = $_POST['searchSKU'];
         $sql = $conn->query("SELECT * FROM INVENTORY WHERE productSKU = $searchSKU;");
         $data = $sql->fetchAll(PDO::FETCH_ASSOC)[0];
+        $price = number_format(floatval($data['price']),2);
 
         //Enable forms on the rest of the page
         $status = "enabled";
@@ -88,7 +89,7 @@
     <div class="form-group row">
         <label for="priceid" class="col-sm-1 col-form-label">Price:</label>
         <div class="col-sm-3">
-            <input type="number" step="0.01" class="form-control" name="price" placeholder="Price" id="priceid" min="0" max="9999999999" value="<?php echo $data['price'] ?? ''; ?>" required <?php echo $status; ?>>
+            <input type="number" step="0.01" class="form-control" name="price" placeholder="Price" id="priceid" min="0" max="9999999999" value="<?php echo $price ?? ''; ?>" required <?php echo $status; ?>>
         </div>
     </div>
 
