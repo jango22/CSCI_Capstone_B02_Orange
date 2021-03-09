@@ -26,7 +26,7 @@
 		</div>
 		
 </head>	  
-<body style="font-family:Verdana;color:#aaaaaa;">
+<body style="font-family:Verdana;color:white;">
 <div class="jumbotron-fluid container">
         <br>
         <br>
