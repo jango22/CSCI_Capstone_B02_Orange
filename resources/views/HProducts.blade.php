@@ -41,7 +41,7 @@
 			<ul id="myUL" class="w3-ul w3-card-4" style="background-color:lightgray">
 				<li class="w3-bar w3-hover-blue">
 						<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">×</span>
-						<img src="https://i.imgur.com/N6Vx3Or.jpg" class="w3-bar-item w3-hide-small" class="thumb" style="width: 125px; height: 125px; ">
+						<img src="https://i.imgur.com/N6Vx3Or.jpg" class="w3-bar-item w3-hide-small" id="thumb" style="width: 125px; height: 125px; ">
 						<div class="w3-bar-item w3-left">
 							<h3>Hammer</h3>
 							<span>This is a hammer. May cause spontaneous bursts of lightning. Trust us, its a feature.</span> <br>
@@ -50,7 +50,7 @@
 				</li>
 				<li class="w3-bar w3-hover-red">
 						<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">×</span>
-						<img src="https://i.imgur.com/mFOndyT.jpeg" class="w3-bar-item w3-hide-small" class="thumb" style="width: 125px; height: 125px; ">
+						<img src="https://i.imgur.com/mFOndyT.jpeg" class="w3-bar-item w3-hide-small" style="width: 125px; height: 125px; ">
 						<div class="w3-bar-item" style="float:left;">
 							<h3>Glue</h3>
 							<span>If you want to bind two things together, use this. Seriously, they wont come apart. DISCLAIMER: Sniffing this stuff will drop you quicker than a Tyson right hook.</span><br>
