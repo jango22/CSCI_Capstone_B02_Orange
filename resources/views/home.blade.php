@@ -26,20 +26,11 @@
 		</div>
 </head>	  
 <body class="body" style="font-family:Verdana;color:white;">
-
-<div class="jumbotron-fluid container">
-        <br>
-        <br>
-        <br>
-	
-		<h1 style="text-align:center;">Nuts and Bolts Homepage</h1>
-
-		</div>
         <br>
         <br>
         <br>
 <div class="w3-blue-gray" style="padding:15px;text-align:center;">
-  <h1>Featured Products</h1>
+  <h1>Nuts and Bolts Homepage</h1>
 </div>
 <main class="flex"  id="wrapper">
 <div style="overflow:auto">
