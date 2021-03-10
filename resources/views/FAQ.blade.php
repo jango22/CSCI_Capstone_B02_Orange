@@ -57,7 +57,9 @@
   </div>
   
   <div class="column middle">
-    <h2 class="w3-center">How was Nuts and Bolts founded?</h2>
+    <div class="w3-blue-gray" style="text-align:center;">
+        <h2>How was Nuts and Bolts founded?</h2>
+    </div>
     <p>     Nuts and Bolts is a company founded in 2021 by a team of highly intelligent, extremely successful, good looking hardware enthusiasts. On a snowy winter day, this team (Consisting of Yasmin, Andrew, Chitra, Nathan, Mas, Christine, Astrid, and Abdirizak)
        decided, enough is enough, today is the day we build the company the world deserves.</p>
     <br>
