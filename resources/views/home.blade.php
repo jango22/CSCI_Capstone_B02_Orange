@@ -23,7 +23,7 @@
 			<a href="/FAQ" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FAQ</a>
 		</div>
 </head>	  
-<body class="body" style="font-family:Verdana;color:white;">
+<body class="body" style="font-family:Verdana;">
         <br>
         <br>
         <br>
