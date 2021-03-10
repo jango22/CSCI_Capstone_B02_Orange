@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html style="background-color: rgba(195,195,195);" lang="en">
-<head>
-	
-    
+<head>    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -46,7 +44,7 @@
     <p>In order to purchase and use our site as a customer we require you to create an account and login! All you need is a username and password to get rolling! Enjoy!</p>
   </div>
 
-  <div class="right">
+  <div class="right" style="text-align:center;">
     <h2>Notice</h2>
     <p>Nuts and Bolts is a small town, local company based in rural Ohio. All orders must be finalized by credit card. We offer shipping out of state VIA UPS at a flat rate of 14.99.</p>
   </div>
