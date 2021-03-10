@@ -32,8 +32,8 @@
 <br>
 <br>
 <br>
-		<div class="content container" id="wrapper">
-     <h1>Contact Us</h1>      
+<div class="content container" id="wrapper">
+    <h1>Contact Us</h1>      
 	<h3>Where to Find Us?</h3>
 	    <p>We are always open for any issues you have! Our phone line is always open!</p>
 	    <p>Contact Us <br>Phone Number: 383-295-5524 <br>Email: nutsandboltsb02@gmail.com <br>Located at: 5469 South Ridsweth Rd, Marion OH, 39455 </p>
