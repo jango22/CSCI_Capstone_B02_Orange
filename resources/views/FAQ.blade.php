@@ -44,7 +44,7 @@
 			</div>
   
                 
-          <!-- FQA START HERE -->
+          <!-- FAQ START HERE -->
                 
      <div class="row">
   <div class="column side">
