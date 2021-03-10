@@ -47,7 +47,7 @@
   </div>
 
   <div class="right">
-    <h2>About</h2>
+    <h2>Notice</h2>
     <p>Nuts and Bolts is a small town, local company based in rural Ohio. All orders must be finalized by credit card. We offer shipping out of state VIA UPS at a flat rate of 14.99.</p>
   </div>
 </div>
