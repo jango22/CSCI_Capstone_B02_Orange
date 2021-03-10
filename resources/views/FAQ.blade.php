@@ -48,7 +48,7 @@
                 
      <div class="row">
   <div class="column side">
-    <div class="w3-blue-gray" style="padding:15px;text-align:center;">
+    <div class="w3-blue-gray" style="text-align:center;">
         <h2>FAQ</h2>
     </div>
     
