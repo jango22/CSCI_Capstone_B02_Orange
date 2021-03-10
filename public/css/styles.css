@@ -28,10 +28,6 @@ nav ul{
   column-rule-width: 1px;
   column-rule-color: black;
 }
-div.right {
-    border-right-style: solid;
-    border-width: 2px;
-}
 
 /* Middle column */
 .column.middle {
