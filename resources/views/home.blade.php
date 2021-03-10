@@ -26,6 +26,7 @@
 		</div>
 </head>	  
 <body class="body" style="font-family:Verdana;color:white;">
+
 <div class="jumbotron-fluid container">
         <br>
         <br>
@@ -40,7 +41,7 @@
 <div class="w3-blue-gray" style="padding:15px;text-align:center;">
   <h1>Featured Products</h1>
 </div>
-
+<main class="flex"  id="wrapper">
 <div style="overflow:auto">
   <div class="menu">
     <a class="w3-blue-gray" href="#">Product 1</a> <p> Price </p>
@@ -59,7 +60,7 @@
     <p>Nuts and Bolts is a small town, local company based in rural Ohio. All orders must be finalized by credit card. We offer shipping out of state VIA UPS at a flat rate of 14.99.</p>
   </div>
 </div>
-
+</main>
 </body>
   
 <footer>
