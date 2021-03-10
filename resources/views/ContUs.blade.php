@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<html class="w3-dark-gray" lang="en">
+<html style="background-color: rgba(195,195,195); lang="en">
 <head>  
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
