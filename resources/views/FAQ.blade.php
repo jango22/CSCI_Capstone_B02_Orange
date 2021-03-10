@@ -67,7 +67,9 @@
   </div>
   
   <div class="column side">
-    <h2 class="">Store Hours</h2>
+    <div class="w3-blue-gray" style="text-align:center;">
+        <h2>Store hours</h2>
+    </div>
     <p>We're literally open 24/7. What more could you want. 4am early riser? We'll be there. 9pm on Thanksgiving and your table broke? We got you.</p>
   </div>
 </div>              
