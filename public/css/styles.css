@@ -28,7 +28,14 @@ nav ul{
   column-rule-width: 1px;
   column-rule-color: black;
 }
-
+p.right {
+    border-right-style: solid;
+    border-width: 2px;
+}
+p.left {
+    border-left-style: solid;
+    border-width: 2px;
+}
 /* Middle column */
 .column.middle {
   width: 50%;
