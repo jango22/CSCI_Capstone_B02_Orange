@@ -32,8 +32,8 @@
 			<div id="w3-wrapper">
 	<!--Main Body for Website-->
 
-	<bodystyle="color:white;">
-		<main class="flex">
+	<body>
+		<main class="flex"  id="wrapper">
 			<div class="w3-container">
             <br>
             <br>
