@@ -15,22 +15,20 @@ nav ul{
 
 }
 
-.column {
-  float: left;
-  padding: 10px;
-  column-rule-style: solid;
-  column-rule-width: 1px;
-  column-rule-color: lightblue;
-}
-
 /* Left and right column */
 .column.side {
   width: 25%;
+  column-rule-style: solid;
+  column-rule-width: 1px;
+  column-rule-color: black;
 }
 
 /* Middle column */
 .column.middle {
   width: 50%;
+  column-rule-style: solid;
+  column-rule-width: 1px;
+  column-rule-color: black;
 }
 
 /* Clear floats after the columns */
