@@ -48,7 +48,10 @@
                 
      <div class="row">
   <div class="column side">
-    <h2>FAQ</h2>
+    <div class="w3-blue-gray" style="padding:15px;text-align:center;">
+        <h2>FAQ</h2>
+    </div>
+    
     <p>How is it possible you stay open for 24/7/365?</p>
     <p>Honestly I have no idea. It just works.</p>
   </div>
