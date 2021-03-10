@@ -18,6 +18,9 @@ nav ul{
 .column {
   float: left;
   padding: 10px;
+  column-rule-style: solid;
+  column-rule-width: 1px;
+  column-rule-color: lightblue;
 }
 
 /* Left and right column */
