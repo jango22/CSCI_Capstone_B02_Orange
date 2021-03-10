@@ -47,7 +47,7 @@
           <!-- FAQ START HERE -->
                 
      <div class="row">
-  <div class="column side">
+  <div class="right column side">
     <div class="w3-blue-gray" style="text-align:center;">
         <h2>FAQ</h2>
     </div>
@@ -56,7 +56,7 @@
     <p>Honestly I have no idea. It just works.</p>
   </div>
   
-  <div class="column middle">
+  <div class="right column middle">
     <div class="w3-blue-gray" style="text-align:center;">
         <h2>How was Nuts and Bolts founded?</h2>
     </div>
