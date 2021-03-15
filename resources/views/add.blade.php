@@ -5,6 +5,7 @@ Add a Product
 @stop
 
 @section('content')
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 <script>
     var msg = '{{Session::get('alert')}}';
     var exist = '{{Session::has('alert')}}';

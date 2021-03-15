@@ -5,6 +5,7 @@ Update a Product
 @stop
 
 @section('content')
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 <script>
     /* Dismissable alert script */
     var msg = '{{Session::get('alert')}}';
