@@ -32,21 +32,20 @@ Route::get('/info', function () {
 Route::any('/', function () {
     return view('home');
 });
+
 //Products
 Route::any('/products', function () {
     return view('products');
 });
-//Products (Hardcoded)
-Route::any('/HProducts', function () {
-    return view('HProducts');
-});
-//FAQ
-Route::any('/FAQ', function () {
-    return view('FAQ');
-});
+
 //Contact Us
-Route::any('/Contact', function () {
-    return view('ContUs');
+Route::any('/contact', function () {
+    return view('contact');
+});
+
+//FAQ
+Route::any('/faq', function () {
+    return view('faq');
 });
 
 
@@ -55,6 +54,7 @@ Route::any('/Contact', function () {
 Route::any('/add', function () {
     return view('add');
 });
+
 //Update Products
 Route::any('/update', function () {
     return view('update');
@@ -65,4 +65,9 @@ Route::any('/update', function () {
 //Button
 Route::any('/button', function () {
     return view('button');
+});
+
+//Products (Hardcoded)
+Route::any('/HProducts', function () {
+    return view('HProducts');
 });

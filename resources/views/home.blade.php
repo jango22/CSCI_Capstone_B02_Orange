@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html style="background-color: rgba(195,195,195);" lang="en">
 <head>    
@@ -30,8 +31,22 @@
 <div class="w3-blue-gray" style="padding:15px;text-align:center;">
   <h1>Nuts and Bolts Homepage</h1>
 </div>
+=======
+@extends('layout')
+
+@section('title')
+Home
+@stop
+
+@section('content')
+<div class="w3-blue-gray" style="padding:5px;text-align:center;">
+  <h1>Nuts and Bolts Homepage</h1>
+</div>
+
+>>>>>>> Stashed changes
 <main class="flex"  id="wrapper">
 <div style="overflow:auto">
+  <br>
   <div class="menu">
     <a class="w3-blue-gray" href="#">Product 1</a> <p> Price </p>
     <a class="w3-blue-gray" href="#">Product 2</a> <p> Price </p>
@@ -50,9 +65,13 @@
   </div>
 </div>
 </main>
+<<<<<<< Updated upstream
 </body>
   
 <footer>
 </footer>
 </html>
 
+=======
+@stop
+>>>>>>> Stashed changes

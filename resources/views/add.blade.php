@@ -1,27 +1,19 @@
-<!DOCTYPE html>
-<html>
+@extends('layout')
 
-<head>
-    <meta charset="utf-8">
-    <title>Add a Product</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script>
-        var msg = '{{Session::get('alert')}}';
-        var exist = '{{Session::has('alert')}}';
-        if(exist){
-            alert(msg);
-        }
-    </script>
-    <style>
-        h2 {text-indent: 10px;}
-    </style>
-</head>
+@section('title')
+Add a Product
+@stop
 
-<body>
-<h2>Add a Product to Inventory</h2>
+@section('content')
+<script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+        alert(msg);
+    }
+</script>
+
+<h2 style="text-indent: 10px;">Add a Product to Inventory</h2>
 <form method="POST" enctype="multipart/form-data">
 @csrf
     <div class="form-group row">
@@ -108,6 +100,4 @@
         }
     }
 ?>
-
-</body>
-</html>
+@stop

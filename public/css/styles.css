@@ -1,3 +1,7 @@
+body { 
+    padding-top: 65px; 
+}
+
 header h1{
 	margin:auto;
 	text-align:center;
@@ -143,11 +147,11 @@ form{
 	border-bottom: 1px solid #ddd;
 }
 
-	#myInput:focus {
-		outline: 3px solid #ddd;
-	}
+#myInput:focus {
+	outline: 3px solid #ddd;
+}
 
 
-	#myUL li a {
-		display: block
-	}
+#products {
+	color: #000000;
+}

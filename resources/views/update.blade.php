@@ -1,34 +1,30 @@
-<!DOCTYPE html>
-<html>
+@extends('layout')
 
-<head>
-    <meta charset="utf-8">
-    <title>Update a Product</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script>
-        /* Dismissable alert script */
-        var msg = '{{Session::get('alert')}}';
-        var exist = '{{Session::has('alert')}}';
-        if(exist){
-            alert(msg);
-        }
-        /* Enable forms script */
-        $(document).ready(function() {
-        $(".remove-attr").click(function(){            
-            $("input").removeAttr("disabled");
-        });
+@section('title')
+Update a Product
+@stop
+
+@section('content')
+<script>
+    /* Dismissable alert script */
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+        alert(msg);
+    }
+    /* Enable forms script */
+    $(document).ready(function() {
+    $(".remove-attr").click(function(){            
+        $("input").removeAttr("disabled");
     });
-    </script>
-    <style>
-        h2 {text-indent: 10px;}
-        .btn.btn-primary:disabled{background-color: #858585;}
-    </style>
-    <?php $status = "disabled"; ?>
-</head>
-<body>
+});
+</script>
+<style>
+    h2 {text-indent: 10px;}
+    .btn.btn-primary:disabled{background-color: #858585;}
+</style>
+<?php $status = "disabled"; ?>
+
 <h2>Update a Product</h2>
 
 <!-- Search Product by SKU -->
@@ -129,6 +125,4 @@
             </div>";
     }
 ?>
-
-</body>
-</html>
+@stop
