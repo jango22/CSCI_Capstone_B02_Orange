@@ -1,37 +1,3 @@
-<<<<<<< Updated upstream
-<!DOCTYPE html>
-<html style="background-color: rgba(195,195,195);" lang="en">
-<head>    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-	<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<div class="w3-top">
-			<div class="w3-bar w3-blue-gray w3-card">
-				<a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-				<a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-				<a href="/HProducts" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
-				<a href="/Contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
-				<a href="/FAQ" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
-				<a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
-			</div>
-		</div>
-		<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-			<a href="/HProducts" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Products</a>
-			<a href="/Contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact Us</a>
-			<a href="/FAQ" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FAQ</a>
-		</div>
-</head>	  
-<body class="body" style="font-family:Verdana;">
-        <br>
-        <br>
-        <br>
-<div class="w3-blue-gray" style="padding:15px;text-align:center;">
-  <h1>Nuts and Bolts Homepage</h1>
-</div>
-=======
 @extends('layout')
 
 @section('title')
@@ -43,7 +9,6 @@ Home
   <h1>Nuts and Bolts Homepage</h1>
 </div>
 
->>>>>>> Stashed changes
 <main class="flex"  id="wrapper">
 <div style="overflow:auto">
   <br>
@@ -65,13 +30,4 @@ Home
   </div>
 </div>
 </main>
-<<<<<<< Updated upstream
-</body>
-  
-<footer>
-</footer>
-</html>
-
-=======
 @stop
->>>>>>> Stashed changes
