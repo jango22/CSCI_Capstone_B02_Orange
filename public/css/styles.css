@@ -18,34 +18,9 @@ nav ul{
 	overflow: hidden;
 
 }
-.column {
-  float: left;
-  padding: 10px;
-  column-rule-style: solid;
-  column-rule-width: 1px;
-  column-rule-color: lightblue;
-}
-/* Left and right column */
-.column.side {
-  width: 25%;
-  column-rule-style: solid;
-  column-rule-width: 1px;
-  column-rule-color: black;
-}
 
-/* Middle column */
-.column.middle {
-  width: 50%;
-  column-rule-style: solid;
-  column-rule-width: 1px;
-  column-rule-color: black;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: Roboto, sans-serif;
 }
 
 nav li{
@@ -63,9 +38,7 @@ nav a{
 	font-weight:bold;
 	
 }
-h1 {
-  background-color: w3-gray-blue;
-}
+
 nav a:link{
 	color:#FFFFFF;
 	
@@ -90,10 +63,6 @@ form{
 }
 * {
   box-sizing: border-box;
-}
-.div1 {
- background: url("https://i.imgur.com/mQmQM8f.jpg") no-repeat center fixed; 
- background-size: contain;     
 }
 .menu {
   float:left;
