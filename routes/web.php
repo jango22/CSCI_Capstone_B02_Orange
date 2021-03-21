@@ -38,6 +38,11 @@ Route::any('/products', function () {
     return view('products');
 });
 
+//RegisterEmp
+Route::any('/emp', function () {
+    return view('registerEmp');
+});
+
 //Contact Us
 Route::any('/contact', function () {
     return view('contact');
