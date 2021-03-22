@@ -12,7 +12,7 @@
             <label for="lname">Confirm Password</label>
             <input type="text" id="cpwd" name="confirm" placeholder="Confirm your Password"><br><br>
 
-            <input type="submit" value="Submit">
+            <input type="submit" name="submit" value="Submit">
         </form>
     </div>
     <?php
