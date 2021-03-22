@@ -17,11 +17,11 @@
     </div>
     <?php
     $servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
-    $username = "orangeadmin";
+    $user = "orangeadmin";
     $password = "capstone02";
     $dbname = "OrangeDB";
     $port = "1433";
-    $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
+    $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $user, $password);
 
     //Ensure password has one Capital, number, and special character
     if(isset($_POST['submit'])){
