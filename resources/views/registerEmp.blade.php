@@ -4,13 +4,13 @@
         <form method="post" id="loginform">
             @csrf
             <label for="fname">Username</label>
-            <input type="text" id="uname" name="username" placeholder="Type your username"> <br><br>
+            <input type="text" id="uname" name="uname" placeholder="Type your username"> <br><br>
             
             <label for="lname">Password</label>
-            <input type="text" id="pwd" name="password" placeholder="Type a Password"><br><br>
+            <input type="text" id="pwd" name="pwd" placeholder="Type a Password"><br><br>
 
             <label for="lname">Confirm Password</label>
-            <input type="text" id="cpwd" name="confirm" placeholder="Confirm your Password"><br><br>
+            <input type="text" id="cpwd" name="cpwd" placeholder="Confirm your Password"><br><br>
 
             <input type="submit" name="submit" value="Submit">
         </form>
