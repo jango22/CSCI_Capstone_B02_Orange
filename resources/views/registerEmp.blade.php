@@ -38,7 +38,7 @@
             $upperLower = "[A-Za-z]";
             $special = "/[`'\"~!@#$*()<>\|]/";
             //checks username for lowercase
-          if (preg_match($upper, $uname) == 0) {
+          if (preg_match($upper, $username) == 0) {
 
             //checks if password has appropriate values
             if(preg_match($numPat, $pass) == 0 and preg_match($upperLower, $pass) == 0 and preg_match($special, $pass) == 0) {
