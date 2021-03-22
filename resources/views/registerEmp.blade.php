@@ -1,4 +1,4 @@
-  <h3>Using CSS to style an HTML Form</h3>
+  <h3>Employee Register Form</h3>
 
     <div>
         <form method="post" id="loginform">
