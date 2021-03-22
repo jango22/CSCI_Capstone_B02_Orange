@@ -44,7 +44,7 @@
 
                 //checks that passwords match
                 if($pass == $confirm) {
-                      $conn->query("INSERT INTO Users (username, password, is_employee) VALUES ('$username', '$pass', '$emp')");
+                      $conn->query("INSERT INTO Users (username, password, is_Employee) VALUES ('$username', '$pass', '$emp')");
                 }
                 else {
                     echo "Passwords do not match!";
