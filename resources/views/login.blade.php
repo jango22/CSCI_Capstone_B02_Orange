@@ -57,7 +57,12 @@ Login
                 header("Location: http://capstoneclass-php.eba-c2wjtm2e.us-east-1.elasticbeanstalk.com/");
             }
             else {
-                echo "Username or password is incorrect";
+                ++$count;
+                echo "Username or password is incorrect! You only have 3 trys before a 15 minute lockout! Good luck, and may god have mercy on your soul.";
+                if ($count >= 3) {
+                    function();
+                    $count = 0;
+                }
             }
 
         }
@@ -66,4 +71,16 @@ Login
         }
     }
     ?>
+    <script>
+        // self executing function
+     (function() {
+        setTimeout(function(){ 
+        //disable the button with id="submitbutton"
+           document.getElementById('uname').disabled = true;
+           document.getElementById('pwd').disabled = true;
+           alert("Denied! Max attempts reached! You will now be locked out for 15 minutes."); 
+         }, 900000);
+
+      })();
+     </script>
     @stop
