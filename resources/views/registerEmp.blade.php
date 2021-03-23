@@ -41,7 +41,7 @@ Employee Register Form
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $user, $password);
 
 if (isset($_POST['submit'])){
-    if (isset($_POST['uname']) and !empty($_POST['uname']) and isset($_POST['pwd']) and !empty($_POST['pwd']) and isset($_POST['cpwd']) and !empty($_POST['cpwd']) isset($_POST['fname']) and !empty($_POST['fname']) and isset($_POST['lname']) and !empty($_POST['lname']) {
+    if (isset($_POST['uname']) and !empty($_POST['uname']) and isset($_POST['pwd']) and !empty($_POST['pwd']) and isset($_POST['cpwd']) and !empty($_POST['cpwd']) and isset($_POST['fname']) and !empty($_POST['fname']) and isset($_POST['lname']) and !empty($_POST['lname']) {
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
             $username = $_POST['uname'];
