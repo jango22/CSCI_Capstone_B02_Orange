@@ -25,23 +25,15 @@
 
     //Ensure password has one Capital, number, and special character
     if(isset($_POST['submit'])){
-        $username = $_POST['uname'];
-        $emp = "yes";
-        $pass = $_POST['pwd'];
-        $confirm = $_POST['cpwd'];
-        if(isset($_POST['uname']) and !empty($_POST['uname']) and isset($_POST['pwd']) and !empty($_POST['pwd']) and isset($_POST['cpwd']) and !empty($_POST['cpwd'])) {
-            
-            
-            //regex patterns for password
             $numPat = "[0-9]";
             $upper = "[A-Z]";
             $upperLower = "[A-Za-z]";
-            $special = "/[^a-zA-Z\d]/";
+            $special = "/[`'\"~!@#$*()<>\|]/";
             //checks username for lowercase
-
+          if (preg_match($upper, $uname) = 0) {
 
             //checks if password has appropriate values
-            if (preg_match(" ^.*(?=.{7,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$ ", $pass)) {
+            if (preg_match($numPat, $pass) > 0 and preg_match($upperLower, $pass) > 0 and preg_match($special, $pass) > 0) {
 
                 //checks that passwords match
                 if($pass == $confirm) {
@@ -54,5 +46,12 @@
             else {
                 echo "Your password must contain atleast one capital, lowercase, and special character";
             }
-    } 
-?>
+          } 
+          else {
+            echo "username must be all lowercase";
+          }
+        }
+        else {
+            echo "you must set a username or password";
+        }
+    }
