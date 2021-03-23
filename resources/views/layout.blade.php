@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html style="background-color: rgba(195,195,195);" lang="en">
 <head>
@@ -19,7 +24,7 @@
 				<a href="/add" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Add Product</a>
 				<a href="/update" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update Product</a>
 				<a href="" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Log Out</a>
-        		<span href="" class="w3-bar-item w3-padding-large w3-hide-small w3-right">Welcome, !</span>
+        		<span href="" class="w3-bar-item w3-padding-large w3-hide-small w3-right">Welcome, <?php echo $_SESSION['username']; ?></span>
 			</div>
 		</div>
 </head>	  
