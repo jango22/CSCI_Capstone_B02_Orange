@@ -39,9 +39,12 @@ Login
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $user, $password);
    if (isset($_COOKIE['block'])) {
        echo "Too many attempts! You will be locked out for 15 minutes!";
-       echo '<script> document.getElementById('uname').disabled = true;
-       document.getElementById('pwd').disabled = true;
-       document.getElementById('submit').disabled = true; </script>'
+       echo '<script> document.getElementById("uname").disabled = true;
+       document.getElementById("pwd").disabled = true;
+       document.getElementById("submit").disabled = true; </script>'
+    }
+    else {
+    
     }
     //Retrieve Login values from form
     if(isset($_POST['submit'])) {
