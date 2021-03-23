@@ -50,6 +50,9 @@ session_start();
             }
 
         }
+        else {
+            echo "You must enter a username and password!";
+        }
     }
     ?>
     </div>
