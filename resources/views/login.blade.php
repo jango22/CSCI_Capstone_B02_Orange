@@ -70,6 +70,8 @@ Login
             echo "You must enter a username and password!";
         }
     }
+    
+    ?>
     <script>
         // self executing function
      (function() {
@@ -82,6 +84,4 @@ Login
 
       })();
      </script>
-    ?>
-    
     @stop
