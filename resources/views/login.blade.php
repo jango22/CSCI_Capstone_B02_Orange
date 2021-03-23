@@ -46,7 +46,7 @@ Login
     else {
     echo '<script> document.getElementById("uname").disabled = false;
        document.getElementById("pwd").disabled = false;
-       document.getElementById("submit").disabled = false; </script>'
+       document.getElementById("submit").disabled = false; </script>';
     }
     //Retrieve Login values from form
     if(isset($_POST['submit'])) {
