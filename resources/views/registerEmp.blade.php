@@ -24,7 +24,13 @@
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $user, $password);
 
     //Ensure password has one Capital, number, and special character
-    if(isset($_POST['submit'])){
+ if(isset($_POST['submit'])){
+    if(isset($_POST['uname']) and !empty($_POST['uname']) and isset($_POST['pwd']) and !empty($_POST['pwd']) and isset($_POST['cpwd']) and !empty($_POST['cpwd'])) {
+            $username = $_POST['uname'];
+            $emp = "yes";
+            $pass = $_POST['pwd'];
+            $confirm = $_POST['cpwd'];
+            
             $numPat = "[0-9]";
             $upper = "[A-Z]";
             $upperLower = "[A-Za-z]";
@@ -54,3 +60,4 @@
         else {
             echo "you must set a username or password";
         }
+    }
