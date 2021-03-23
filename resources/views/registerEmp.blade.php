@@ -14,13 +14,19 @@ Employee Register Form
     <div>
         <form method="post" id="loginform">
             @csrf
-            <label for="uname">Username</label>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" placeholder="Type your first name"> <br><br>
+            
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" placeholder="Type your last name"> <br><br>
+            
+            <label for="uname">Username:</label>
             <input type="text" id="uname" name="uname" placeholder="Type your username"> <br><br>
             
-            <label for="pwd">Password</label>
+            <label for="pwd">Password:</label>
             <input type="text" id="pwd" name="pwd" placeholder="Type a password"><br><br>
 
-            <label for="cpwd">Confirm Password</label>
+            <label for="cpwd">Confirm Password:</label>
             <input type="text" id="cpwd" name="cpwd" placeholder="Confirm your password"><br><br>
 
             <input type="submit" name="submit" value="Submit">
@@ -35,7 +41,9 @@ Employee Register Form
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $user, $password);
 
 if (isset($_POST['submit'])){
-    if (isset($_POST['uname']) and !empty($_POST['uname']) and isset($_POST['pwd']) and !empty($_POST['pwd']) and isset($_POST['cpwd']) and !empty($_POST['cpwd'])) {
+    if (isset($_POST['uname']) and !empty($_POST['uname']) and isset($_POST['pwd']) and !empty($_POST['pwd']) and isset($_POST['cpwd']) and !empty($_POST['cpwd']) isset($_POST['fname']) and !empty($_POST['fname']) and isset($_POST['lname']) and !empty($_POST['lname']) {
+            $fname = $_POST['fname'];
+            $lname = $_POST['lname'];
             $username = $_POST['uname'];
             $emp = "yes";
             $pass = $_POST['pwd'];
@@ -72,7 +80,7 @@ if (isset($_POST['submit'])){
             else {
                 
                 if($pass == $confirm) {
-                      $conn->query("INSERT INTO Users (username, password, is_Employee) VALUES ('$username', '$pass', '$emp')");
+                      $conn->query("INSERT INTO Users (username, password, is_Employee, fname, lname) VALUES ('$username', '$pass', '$emp', 'fname', 'lname')");
                 }
                 else {
                     echo "Passwords do not match!";
@@ -83,7 +91,7 @@ if (isset($_POST['submit'])){
     }
     
     else {
-        echo "you must set a username and password";
+        echo "You must set a first name, last name, username, and password";
     }
      
 }
