@@ -1,8 +1,3 @@
-<?php
-// Start the session
-session_start();
-?>
-
 <!DOCTYPE html>
 <html style="background-color: rgba(195,195,195);" lang="en">
 <head>
