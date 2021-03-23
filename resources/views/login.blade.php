@@ -8,7 +8,7 @@ session_start();
         <input type="text" id="uname" name="uname"><br>
         <label for="password">Password</label><br>
         <input type="text" id="pwd" name="pwd" value="Doe"><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" name="submit" value="Submit">
     </form>
 
     <?php
@@ -45,11 +45,7 @@ session_start();
                 header("Location: http://capstoneclass-php.eba-c2wjtm2e.us-east-1.elasticbeanstalk.com/");
             }
             else {
-                $msg="Username or password is incorrect";
-                echo "<div class='alert alert-danger alert-dismissable fade in' role='alert'>
-                        <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                        $msg
-                      </div>";
+                echo "Username or password is incorrect";
             }
 
         }
