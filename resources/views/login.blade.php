@@ -1,7 +1,10 @@
-﻿<?php
-// Start the session
-session_start();
-?>
+@extends('layout')
+
+@section('title')
+Login
+@stop
+
+@section('content')
 
     <form method="post">
     @csrf
@@ -55,4 +58,4 @@ session_start();
         }
     }
     ?>
-    </div>
+    @stop
