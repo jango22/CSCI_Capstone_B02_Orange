@@ -61,7 +61,7 @@ Login
                 if(isset($_SESSION['attempts'])) {
                     $_SESSION['fail'] = $_SESSION['attempts']++; //increment 
                     if ($_SESSION['fail'] >= 3) {
-                        disableTries();
+                        echo '<script type="text/javascript">', 'disableTries();', '</script>';
                         unset($_SESSION['attempts']);
                     }
                 } 
