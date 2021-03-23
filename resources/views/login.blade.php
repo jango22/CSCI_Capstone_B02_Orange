@@ -41,10 +41,12 @@ Login
        echo "Too many attempts! You will be locked out for 15 minutes!";
        echo '<script> document.getElementById("uname").disabled = true;
        document.getElementById("pwd").disabled = true;
-       document.getElementById("submit").disabled = true; </script>'
+       document.getElementById("submit").disabled = true; </script>';
     }
     else {
-    
+    echo '<script> document.getElementById("uname").disabled = false;
+       document.getElementById("pwd").disabled = false;
+       document.getElementById("submit").disabled = false; </script>'
     }
     //Retrieve Login values from form
     if(isset($_POST['submit'])) {
