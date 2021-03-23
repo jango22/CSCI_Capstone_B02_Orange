@@ -37,10 +37,15 @@ Login
     $dbname = "OrangeDB";
     $port = "1433";
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $user, $password);
-   
+   if (isset($_COOKIE['block'])) {
+       echo "Too many attempts! You will be locked out for 15 minutes!";
+       echo '<script> document.getElementById('uname').disabled = true;
+       document.getElementById('pwd').disabled = true;
+       document.getElementById('submit').disabled = true; </script>'
+    }
     //Retrieve Login values from form
     if(isset($_POST['submit'])) {
-        if (isset($_POST['uname']) and !empty($_POST['uname']) and isset($_POST['pwd']) and !empty($_POST['pwd'])) {
+        if (isset($_POST['uname']) and isset($_POST['pwd'])) {
             $username = $_POST['uname'];
             $pass = $_POST['pwd'];
 
@@ -71,8 +76,7 @@ Login
                 if(isset($_SESSION['attempts'])) {
                     $_SESSION['fail'] = $_SESSION['attempts']++; //increment 
                     if ($_SESSION['fail'] >= 2) {
-                        echo "Too many attempts! You will be locked out for 15 minutes!";
-                        echo '<script> disableTries(); </script';
+                        setcookie('block', $_SESSION['fail'], time() + (60 * 15),'/'); //15 minutes            
                     }
                 } 
                 else {
