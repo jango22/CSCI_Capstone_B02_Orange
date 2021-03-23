@@ -55,5 +55,5 @@
                 echo "Your password must contain atleast one capital, lowercase, and special character";
             }
     } 
-
+?>
 
