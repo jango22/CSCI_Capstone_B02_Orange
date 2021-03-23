@@ -1,11 +1,10 @@
 @extends('layout')
 
 @section('title')
-Update a Product
+Employee Register Form
 @stop
 
 @section('content')
-<h3>Employee Register Form</h3>
 
     <div>
         <form method="post" id="loginform">
