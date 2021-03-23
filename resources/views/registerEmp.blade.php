@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+<?php session_start(); ?>
 @extends('layout')
 
 @section('title')
@@ -8,6 +6,13 @@ Employee Register Form
 @stop
 
 @section('content')
+<!-- Make sure user is logged in -->
+<?php 
+if(!isset($_SESSION['username'])){
+    die(header("Location: /login"));
+}
+?>
+
 <script>
     function togglePassword() {
             var x = document.getElementById("pwd");

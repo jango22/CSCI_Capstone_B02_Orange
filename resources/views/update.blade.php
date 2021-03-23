@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+<?php session_start(); ?>
 @extends('layout')
 
 @section('title')
@@ -8,7 +6,13 @@ Update a Product
 @stop
 
 @section('content')
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+<!-- Make sure user is logged in -->
+<?php 
+if(!isset($_SESSION['username'])){
+    die(header("Location: /login"));
+}
+?>
+
 <script>
     /* Dismissable alert script */
     var msg = '{{Session::get('alert')}}';
