@@ -8,7 +8,7 @@ session_start();
         <label for="username">Username</label><br>
         <input type="text" id="uname" name="uname"><br>
         <label for="password">Password</label><br>
-        <input type="text" id="pwd" name="pwd" value="Doe"><br><br>
+        <input type="text" id="pwd" name="pwd"><br><br>
         <input type="submit" name="submit" value="Submit">
     </form>
 
@@ -23,7 +23,7 @@ session_start();
 
     //Retrieve Login values from form
     if(isset($_POST['submit'])) {
-        if (isset($_POST['username']) and isset($_POST['pwd'])) {
+        if (isset($_POST['uname']) and isset($_POST['pwd'])) {
             $username = $_POST['uname'];
             $pass = $_POST['pwd'];
 
