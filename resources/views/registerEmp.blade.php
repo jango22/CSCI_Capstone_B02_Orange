@@ -37,7 +37,7 @@
             $special = "/[`'\"~!@#$*()<>\|]/";
 
             //checks if password has appropriate values
-            if (preg_match($numPat, $pass) > 0) {
+            if (preg_match('/^[A-Za-z0-9]+$/', $pass)) {
 
                 //checks that passwords match
                 if($pass == $confirm) {
