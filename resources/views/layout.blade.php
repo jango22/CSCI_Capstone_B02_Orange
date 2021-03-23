@@ -28,7 +28,7 @@
 				<a href="/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Login</a>
         		<span href="" class="w3-bar-item w3-padding-large w3-hide-small w3-right">Welcome, 
                 
-                    <?php if (isset($_SESSION['username'])) { echo '$_SESSION['fname'];' } ?>
+                    <?php if (isset($_SESSION['username'])) { echo $_SESSION['fname']; } ?>
                 
                 </span>
 			</div>
