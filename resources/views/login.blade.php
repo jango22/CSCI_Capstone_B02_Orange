@@ -60,7 +60,7 @@ Login
             }
             else {
                 $_SESSION['tries'] += 1;
-                echo "Username or password is incorrect! You only have " . $count . " trys before a 15 minute lockout! Good luck, and may god have mercy on your soul.";
+                echo "Username or password is incorrect! You only have " . $_SESSION['tries'] . " trys before a 15 minute lockout! Good luck, and may god have mercy on your soul.";
                 if ($_SESSION['tries'] == 3) {
                     setTimeout();
                     $_SESSION['tries'] = 0;
