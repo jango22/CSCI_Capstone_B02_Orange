@@ -32,7 +32,7 @@
             
 
             //checks if password has appropriate values
-            if (!preg_match('~[0-9]+~'', $pass)) {
+            if (!preg_match('~[0-9]+~', $pass)) {
 
                 echo "Your password must contain a number. You must also have a lower case, upper case, and special character.";
                
