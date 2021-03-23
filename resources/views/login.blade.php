@@ -29,7 +29,7 @@ Login
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $user, $password);
     
     //atempts tracker, up to 3
-    $count = 0;
+    $count = 3;
     //Retrieve Login values from form
     if(isset($_POST['submit'])) {
         if (isset($_POST['uname']) and isset($_POST['pwd'])) {
@@ -59,9 +59,9 @@ Login
                 header("Location: http://capstoneclass-php.eba-c2wjtm2e.us-east-1.elasticbeanstalk.com/");
             }
             else {
-                ++$count;
-                echo "Username or password is incorrect! You only have 3 trys before a 15 minute lockout! Good luck, and may god have mercy on your soul.";
-                if ($count >= 3) {
+                --$count;
+                echo "Username or password is incorrect! You only have" . $count . "trys before a 15 minute lockout! Good luck, and may god have mercy on your soul.";
+                if ($count == 0) {
                     setTimeout();
                     $count = 0;
                 }
