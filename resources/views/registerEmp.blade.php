@@ -80,7 +80,7 @@ if (isset($_POST['submit'])){
             else {
                 
                 if($pass == $confirm) {
-                      $conn->query("INSERT INTO Users (username, password, is_Employee, fname, lname) VALUES ('$username', '$pass', '$emp', 'fname', 'lname')");
+                      $conn->query("INSERT INTO Users (username, password, is_Employee, fname, lname) VALUES ('$username', '$pass', '$emp', '$fname', '$lname')");
                 }
                 else {
                     echo "Passwords do not match!";
