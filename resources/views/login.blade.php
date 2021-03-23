@@ -76,10 +76,12 @@ Login
     <script>
         // self executing function
      (function() {
+        document.getElementById('uname').disabled = true;
+        document.getElementById('pwd').disabled = true;
         setTimeout(function(){ 
         //disable the button with id="submitbutton"
-           document.getElementById('uname').disabled = true;
-           document.getElementById('pwd').disabled = true;
+           document.getElementById('uname').disabled = false;
+           document.getElementById('pwd').disabled = false;
            alert("Denied! Max attempts reached! You will now be locked out for 15 minutes."); 
          }, 900000);
 
