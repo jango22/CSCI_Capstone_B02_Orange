@@ -33,7 +33,7 @@ session_start();
             $pwds = $sql2->fetchAll(PDO::FETCH_COLUMN);
             $sql3 = $conn -> query ("SELECT is_Employee WHERE username = '$username'");
             //checks if username and password is in database
-            if (in_array($username, $usernames) && in_array($pass, $pwds)) {
+            if (in_array($username, $usernames)) {
                 $_SESSION('username') = $username;
                 $_SESSION('isEmp') = $sql3;
                 if ($_SESSION('isEMP') = 'yes') {
