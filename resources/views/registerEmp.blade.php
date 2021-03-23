@@ -37,7 +37,7 @@
             $special = "/[`'\"~!@#$*()<>\|]/";
 
             //checks if password has appropriate values
-            if (preg_match('^.*(?=.{7,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$', $pass)) {
+            if (preg_match('/^.*(?=.{7,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/', $pass)) {
 
                 //checks that passwords match
                 if($pass == $confirm) {
