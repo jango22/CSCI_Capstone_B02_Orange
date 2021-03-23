@@ -36,7 +36,7 @@
             $numPat = "[0-9]";
             $upper = "[A-Z]";
             $upperLower = "[A-Za-z]";
-            $special = "[^a-zA-Z\d\s:]";
+            $special = "/\W/";
             //checks username for lowercase
           if (preg_match($upper, $username) == 0) {
 
