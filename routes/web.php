@@ -43,6 +43,9 @@ Route::any('/emp', function () {
     return view('registerEmp');
 });
 
+Route::any('/login', function () {
+    return view('login');
+});
 //Contact Us
 Route::any('/contact', function () {
     return view('contact');
