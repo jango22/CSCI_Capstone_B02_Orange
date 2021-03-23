@@ -3,13 +3,13 @@
     <div>
         <form method="post" id="loginform">
             @csrf
-            <label for="fname">Username</label>
+            <label for="uname">Username</label>
             <input type="text" id="uname" name="uname" placeholder="Type your username"> <br><br>
             
-            <label for="lname">Password</label>
+            <label for="pwd">Password</label>
             <input type="text" id="pwd" name="pwd" placeholder="Type a Password"><br><br>
 
-            <label for="lname">Confirm Password</label>
+            <label for="cpwd">Confirm Password</label>
             <input type="text" id="cpwd" name="cpwd" placeholder="Confirm your Password"><br><br>
 
             <input type="submit" name="submit" value="Submit">
