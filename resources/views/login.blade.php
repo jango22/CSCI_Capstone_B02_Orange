@@ -81,7 +81,8 @@ Login
                 if(isset($_SESSION['attempts'])) {
                     $_SESSION['fail'] = $_SESSION['attempts']++; //increment 
                     if ($_SESSION['fail'] >= 2) {
-                        setcookie('block', $_SESSION['fail'], time() + (60 * 15),'/'); //15 minutes            
+                        setcookie('block', $_SESSION['fail'], time() + (60 * 15),'/'); //15 minutes 
+                        unset($_SESSION['attempts']);
                     }
                 } 
                 else {
