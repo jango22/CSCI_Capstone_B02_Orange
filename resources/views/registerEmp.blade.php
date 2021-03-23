@@ -7,6 +7,7 @@ Employee Register Form
 
 @section('content')
 
+<h2>Register an Employee</h2>
     <div>
         <form method="post" id="loginform">
             @csrf
