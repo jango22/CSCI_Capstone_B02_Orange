@@ -38,10 +38,10 @@
             $upperLower = "[A-Za-z]";
             $special = '/[^a-zA-Z\d]/';
             //checks username for lowercase
-          if (preg_match($upper, $username) == 0) {
+
 
             //checks if password has appropriate values
-            if (preg_match($numPat, $pass) && preg_match($upperLower, $pass)) {
+            if (preg_match(' ^.*(?=.{7,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$ ', $pass))) {
 
                 //checks that passwords match
                 if($pass == $confirm) {
@@ -54,14 +54,6 @@
             else {
                 echo "Your password must contain atleast one capital, lowercase, and special character";
             }
-          } 
-          else {
-            echo "username must be all lowercase";
-          }
-        }
-        else {
-            echo "you must set a username or password";
-        }
     } 
 
 
