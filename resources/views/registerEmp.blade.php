@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('title')
+<br><br>
 Employee Register Form
 @stop
 
@@ -13,10 +14,10 @@ Employee Register Form
             <input type="text" id="uname" name="uname" placeholder="Type your username"> <br><br>
             
             <label for="pwd">Password</label>
-            <input type="text" id="pwd" name="pwd" placeholder="Type a Password"><br><br>
+            <input type="text" id="pwd" name="pwd" placeholder="Type a password"><br><br>
 
             <label for="cpwd">Confirm Password</label>
-            <input type="text" id="cpwd" name="cpwd" placeholder="Confirm your Password"><br><br>
+            <input type="text" id="cpwd" name="cpwd" placeholder="Confirm your password"><br><br>
 
             <input type="submit" name="submit" value="Submit">
         </form>
