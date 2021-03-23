@@ -1,4 +1,11 @@
-  <h3>Employee Register Form</h3>
+@extends('layout')
+
+@section('title')
+Update a Product
+@stop
+
+@section('content')
+<h3>Employee Register Form</h3>
 
     <div>
         <form method="post" id="loginform">
