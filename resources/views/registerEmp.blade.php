@@ -34,10 +34,7 @@ if (isset($_POST['submit'])){
             echo "Your username cannot have uppercase!";
        }
        else if (preg_match('~[^a-zA-Z\d]+~', $username)) {
-            echo "Your username cannot have a special character";
-       }
-       else if (preg_match('~[\s]+~', $username)) {
-            echo "Your username cannot have whitespace!";
+            echo "Your username cannot have a special character or whitespace!";
        }
        else {
 
