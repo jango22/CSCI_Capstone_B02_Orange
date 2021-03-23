@@ -60,8 +60,8 @@ Login
                 static $count = 0;
                 $count++;
                 echo "Username or password is incorrect! You only have 3 trys before a 15 minute lockout! Good luck, and may god have mercy on your soul.";
-                if ($count == 3) {
-                    setTimeout();
+                if ($count == 3) {                   
+                    disableTries();
                     static $count = 0;
                 }
             }
@@ -74,17 +74,13 @@ Login
     
     ?>
     <script>
-        // self executing function
-     (function() {
+      function disableTries(){
         document.getElementById('uname').disabled = true;
         document.getElementById('pwd').disabled = true;
-        setTimeout(function(){ 
-        //disable the button with id="submitbutton"
-           document.getElementById('uname').disabled = false;
-           document.getElementById('pwd').disabled = false;
-           alert("Denied! Max attempts reached! You will now be locked out for 15 minutes."); 
-         }, 900000);
-
-      })();
-     </script>
+      
+      setTimeout(function(){
+        document.getElementById('uname').disabled = false;
+        document.getElementById('pwd').disabled = false; },900000);
+      }
+    </script>
     @stop
