@@ -8,6 +8,16 @@ Employee Register Form
 @stop
 
 @section('content')
+<script>
+    function togglePassword() {
+            var x = document.getElementById("pwd");
+            if (x.type === "password") { x.type = "text"; }
+            else { x.type = "password"; }
+            var y = document.getElementById("cpwd");
+            if (y.type === "password") { y.type = "text"; }
+            else { y.type = "password"; }
+        }
+</script>
 
 <h2>Register an Employee</h2>
     <div>
@@ -23,10 +33,12 @@ Employee Register Form
             <input type="text" id="uname" name="uname" placeholder="Type your username"> <br><br>
             
             <label for="pwd">Password:</label>
-            <input type="text" id="pwd" name="pwd" placeholder="Type a password"><br><br>
+            <input type="password" id="pwd" name="pwd" placeholder="Type a password"><br><br>
 
             <label for="cpwd">Confirm Password:</label>
-            <input type="text" id="cpwd" name="cpwd" placeholder="Confirm your password"><br><br>
+            <input type="password" id="cpwd" name="cpwd" placeholder="Confirm your password"><br>
+            <input type="checkbox" onclick="togglePassword()"> Show Password<br><br>
+            
 
             <input type="submit" name="submit" value="Submit">
         </form>

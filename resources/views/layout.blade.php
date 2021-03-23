@@ -25,7 +25,7 @@
                 <?php 
                     if (isset($_SESSION['username'])) { 
                         if ($_SESSION['usertype'] == 'admin') {
-                           echo '<a href="/emp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register Employee</a>'; 
+                           echo '<a href="/registeremployee" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register Employee</a>'; 
                         }
 						echo '<a href="/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Log Out</a>';
 						echo '<span href="" class="w3-bar-item w3-padding-large w3-hide-small w3-right">Welcome, ';
@@ -36,12 +36,6 @@
 						echo '<a href="/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Login</a>';
 					}
                 ?>
-
-        		<!-- <span href="" class="w3-bar-item w3-padding-large w3-hide-small w3-right">Welcome, 
-                
-                    
-                
-                </span> -->
 			</div>
 		</div>
 </head>	  

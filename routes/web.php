@@ -71,7 +71,7 @@ Route::any('/update', function () {
 });
 
 //Register Employee
-Route::any('/emp', function () {
+Route::any('/registeremployee', function () {
     return view('registerEmp');
 });
 

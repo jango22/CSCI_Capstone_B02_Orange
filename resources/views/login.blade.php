@@ -9,23 +9,29 @@ Login
 
 @section('content')
 <script>
-      function disableTries(){
+    function disableTries(){
         document.getElementById('uname').disabled = true;
         document.getElementById('pwd').disabled = true;
         document.getElementById('submit').disabled = true;
-      setTimeout(function(){
+        setTimeout(function(){
         document.getElementById('uname').disabled = false;
         document.getElementById('pwd').disabled = false;
         document.getElementById('submit').disabled = false;},900000);
-      }
+    }
+    function togglePassword() {
+        var x = document.getElementById("pwd");
+        if (x.type === "password") { x.type = "text"; }
+        else { x.type = "password"; }
+    }
 </script>
 <h2>Login</h2>
     <form method="post">
     @csrf
         <label for="username">Username</label><br>
         <input type="text" id="uname" name="uname"><br>
-        <label for="password">Password</label><br>
-        <input type="text" id="pwd" name="pwd"><br><br>
+        <label for="password" >Password</label><br>
+        <input type="password" id="pwd" name="pwd"><br>
+        <input type="checkbox" onclick="togglePassword()"> Show Password<br><br>
         <input type="submit" id='submit' name="submit" value="Submit">
     </form>
 
