@@ -12,10 +12,11 @@ Login
       function disableTries(){
         document.getElementById('uname').disabled = true;
         document.getElementById('pwd').disabled = true;
-      
+        document.getElementById('submit').disabled = true;
       setTimeout(function(){
         document.getElementById('uname').disabled = false;
-        document.getElementById('pwd').disabled = false; },900000);
+        document.getElementById('pwd').disabled = false;
+        document.getElementById('submit').disabled = false;},900000);
       }
 </script>
 <h2>Login</h2>
@@ -25,7 +26,7 @@ Login
         <input type="text" id="uname" name="uname"><br>
         <label for="password">Password</label><br>
         <input type="text" id="pwd" name="pwd"><br><br>
-        <input type="submit" name="submit" value="Submit">
+        <input type="submit" id='submit' name="submit" value="Submit">
     </form>
 
     <?php
