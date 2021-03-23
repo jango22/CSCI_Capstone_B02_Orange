@@ -28,7 +28,8 @@ Login
     $port = "1433";
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $user, $password);
     
-    //atempts tracker, up to 3
+    $_SESSION['tries'] = 0;
+   
     //Retrieve Login values from form
     if(isset($_POST['submit'])) {
         if (isset($_POST['uname']) and isset($_POST['pwd'])) {
