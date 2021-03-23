@@ -34,13 +34,13 @@ session_start();
             $sql3 = $conn -> query ("SELECT is_Employee WHERE username = '$username'");
             //checks if username and password is in database
             if (in_array($username, $usernames) && in_array($pass, $pwds)) {
-                $_SESSION('username') = $username;
-                $_SESSION('isEmp') = $sql3;
-                if ($_SESSION('isEMP') = 'yes') {
-                    $_SESSION('usertype') = 'admin';
+                $_SESSION['username'] = $username;
+                $_SESSION['isEmp'] = $sql3;
+                if ($_SESSION['isEMP'] = 'yes') {
+                    $_SESSION['usertype'] = 'admin';
                 }
                 else {
-                    $_SESSION('usertype') = 'user';
+                    $_SESSION['usertype'] = 'user';
                 }
                 header("Location: http://capstoneclass-php.eba-c2wjtm2e.us-east-1.elasticbeanstalk.com/");
             }
