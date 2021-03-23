@@ -16,15 +16,8 @@
 				<!-- Navbar Items -->
 				<a href="/" class="w3-bar-item w3-button w3-padding-large">Home</a>
 				<a href="/products" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
-                <div class="dropdown">
-                    <button class="dropbtn">Products
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                <div class="dropdown-content">
-                    <a href="/add" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Add Product</a>
-                    <a href="/update" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update Product</a>
-                </div>
-                </div>
+                <a href="/add" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Add Product</a>
+                <a href="/update" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update Product</a>
 				<a href="/contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
 				<a href="/faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
 				
