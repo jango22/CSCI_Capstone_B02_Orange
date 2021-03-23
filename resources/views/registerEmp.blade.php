@@ -54,4 +54,3 @@
         else {
             echo "you must set a username or password";
         }
-    }
