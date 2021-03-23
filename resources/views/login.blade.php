@@ -4,6 +4,7 @@ session_start();
 ?>
 
     <form method="post">
+    @csrf
         <label for="username">Username</label><br>
         <input type="text" id="uname" name="uname"><br>
         <label for="password">Password</label><br>
