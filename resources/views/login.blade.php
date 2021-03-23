@@ -60,18 +60,7 @@ Login
                 ++$count;
                 echo "Username or password is incorrect! You only have 3 trys before a 15 minute lockout! Good luck, and may god have mercy on your soul.";
                 if ($count >= 3) {
-                    function()
-                    $count = 0;
-                }
-            }
-
-        }
-        else {
-            echo "You must enter a username and password!";
-        }
-    }
-    ?>
-    <script>
+                    <script>
         // self executing function
      (function() {
         setTimeout(function(){ 
@@ -83,4 +72,15 @@ Login
 
       })();
      </script>
+                    $count = 0;
+                }
+            }
+
+        }
+        else {
+            echo "You must enter a username and password!";
+        }
+    }
+    ?>
+    
     @stop
