@@ -37,7 +37,7 @@ if (isset($_POST['submit'])){
             echo "Your username cannot have a special character";
        }
        else if (preg_match('~[\s]+~', $username)) {
-            echo "Your username cannot have whitespace!"
+            echo "Your username cannot have whitespace!";
        }
        else {
 
