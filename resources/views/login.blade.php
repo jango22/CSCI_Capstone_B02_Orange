@@ -40,7 +40,7 @@ Login
    
     //Retrieve Login values from form
     if(isset($_POST['submit'])) {
-        if (isset($_POST['uname']) and isset($_POST['pwd'])) {
+        if (isset($_POST['uname']) and !empty($_POST['uname']) and isset($_POST['pwd']) and !empty($_POST['pwd'])) {
             $username = $_POST['uname'];
             $pass = $_POST['pwd'];
 
