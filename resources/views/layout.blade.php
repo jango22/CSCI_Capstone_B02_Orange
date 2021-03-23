@@ -26,7 +26,7 @@ session_start();
                 <?php 
                     if (isset($_SESSION['username'])) { 
                         if ($_SESSION['usertype'] == 'admin') {
-                            <a href="/emp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register Employee</a> 
+                           echo '<a href="/emp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register Employee</a>'; 
                         }
                     } 
                 ?>
