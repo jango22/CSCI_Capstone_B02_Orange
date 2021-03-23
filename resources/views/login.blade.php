@@ -60,8 +60,9 @@ Login
             else {
                 if(isset($_SESSION['attempts'])) {
                     $_SESSION['fail'] = $_SESSION['attempts']++; //increment 
-                    if ($_SESSION['fail'] >= 3) {
-                        echo '<script type="text/javascript">', 'disableTries();', '</script>';
+                    if ($_SESSION['fail'] >= 2) {
+                        echo "Too many attempts!";
+                        echo "<script>disableTries();</script>";
                         unset($_SESSION['attempts']);
                     }
                 } 
