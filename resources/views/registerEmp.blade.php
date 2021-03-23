@@ -36,12 +36,12 @@
             $numPat = "[0-9]";
             $upper = "[A-Z]";
             $upperLower = "[A-Za-z]";
-            $special = "/\W/";
+            $special = '/[^a-zA-Z\d]/';
             //checks username for lowercase
           if (preg_match($upper, $username) == 0) {
 
             //checks if password has appropriate values
-            if (preg_match($numPat, $pass) > 0 && preg_match($upperLower, $pass) > 0 && preg_match($special, $pass) > 0) {
+            if (preg_match($numPat, $pass) > 0 && preg_match($upperLower, $pass) > 0) {
 
                 //checks that passwords match
                 if($pass == $confirm) {
