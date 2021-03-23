@@ -8,7 +8,16 @@ Login
 @stop
 
 @section('content')
-
+<script>
+      function disableTries(){
+        document.getElementById('uname').disabled = true;
+        document.getElementById('pwd').disabled = true;
+      
+      setTimeout(function(){
+        document.getElementById('uname').disabled = false;
+        document.getElementById('pwd').disabled = false; },900000);
+      }
+</script>
 <h2>Login</h2>
     <form method="post">
     @csrf
@@ -62,7 +71,7 @@ Login
                     $_SESSION['fail'] = $_SESSION['attempts']++; //increment 
                     if ($_SESSION['fail'] >= 2) {
                         echo "Too many attempts!";
-                        echo "disableTries();";
+                        disableTries();
                         unset($_SESSION['attempts']);
                     }
                 } 
@@ -78,14 +87,4 @@ Login
     }
     
     ?>
-    <script>
-      function disableTries(){
-        document.getElementById('uname').disabled = true;
-        document.getElementById('pwd').disabled = true;
-      
-      setTimeout(function(){
-        document.getElementById('uname').disabled = false;
-        document.getElementById('pwd').disabled = false; },900000);
-      }
-    </script>
     @stop
