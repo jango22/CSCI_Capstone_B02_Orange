@@ -37,18 +37,19 @@
             $special = "/[`'\"~!@#$*()<>\|]/";
 
             //checks if password has appropriate values
-            if (preg_match('/^[A-Za-z0-9]+$/', $pass)) {
+            if (preg_match('/^[A-Za-z0-9]+$/', $pass) === 0) {
 
-                //checks that passwords match
-                if($pass == $confirm) {
+                echo "Your password must contain atleast one capital, lowercase, and special character";
+               
+            }
+            else {
+                
+                 if($pass == $confirm) {
                       $conn->query("INSERT INTO Users (username, password, is_Employee) VALUES ('$username', '$pass', '$emp')");
                 }
                 else {
                     echo "Passwords do not match!";
                 }
-            }
-            else {
-                echo "Your password must contain atleast one capital, lowercase, and special character";
             }
         }
         else {
