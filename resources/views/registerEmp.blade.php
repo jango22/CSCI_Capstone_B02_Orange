@@ -4,7 +4,6 @@
 @extends('layout')
 
 @section('title')
-<br><br>
 Employee Register Form
 @stop
 
