@@ -27,8 +27,6 @@ Login
     $dbname = "OrangeDB";
     $port = "1433";
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $user, $password);
-    
-    $_SESSION['count'] = 0;
    
     //Retrieve Login values from form
     if(isset($_POST['submit'])) {
@@ -59,11 +57,12 @@ Login
                 header("Location: http://capstoneclass-php.eba-c2wjtm2e.us-east-1.elasticbeanstalk.com/");
             }
             else {
-                $_SESSION['tries'] += $_SESSION['count']++;
+                static $count = 0;
+                $count++;
                 echo "Username or password is incorrect! You only have 3 trys before a 15 minute lockout! Good luck, and may god have mercy on your soul.";
-                if ($_SESSION['tries'] == 3) {
+                if ($count == 3) {
                     setTimeout();
-                    $_SESSION['tries'] = 0;
+                    static $count = 0;
                 }
             }
 
