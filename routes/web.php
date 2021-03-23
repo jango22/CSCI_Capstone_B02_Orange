@@ -38,14 +38,6 @@ Route::any('/products', function () {
     return view('products');
 });
 
-//RegisterEmp
-Route::any('/emp', function () {
-    return view('registerEmp');
-});
-
-Route::any('/login', function () {
-    return view('login');
-});
 //Contact Us
 Route::any('/contact', function () {
     return view('contact');
@@ -54,6 +46,16 @@ Route::any('/contact', function () {
 //FAQ
 Route::any('/faq', function () {
     return view('faq');
+});
+
+//Login
+Route::any('/login', function () {
+    return view('login');
+});
+
+//Logout
+Route::any('/logout', function () {
+    return view('logout');
 });
 
 
@@ -66,6 +68,11 @@ Route::any('/add', function () {
 //Update Products
 Route::any('/update', function () {
     return view('update');
+});
+
+//Register Employee
+Route::any('/emp', function () {
+    return view('registerEmp');
 });
 
 
