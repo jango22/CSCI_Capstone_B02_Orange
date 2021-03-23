@@ -6,6 +6,7 @@ Login
 
 @section('content')
 
+<h2>Login</h2>
     <form method="post">
     @csrf
         <label for="username">Username</label><br>
