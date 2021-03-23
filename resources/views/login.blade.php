@@ -78,6 +78,7 @@ Login
                 header("Location: http://capstoneclass-php.eba-c2wjtm2e.us-east-1.elasticbeanstalk.com/");
             }
             else {
+            echo 'Your username and password are incorrect';
                 if(isset($_SESSION['attempts'])) {
                     $_SESSION['fail'] = $_SESSION['attempts']++; //increment 
                     if ($_SESSION['fail'] >= 2) {
