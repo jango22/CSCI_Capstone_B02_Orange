@@ -40,14 +40,14 @@ Login
             $sql2 = $conn->query("SELECT password FROM Users;");
             $pwds = $sql2->fetchAll(PDO::FETCH_COLUMN);
             $sql3 = $conn -> query ("SELECT is_Employee FROM Users WHERE username = '$username'");
-            
+            $emp = $sql3->fetchAll(PDO::FETCH_ASSOC)[0];
             $sql4 = $conn -> query ("SELECT fname FROM Users WHERE username = '$username'");
-            $name = $sql4->fetchAll(PDO::FETCH_COLUMN);
+            $name = $sql4->fetchAll(PDO::FETCH_ASSOC)[0];
             //checks if username and password is in database
             if (in_array($username, $usernames) && in_array($pass, $pwds)) {
                 $_SESSION['username'] = $username;
-                $_SESSION['fname'] = $sql4;
-                $_SESSION['isEmp'] = $sql3;
+                $_SESSION['fname'] = $name['fname'];
+                $_SESSION['isEmp'] = $emp['is_Employee'];
                 if ($_SESSION['isEmp'] == 'yes') {
                     $_SESSION['usertype'] = 'admin';
                 }
