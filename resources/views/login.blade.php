@@ -46,8 +46,8 @@ Login
             //checks if username and password is in database
             if (in_array($username, $usernames) && in_array($pass, $pwds)) {
                 $_SESSION['username'] = $username;
-                $_SESSION['fname'] = $sql3;
-                $_SESSION['isEmp'] = $emp;
+                $_SESSION['fname'] = $sql4;
+                $_SESSION['isEmp'] = $sql3;
                 if ($_SESSION['isEmp'] == 'yes') {
                     $_SESSION['usertype'] = 'admin';
                 }
