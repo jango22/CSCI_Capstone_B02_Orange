@@ -60,7 +60,7 @@ Login
                 ++$count;
                 echo "Username or password is incorrect! You only have 3 trys before a 15 minute lockout! Good luck, and may god have mercy on your soul.";
                 if ($count >= 3) {
-                    function();
+                    function()
                     $count = 0;
                 }
             }
