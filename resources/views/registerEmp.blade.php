@@ -37,7 +37,7 @@
             $special = "/[`'\"~!@#$*()<>\|]/";
 
             //checks if password has appropriate values
-            if (preg_match('/^[A-Za-z0-9]+$/', $pass) === 0) {
+            if (preg_match('/^[0-9]+$/', $pass) === 0) {
 
                 echo "Your password must contain atleast one capital, lowercase, and special character";
                
