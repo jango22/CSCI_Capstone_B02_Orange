@@ -71,7 +71,7 @@ Login
                     $_SESSION['fail'] = $_SESSION['attempts']++; //increment 
                     if ($_SESSION['fail'] >= 2) {
                         echo "Too many attempts!";
-                        disableTries();
+                        echo '<script> disableTries(); </script';
                         unset($_SESSION['attempts']);
                     }
                 } 
