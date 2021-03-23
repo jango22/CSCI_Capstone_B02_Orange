@@ -48,6 +48,7 @@ Login
                 $_SESSION['username'] = $username;
                 $_SESSION['fname'] = $name['fname'];
                 $_SESSION['isEmp'] = $emp['is_Employee'];
+                unset($_SESSION['attempts']);
                 if ($_SESSION['isEmp'] == 'yes') {
                     $_SESSION['usertype'] = 'admin';
                 }
@@ -57,12 +58,15 @@ Login
                 header("Location: http://capstoneclass-php.eba-c2wjtm2e.us-east-1.elasticbeanstalk.com/");
             }
             else {
-                static $count = 0;
-                $count++;
-                echo "Username or password is incorrect! You only have 3 trys before a 15 minute lockout! Good luck, and may god have mercy on your soul.";
-                if ($count == 3) {                   
-                    disableTries();
-                    static $count = 0;
+                if(isset($_SESSION['attempts'])) {
+                    $_SESSION['fail'] = $_SESSION['attempts']++; //increment 
+                    if ($_SESSION['fail'] >= 3) {
+                        disableTries();
+                        unset($_SESSION['attempts']);
+                    }
+                } 
+                else {
+                    $_SESSION['attempts'] = 1;
                 }
             }
 
