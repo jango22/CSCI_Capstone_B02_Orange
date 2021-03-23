@@ -43,7 +43,7 @@
             else if (!preg_match('~[a-z]+~',$pass)) {
                 echo "Your password doesnt have a lower case letter. You must also have a number, upper case letter and special character.";
             }
-            else if (!preg_match('~[/W]+~',$pass)) {
+            else if (!preg_match('~[^a-zA-Z\d]+~',$pass)) {
                 echo "Your password doesnt have a special character. You must also have a number, lower case, and upper case letter.";
             }
             else {
