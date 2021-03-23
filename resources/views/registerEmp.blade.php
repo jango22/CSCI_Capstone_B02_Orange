@@ -23,7 +23,6 @@
     $port = "1433";
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $user, $password);
 
-    //Ensure password has one Capital, number, and special character
  if(isset($_POST['submit'])){
     if(isset($_POST['uname']) and !empty($_POST['uname']) and isset($_POST['pwd']) and !empty($_POST['pwd']) and isset($_POST['cpwd']) and !empty($_POST['cpwd'])) {
             $username = $_POST['uname'];
@@ -31,13 +30,9 @@
             $pass = $_POST['pwd'];
             $confirm = $_POST['cpwd'];
             
-            $numPat = "[0-9]";
-            $upper = "[A-Z]";
-            $upperLower = "[A-Za-z]";
-            $special = "/[`'\"~!@#$*()<>\|]/";
 
             //checks if password has appropriate values
-            if (!preg_match('/^[0-9]+$/', $pass)) {
+            if (!preg_match('~[0-9]+~'', $pass)) {
 
                 echo "Your password must contain a number. You must also have a lower case, upper case, and special character.";
                
