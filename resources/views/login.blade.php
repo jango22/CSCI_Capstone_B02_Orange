@@ -3,7 +3,7 @@
 session_start();
 ?>
 
-    <form method="post" enctype="multipart/form-data">
+    <form method="post">
         <label for="username">Username</label><br>
         <input type="text" id="uname" name="uname"><br>
         <label for="password">Password</label><br>
