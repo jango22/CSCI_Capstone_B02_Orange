@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html style="background-color: rgba(195,195,195);" lang="en">
 <head>
@@ -18,8 +23,19 @@
 				<a href="/faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
 				<a href="/add" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Add Product</a>
 				<a href="/update" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update Product</a>
+                <?php 
+                    if (isset($_SESSION['username'])) { 
+                        if ($_SESSION['usertype'] == 'admin') {
+                           echo '<a href="/emp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register Employee</a>'; 
+                        }
+                    } 
+                ?>
 				<a href="" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Log Out</a>
-        		<span href="" class="w3-bar-item w3-padding-large w3-hide-small w3-right">Welcome, !</span>
+        		<span href="" class="w3-bar-item w3-padding-large w3-hide-small w3-right">Welcome, 
+                
+                    <?php if (isset($_SESSION['username'])) { echo $_SESSION['username']; } ?>
+                
+                </span>
 			</div>
 		</div>
 </head>	  
