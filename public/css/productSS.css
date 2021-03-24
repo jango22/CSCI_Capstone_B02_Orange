@@ -5,9 +5,10 @@
 }
 
 .column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
 }
 
 /* Clearfix (clear floats) */
