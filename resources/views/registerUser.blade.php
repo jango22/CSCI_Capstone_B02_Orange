@@ -49,6 +49,7 @@ if(isset($_SESSION['username'])){
         </form>
     </div>
     <?php
+
     $servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
     $user = "orangeadmin";
     $password = "capstone02";
@@ -97,6 +98,8 @@ if (isset($_POST['submit'])){
                 
                 if($pass == $confirm) {
                       $conn->query("INSERT INTO Users (username, password, is_Employee, fname, lname) VALUES ('$username', '$pass', '$emp', '$fname', '$lname')");
+                      alert('Registration Succesful, Redirecting to login page. Thanks!');
+                      header("Location: /login");
                 }
                 else {
                     echo "Passwords do not match!";
