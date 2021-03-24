@@ -6,9 +6,9 @@ Employee Register
 @stop
 
 @section('content')
-<!-- Make sure user is logged in -->
+<!-- Make sure user is *not* logged in -->
 <?php 
-if(!isset($_SESSION['username'])){
+if(isset($_SESSION['username'])){
     die(header("Location: /login"));
 }
 ?>
@@ -24,7 +24,7 @@ if(!isset($_SESSION['username'])){
         }
 </script>
 
-<h2>Register an Employee</h2>
+<h2>Register</h2>
     <div>
         <form method="post" id="loginform">
             @csrf
