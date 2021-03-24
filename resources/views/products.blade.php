@@ -33,7 +33,7 @@ Products
 	<ul id="products" class="w3-ul w3-card-4" style="background-color:lightgray">
 		@foreach ($products as $product)
 		<li class="w3-bar w3-hover-blue-gray">
-			<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">×</span>
+			<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">+</span>
 			<div id="product" class="w3-bar-item">
 				<span style="font-size:24px">{{ $product['name'] }}</span> <span>({{ $product['productSKU'] }})</span></br>
 				<span>${{ number_format($product['price'], 2) }}</span></br>
