@@ -8,7 +8,7 @@ Add a Product
 @section('content')
 <!-- Make sure user is logged in -->
 <?php 
-if(!isset($_SESSION['username'])){
+if(isset($_SESSION['username'])){
     if ($_SESSION['usertype'] !== 'admin') {
         die(header("Location: /login"));
     }

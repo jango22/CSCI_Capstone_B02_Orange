@@ -8,10 +8,13 @@ Employee Register
 @section('content')
 <!-- Make sure user is a logged in employee -->
 <?php 
-if(!isset($_SESSION['username'])){
+if(isset($_SESSION['username'])){
     if ($_SESSION['usertype'] !== 'admin') {
         die(header("Location: /login"));
     }
+}
+else {
+    die(header("Location: /login"));
 }
 ?>
 
