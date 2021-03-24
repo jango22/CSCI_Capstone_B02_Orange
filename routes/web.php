@@ -75,6 +75,10 @@ Route::any('/registeremployee', function () {
     return view('registerEmp');
 });
 
+//Register User
+Route::any('/register', function () {
+    return view('registerUser');
+});
 
 /* Secret pages */
 //Button

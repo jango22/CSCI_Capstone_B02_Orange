@@ -20,6 +20,7 @@
                 <a href="/update" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update Product</a>
 				<a href="/contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
 				<a href="/faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
+				<a href="/register" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register</a>
 				
 				
 
