@@ -53,6 +53,11 @@ Route::any('/login', function () {
     return view('login');
 });
 
+//test for new product page
+Route::any('/newproducts', function () {
+    return view('newProducts');
+});
+
 //Logout
 Route::any('/logout', function () {
     return view('logout');
