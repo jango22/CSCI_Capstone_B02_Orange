@@ -6,9 +6,9 @@ Register
 @stop
 
 @section('content')
-<!-- Make sure user is logged in -->
+<!-- Make sure user is not logged in -->
 <?php 
-if(!isset($_SESSION['username'])){
+if(isset($_SESSION['username'])){
     die(header("Location: /"));
 }
 ?>

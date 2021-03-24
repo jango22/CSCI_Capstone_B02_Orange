@@ -13,6 +13,9 @@ if(isset($_SESSION['username'])){
         die(header("Location: /login"));
     }
 }
+else {
+    die(header("Location: /login"));
+}
 ?>
 
 <script>
