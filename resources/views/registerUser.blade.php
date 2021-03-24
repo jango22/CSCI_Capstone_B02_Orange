@@ -98,8 +98,7 @@ if (isset($_POST['submit'])){
                 
                 if($pass == $confirm) {
                       $conn->query("INSERT INTO Users (username, password, is_Employee, fname, lname) VALUES ('$username', '$pass', '$emp', '$fname', '$lname')");
-                      echo '<script>alert("Registration Succesful, Redirecting to login page. Thanks!")</script>';
-                      header("Location: /login");
+                      echo "<script>alert('Registration Succesful, Redirecting to login page. Thanks!'); window.location.href='/login';</script>";
                 }
                 else {
                     echo "Passwords do not match!";
