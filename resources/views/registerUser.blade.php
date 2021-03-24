@@ -2,7 +2,7 @@
 @extends('layout')
 
 @section('title')
-User Register Form
+Register
 @stop
 
 @section('content')

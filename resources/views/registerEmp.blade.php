@@ -2,7 +2,7 @@
 @extends('layout')
 
 @section('title')
-Employee Register Form
+Employee Register
 @stop
 
 @section('content')
