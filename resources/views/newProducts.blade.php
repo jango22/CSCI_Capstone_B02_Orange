@@ -24,8 +24,9 @@ Add a Product
     </div >
     <br >
     
-    @foreach ($products as $product)
+   
     <div class="row" style="background:lightgray">
+     @foreach ($products as $product)
     <div class="card column" style="background:lightgray">
     <img src="/w3images/jeans3.jpg" alt="Product Image" style="width:100%">
     <h1>{{ $product['name'] }}</h1><span>({{ $product['productSKU'] }})</span></br>
@@ -33,8 +34,9 @@ Add a Product
     <p>{{ $product['itemdesc'] }}</p>
     <p><button>Add to Cart</button></p>
     </div>
+     @endforeach
     </div>
 
-    @endforeach
+   
 </div>
 @stop
