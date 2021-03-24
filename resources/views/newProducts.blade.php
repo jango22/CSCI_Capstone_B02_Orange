@@ -27,7 +27,7 @@ Add a Product
    
     <div class="row" style="background:lightgray">
      @foreach ($products as $product)
-    <div class="card column" style="background:lightgray">
+    <div class="card column w3-col" style="background:lightgray">
     <img src="https://i.imgur.com/uVymdir.png" alt="Product Image" style="width:100%" class="responsive">
     <h1>{{ $product['name'] }}</h1><span>({{ $product['productSKU'] }})</span></br>
     <p class="price">${{number_format($product['price'], 2) }}</p>
