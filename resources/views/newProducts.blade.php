@@ -29,10 +29,10 @@ Add a Product
      @foreach ($products as $product)
     <div class="card column" style="background:lightgray">
     <img src="https://i.imgur.com/uVymdir.png" alt="Product Image" style="width:100%" class="responsive">
-    <h 1style="font-size:10vw;>{{ $product['name'] }}</h1><span style="font-size:5vw;">({{ $product['productSKU'] }})</span></br>
-    <p class="price" style="font-size:5vw;">${{number_format($product['price'], 2) }}</p>
-    <p style="font-size:5vw;">{{ $product['itemdesc'] }}</p>
-    <p style="font-size:5vw;"><button>Add to Cart</button></p>
+    <h1>{{ $product['name'] }}</h1><span>({{ $product['productSKU'] }})</span></br>
+    <p class="price">${{number_format($product['price'], 2) }}</p>
+    <p>{{ $product['itemdesc'] }}</p>
+    <p><button>Add to Cart</button></p>
     </div>
      @endforeach
     </div>
