@@ -30,7 +30,7 @@ Products
 	</div>
 	<br>
 
-	<ul id="products" class="w3-ul w3-card-4" style="background-color:lightgray">
+	<ul id="products" class="w3-ul card" style="background-color:lightgray">
 		@foreach ($products as $product)
 		<li class="w3-bar w3-hover-blue-gray">
 			<span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-xlarge w3-right">+</span>
