@@ -9,7 +9,7 @@ $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, 
 //Get array of products
 $sql = $conn-> query("SELECT * FROM INVENTORY");
 $products = $sql-> fetchAll();
-? >
+?>
 
 <div class="container-sm" id="wrapper">
 
