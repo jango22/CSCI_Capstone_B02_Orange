@@ -24,7 +24,7 @@ if(isset($_SESSION['username'])){
         }
 </script>
 
-<h2>Register an Employee</h2>
+<h2>Register!</h2>
     <div>
         <form method="post" id="loginform">
             @csrf

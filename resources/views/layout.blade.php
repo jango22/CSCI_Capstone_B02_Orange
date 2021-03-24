@@ -18,8 +18,7 @@
 				<a href="/products" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
                	<a href="/contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
 				<a href="/faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
-				<a href="/register" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register</a>
-				
+							
 				
 
 				<!-- Nabvar Items that are conditional on being logged in or out -->
@@ -38,6 +37,7 @@
                     } 
 					else {
 						echo '<a href="/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Login</a>';
+						echo '<a href="/register" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register</a>';
 					}
                 ?>
 			</div>
