@@ -10,7 +10,13 @@ $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, 
 $sql = $conn-> query("SELECT * FROM INVENTORY");
 $products = $sql-> fetchAll();
 ?>
+@extends('layout')
 
+@section('title')
+Add a Product
+@stop
+
+@section('content')
 <div class="container-sm" id="wrapper">
 
     <div class="w3-card-4 w3-blue-gray" >
@@ -30,3 +36,4 @@ $products = $sql-> fetchAll();
 
     @endforeach
 </div>
+@stop
