@@ -26,6 +26,11 @@
     font-family: arial;
 }
 
+//image responsiveness
+.responsive {
+  width: 100%;
+  height: auto;
+}
 .price {
     color: grey;
     font-size: 22px;
