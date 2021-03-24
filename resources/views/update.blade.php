@@ -9,7 +9,9 @@ Update a Product
 <!-- Make sure user is logged in -->
 <?php 
 if(!isset($_SESSION['username'])){
-    die(header("Location: /login"));
+    if ($_SESSION['usertype'] !== 'admin') {
+        die(header("Location: /login"));
+    }
 }
 ?>
 
