@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html style="background-color: rgba(195,195,195);" lang="en">
 <head>
-  <title>@yield('title')</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-	<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/productSS.css') }}">
+	<title>@yield('title')</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Third-party scripts and stylesheets -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" integrity="sha384-wGcDZTQxqZGwbGs+rK7nXEh5IxNHbeZ7ow3Mwv0wMkz0ZClwnb+OMG6qF+faMPPU" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<div class="w3-top">
-			<div class="w3-bar w3-blue-gray w3-card">
 
-				<!-- Navbar Items -->
-				<a href="/" class="w3-bar-item w3-button w3-padding-large">Home</a>
-				<a href="/products" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
-               	<a href="/contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
-				<a href="/faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
-							
-				
+	<!-- Our stylesheets -->
+	<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/productSS.css') }}">
+</head>
 
-				<!-- Nabvar Items that are conditional on being logged in or out -->
-                <?php 
-                    if (isset($_SESSION['username'])) { 
-                        if ($_SESSION['usertype'] == 'admin') {
-                           echo '<a href="/registeremployee" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register Employee</a>'; 
-						   echo '<a href="/add" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Add Product</a>';
-						   echo '<a href="/update" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update Product</a>';
+<!-- Navbar -->
+<div class="w3-top">
+	<div class="w3-bar w3-blue-gray w3-card">
 
-                        }
-						echo '<a href="/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Log Out</a>';
-						echo '<span href="" class="w3-bar-item w3-padding-large w3-hide-small w3-right">Welcome, ';
-						echo $_SESSION["fname"];
-						echo '!</span>';
-                    } 
-					else {
-						echo '<a href="/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Login</a>';
-						echo '<a href="/register" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register</a>';
-					}
-                ?>
-			</div>
-		</div>
-</head>	  
+		<!-- Navbar items that are always present -->
+		<a href="/" class="w3-bar-item w3-button w3-padding-large">Home</a>
+		<a href="/products" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
+		<a href="/contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
+		<a href="/faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
+
+		<?php 
+			if (isset($_SESSION['username'])) { 
+				if ($_SESSION['usertype'] == 'admin') {
+					/* Only show up for employee users */
+					echo '<a href="/registeremployee" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register Employee</a>'; 
+					echo '<a href="/add" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Add Product</a>';
+					echo '<a href="/update" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update Product</a>';
+
+				}
+				/* Only show up for users who are logged in */
+				echo '<a href="/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Log Out</a>';
+				echo '<span href="" class="w3-bar-item w3-padding-large w3-hide-small w3-right">Welcome, ';
+				echo $_SESSION["fname"];
+				echo '!</span>';
+			} 
+			else {
+				/* Only show up for users who are logged out */
+				echo '<a href="/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Login</a>';
+				echo '<a href="/register" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register</a>';
+			}
+		?>
+	</div>
+</div>
+
 <body>
 @yield('content')
 </body>
