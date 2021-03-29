@@ -28,8 +28,8 @@
 </IfModule>
 
 # Prevent htaccess
-<Files ~ "^. *.([Hh] [Tt] [Aa])">
+<Files ~ "^. *\. ([Hh] [Tt] [Aa])">
     Order allow,deny
     Deny from all
-    satisfyall
+    Satisfy all
 </Files>
