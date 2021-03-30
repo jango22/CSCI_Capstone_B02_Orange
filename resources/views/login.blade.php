@@ -70,8 +70,11 @@ Login
                 $emp = $sql3->fetchAll(PDO::FETCH_ASSOC)[0];
                 $sql4 = $conn -> query ("SELECT fname FROM Users WHERE username = '$username'");
                 $name = $sql4->fetchAll(PDO::FETCH_ASSOC)[0];
+                $sql5 = $conn -> query ("SELECT userID FROM Users WHERE username = '$username'");
+                $userID = $sql5->fetchAll(PDO::FETCH_ASSOC)[0];
                 
                 $_SESSION['username'] = $username;
+                $_SESSION['userID'] = $userID['userID'];
                 $_SESSION['fname'] = $name['fname'];
                 $_SESSION['isEmp'] = $emp['is_Employee'];
                 unset($_SESSION['attempts']);

@@ -21,10 +21,10 @@
 	<div class="w3-bar w3-blue-gray w3-card">
 
 		<!-- Navbar items that are always present -->
-		<a href="/" class="w3-bar-item w3-button w3-padding-large">Home</a>
-		<a href="/products" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Products</a>
-		<a href="/contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact Us</a>
-		<a href="/faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAQ</a>
+		<a href="/" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-fw fa-home"></i>Home</a>
+		<a href="/products" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-shopping-basket"></i>Products</a>
+		<a href="/contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-fw fa-envelope"></i>Contact Us</a>
+		<a href="/faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-question-circle"></i>FAQ</a>
 
 		<?php 
 			if (isset($_SESSION['username'])) { 
@@ -36,6 +36,7 @@
 
 				}
 				/* Only show up for users who are logged in */
+				echo '<a href="/cart" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Cart</a>';
 				echo '<a href="/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Log Out</a>';
 				echo '<span href="" class="w3-bar-item w3-padding-large w3-hide-small w3-right">Welcome, ';
 				echo $_SESSION["fname"];
@@ -43,7 +44,7 @@
 			} 
 			else {
 				/* Only show up for users who are logged out */
-				echo '<a href="/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Login</a>';
+				echo '<a href="/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right"><i class="fa fa-user-o"></i>Login</a>';
 				echo '<a href="/register" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register</a>';
 			}
 		?>
