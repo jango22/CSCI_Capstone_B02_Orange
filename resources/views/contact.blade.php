@@ -7,8 +7,14 @@ Contact Us
 
 @section('content')
 <main class="flex">
-    <div class="content container" id="wrapper">
-        <h1>Contact Us</h1>      
+    <<div class="container-sm" id="wrapper">
+	<div class="jumbotron-fluid container">
+		<img src="https://i.imgur.com/uVymdir.png" height="120" width="120" title="Logo" alt="Logo" class="center">
+	</div>
+
+	<div class="w3-card-4 w3-blue-gray">
+		<h2 class="w3-center">Contact US</h2>
+	</div>   
         <h3>Where to Find Us?</h3>
 	    <p>We are always open for any issues you have! Our phone line is always open!</p>
 	    <p>Contact Us <br>Phone Number: 383-295-5524 <br>Email: nutsandboltsb02@gmail.com <br>Located at: 5469 South Ridsweth Rd, Marion OH, 39455 </p>
