@@ -22,6 +22,15 @@ Login
         else { x.type = "password"; }
     }
 </script>
+<div class="container-sm" id="wrapper">
+	<div class="jumbotron-fluid container">
+		<img src="https://i.imgur.com/uVymdir.png" height="120" width="120" title="Logo" alt="Logo" class="center">
+	</div>
+
+	<div class="w3-card-4 w3-blue-gray">
+		<h2 class="w3-center">Login</h2>
+	</div>     
+    
 <h2>Login</h2>
     <form method="post">
     @csrf
