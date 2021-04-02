@@ -10,6 +10,7 @@ Home
 <div class="jumbotron-fluid container">
 		<img src="https://i.imgur.com/uVymdir.png" height="120" width="120" title="Logo" alt="Logo" class="center">
 	</div> 
+  <div class="container-sm" id="wrapper">   
   
 <div class="w3-blue-gray" style="padding:5px;text-align:center;">
   <h1>Nuts and Bolts Homepage</h1>
