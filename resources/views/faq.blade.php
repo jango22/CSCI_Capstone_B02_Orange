@@ -7,6 +7,12 @@ FAQ
 
 @section('content')
 <main class="flex" id="wrapper">
+
+<div class="container-sm" id="wrapper">
+	<div class="jumbotron-fluid container">
+		<img src="https://i.imgur.com/uVymdir.png" height="120" width="120" title="Logo" alt="Logo" class="center">
+	</div>
+  
 <div class="w3-container">
     <div class="w3-gray-blue">
         <h2 class="w3-center">What is Nuts and Bolts?</h2>
