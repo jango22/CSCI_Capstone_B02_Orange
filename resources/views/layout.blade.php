@@ -45,7 +45,7 @@
 			else {
 				/* Only show up for users who are logged out */
 				echo '<a href="/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right"><i class="fa fa-user-o"></i>Login</a>';
-				echo '<a href="/register" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register</a>';
+				echo '<a href="/register" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-sign-in"></i>Register</a>';
 			}
 		?>
 	</div>
