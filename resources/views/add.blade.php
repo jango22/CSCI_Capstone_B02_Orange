@@ -111,7 +111,7 @@ else {
         } 
         //Insert values into INVENTORY table
         else {
-            $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc) VALUES ('$name', $SKU, $price, '$desc', $quant);");
+            $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc, quantity) VALUES ('$name', $SKU, $price, '$desc', $quant);");
             $msg = "Added to inventory successfully.";
             echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
