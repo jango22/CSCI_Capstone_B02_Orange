@@ -62,10 +62,11 @@ Route::any('/register', function () {
     return view('registerUser');
 });
 
-//test for new product page
-Route::any('/newproducts', function () {
-    return view('newProducts');
+//Cart
+Route::any('/cart', function () {
+    return view('cart');
 });
+
 
 /*
 |--------------------------------------------------------------------------
@@ -75,11 +76,6 @@ Pages that any logged in user can see
 //Logout
 Route::any('/logout', function () {
     return view('logout');
-});
-
-//Cart
-Route::any('/cart', function () {
-    return view('cart');
 });
 
 
@@ -117,4 +113,14 @@ Route::any('/button', function () {
 //Products (Hardcoded)
 Route::any('/HProducts', function () {
     return view('HProducts');
+});
+
+//test for new product page
+Route::any('/newproducts', function () {
+    return view('newProducts');
+});
+
+//test for cart page
+Route::any('/newcart', function () {
+    return view('newcart');
 });

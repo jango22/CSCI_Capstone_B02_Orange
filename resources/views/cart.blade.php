@@ -25,7 +25,7 @@ My Cart
 	$cartID = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
 
 	//Get array of all cart items
-	$sql3 = $conn->query("SELECT productID FROM CARTITEMS");
+	$sql3 = $conn->query("SELECT * FROM CARTITEMS WHERE cartID = $cartID");
 	$cartitems = $sql3->fetchAll();
 	echo print_r($cartitems);
 ?>
