@@ -108,6 +108,12 @@ else {
             <textarea name="desc" class="form-control" rows="6" id="descid" placeholder="Description" maxlength="255" required <?php echo $status; ?>><?php echo $data['itemdesc'] ?? ''; ?></textarea>
         </div>
     </div>
+    <div class="form-group row">
+        <label for="priceid" class="col-sm-1 col-form-label">Quantity:</label>
+        <div class="col-sm-3">
+            <input type="number" class="form-control" name="quantity" placeholder="Quantity" id="quantid"  value="<?php echo $quant ?? ''; ?>" required <?php echo $status; ?>>
+        </div>
+    </div>
     
     <div class="form-group row">
         <label for="descid" class="col-sm-1 col-form-label"></label>
@@ -129,8 +135,9 @@ else {
         $price = $_POST['price'];
         $desc = $_POST['desc'];
         $productID = $_POST['productID'];
+        $quant = $_POST['quantity'];
 
-        $conn->query("UPDATE INVENTORY SET name='$name',productSKU='$SKU',price='$price',itemdesc='$desc' WHERE productID='$productID';");
+        $conn->query("UPDATE INVENTORY SET name='$name',productSKU='$SKU',price='$price',itemdesc='$desc', quantity='$quant' WHERE productID='$productID';");
         $msg = "Added to inventory successfully.";
         echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
