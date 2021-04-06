@@ -33,6 +33,7 @@ Add a Product
             <p class="price">${{number_format($product['price'], 2) }}</p>
             <p>{{ $product['itemdesc'] }}</p>
             <form action="" method="post">
+                <input type="number" name="quantity" class="form-control" id="descid" placeholder="Quantity" min="0" required>
                 <input type="submit" name="addCart" value="Add to Cart" />
             </form>
             
@@ -47,12 +48,27 @@ Add a Product
 	//if user isnt logged in, the session variable username gets set to guest
 	if(isset($_POST['addCart']) && isset($_SESSION['username'])) {
 		//check if the item being added is in stock
-		$conn->query('SELECT quantity FROM Inventory WHERE productSKU = $sku');
+		$qnt = $conn->query('SELECT quantity FROM Inventory WHERE productSKU = $sku');
+        if($qnt > 0) {        
 		//check if a $_SESSION[cart] exists
+            if(isset($_SESSION['cart'])) {
+            
+            }
 		//create one if not
+        else {
+            $item_array = array (
+                'item_name' => $product['name'],
+                'item_quant' => ,
+                'item_total' => $total
+                );
+        }
 		//add the item or quantity to the cart, quantity increases if item exists
+        }
+        else {
+            echo "<script>alert('The item you want is out of stock! Please check back later.'); window.location.href='/login';</script>";
+        }
 	}
 	else {
-
+        $_SESSION['username'] = 'guest';
 	}
 ?>
