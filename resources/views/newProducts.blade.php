@@ -56,15 +56,16 @@ Add a Product
         $qnt = $dbqnt['quantity'];
         if($qnt > 0) {        
 		//check if a $_COOKIE[cart] exists
-        $item_array = array (
-                'item_name' => $product['name'],
-                'item_quant' => $quantity,
-                'item_total' => $quantity * $price
-                );
-            
+        
             $cookie = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "";
             $cookie = stripslashes($cookie);
             $saved_cart_items = json_decode($cookie, true);
+            //adds item to cart
+            $item_array = array (
+                'item_name' => $product['name'],
+                'item_quant' => $quantity,
+                'item_total' => $quantity * $price
+            );
             
             //checks if saved cart is null and correct the error if it is.
             if(!$saved_cart_items){
