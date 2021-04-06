@@ -65,10 +65,10 @@ Add a Product
 		//add the item or quantity to the cart, quantity increases if item exists
         }
         else {
-            echo "<script>alert('The item you want is out of stock! Please check back later.'); window.location.href='/login';</script>";
+            echo "<script>alert('The item you want is out of stock! Please check back later.');</script>";
         }
 	}
 	else {
-        echo "<script>alert('You must be signed in to add an item to a cart.'); window.location.href='/login';</script>";
+        echo "<script>alert('You must be signed in to add an item to a cart.');</script>";
 	}
 ?>
