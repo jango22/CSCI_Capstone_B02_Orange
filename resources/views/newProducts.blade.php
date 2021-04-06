@@ -60,11 +60,10 @@ Add a Product
             }
             else {
                 $cart[] = array(
-                "productName" => $name,
-                "quantity" => $quantity,
-                "price" => $price
-            );
-            print_r($cart);
+                    "productName" => $name,
+                    "quantity" => $quantity,
+                    "price" => $price
+                );
             echo "<script>alert('Item added successfully');</script>";  
             }
             

@@ -49,7 +49,7 @@ My Cart
 
 <?php
 	if(isset($_POST['clearCart'])) {
-
+		unset($_COOKIE['cart']);
 	}
 ?>
 
