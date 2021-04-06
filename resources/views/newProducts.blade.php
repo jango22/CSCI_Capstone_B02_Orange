@@ -56,7 +56,7 @@ Add a Product
         if($qnt > 0) {
             $cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "[]";
             $cart = json_decode($cart);
-            if(array_search($name,$cart) >= 0) {
+            if(in_array($name,$cart)) {
                 echo "<script>alert('Item is already in your cart');</script>";
             }
             else {
