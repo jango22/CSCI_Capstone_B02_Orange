@@ -46,8 +46,7 @@ Add a Product
 @stop
 
 <?php
-	//checks if the button addCart has been pressed and if the user is logged in.
-	//if user isnt logged in, the session variable username gets set to guest
+	$quantity = $_POST['quantity'];
     $price = number_format($product['price'], 2);
 	if(isset($_POST['addCart']) && isset($_SESSION['username'])) {
 		//check if the item being added is in stock
@@ -73,7 +72,7 @@ Add a Product
             else {
                 $item_array = array (
                 'item_name' => $product['name'],
-                'item_quant' => $_POST['quantity'],
+                'item_quant' => $quantity,
                 'item_total' => $quantity * $price
                 );
                 // put item to cookie
