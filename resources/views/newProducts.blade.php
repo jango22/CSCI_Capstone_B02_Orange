@@ -7,7 +7,8 @@ $dbname = "OrangeDB";
 $port = "1433";
 $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
 //Get array of products
-$sql = $conn-> query("SELECT * FROM INVENTORY WHERE productSku = $_GET['sku']");
+$sku = $_GET['sku'];
+$sql = $conn-> query("SELECT * FROM INVENTORY WHERE productSku = $sku");
 $products = $sql-> fetchAll();
 ?>
 @extends('layout')
