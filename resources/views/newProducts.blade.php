@@ -40,6 +40,19 @@ Add a Product
 
    
 </div>
+<?php
+	//checks if the button addCart has been pressed and if the user is logged in.
+	//if user isn't logged in, the session variable username gets set to "guest"
+	if(isset($_POST['addCart']) && isset($_SESSION['username'])) {
+		//check if the item being added is in stock
+		$conn->query('SELECT quantity FROM Inventory WHERE );
+		//check if a $_SESSION[cart] exists
+		//create one if not
+		//add the item or quantity to the cart, quantity increases if item exists
+	}
+	else {
 
+	}
+?>
 
 @stop
