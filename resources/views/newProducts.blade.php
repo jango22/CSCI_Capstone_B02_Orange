@@ -75,7 +75,4 @@ Add a Product
             echo "<script>alert('The item you want is out of stock! Please check back later.');</script>";
         }
 	}
-	else {
-        echo "<script>alert('You must be signed in to add an item to a cart.');</script>";
-	}
 ?>
