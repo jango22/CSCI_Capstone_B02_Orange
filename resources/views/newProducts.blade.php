@@ -69,6 +69,6 @@ Add a Product
         }
 	}
 	else {
-        $_SESSION['username'] = 'guest';
+        echo "<script>alert('You must be signed in to add an item to a cart.'); window.location.href='/login';</script>";
 	}
 ?>
