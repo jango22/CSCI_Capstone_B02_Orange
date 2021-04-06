@@ -7,7 +7,11 @@ My Cart
 
 @section('content')
 
-<?php $runningtotal=0 ?>
+<?php
+	$cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : '[]';
+	$cart = json_decode($cart);
+	$runningtotal=0
+?>
 
 <div class="container-sm" id="wrapper">
 	<div class="jumbotron-fluid container">
@@ -17,12 +21,13 @@ My Cart
 	<div class="w3-card-4 w3-blue-gray">
 		<h2 class="w3-center">My Cart</h2>
 	</div>
-	<br>
-
-	<?php
-	$cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : '[]';
-	$cart = json_decode($cart);
-	?>
+	
+	<div class="w3-center">
+		<form method="post">
+		@csrf
+		<input type="submit" name="clearCart" value="Clear Cart">
+		</form>
+	</div>
 
 	<ul id="products" class="w3-ul card" style="background-color:lightgray">
 	@foreach ($cart as $cartitem)
@@ -41,5 +46,11 @@ My Cart
 	</ul>
 	<h3 class="w3-center">Total: ${{ $runningtotal }}</h2>
 </div>
+
+<?php
+	if(isset($_POST['clearCart'])) {
+
+	}
+?>
 
 @stop

@@ -63,7 +63,6 @@ Add a Product
                 "quantity" => $quantity,
                 "price" => $price
             );
-            print_r($cart);
             echo "<script>alert('Item added successfully');</script>";  
             }
             
