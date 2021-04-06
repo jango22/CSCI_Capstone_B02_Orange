@@ -26,7 +26,6 @@ Add a Product
     <br >
     
    
-    <div class="row" style="background:lightgray">
         <div class="w3-card"" style="background:lightgray">
         
             <img src="https://i.imgur.com/uVymdir.png" alt="Product Image" style="width:100%">
@@ -36,8 +35,6 @@ Add a Product
             <p><button name="addCart">Add to Cart</button></p>
             
         </div>
-    </div>
-
    
 </div>
 <?php
