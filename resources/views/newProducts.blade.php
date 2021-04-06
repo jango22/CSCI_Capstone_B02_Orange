@@ -46,7 +46,7 @@ Add a Product
 <?php
 	//checks if the button addCart has been pressed and if the user is logged in.
 	//if user isnt logged in, the session variable username gets set to guest
-    $price = number_format($product['price'], 2)
+    $price = number_format($product['price'], 2);
 	if(isset($_POST['addCart']) && isset($_SESSION['username'])) {
 		//check if the item being added is in stock
 		$qnt = $conn->query('SELECT quantity FROM Inventory WHERE productSKU = $sku');
