@@ -18,7 +18,7 @@ Add a Product
 @stop
 
 @section('content')
-<div class="container-sm" id="wrapper">
+<div class="w3-container" id="wrapper">
 
     <div class="w3-card-4 w3-blue-gray" >
     <h2 class="w3-center" >Products List</h2 >
