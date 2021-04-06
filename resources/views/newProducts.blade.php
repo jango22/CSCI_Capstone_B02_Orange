@@ -28,7 +28,7 @@ Add a Product
    
         <div class="w3-card"" style="background:lightgray">
         
-            <img src="https://i.imgur.com/uVymdir.png" alt="Product Image" style="width:100%">
+            
             <h1>{{ $product['name'] }}</h1><span>({{ $product['productSKU'] }})</span></br>
             <p class="price">${{number_format($product['price'], 2) }}</p>
             <p>{{ $product['itemdesc'] }}</p>
