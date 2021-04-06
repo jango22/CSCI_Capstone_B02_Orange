@@ -71,9 +71,12 @@ Add a Product
             if(!$saved_cart_items){
                 $saved_cart_items=array();
             }
-            if(array_key_exists($product['name'], $saved_cart_items)){
-                // redirect to product list and tell the user it was added to cart
-                header('Location: /products');
+            for($i=0;$i<=count($saved_cart_items)-1;$i++)
+            {
+                if($saved_cart_items[i]['name']==$product['name'])
+                {
+                    echo "Item already exists in cart";
+                }
             }
             else {
             if(count($saved_cart_items)>0){
