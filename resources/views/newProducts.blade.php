@@ -77,12 +77,12 @@ Add a Product
             }
             else {
             if(count($saved_cart_items)>0){
-                foreach ($saved_cart_items as $row)
+                foreach ($saved_cart_items as $row) {
                     $item_array = array (
                     'item_name' => $row['item_name'],
                     'item_quant' => $row['item_quant'],
                     'item_total' => $row['item_total']
-                );
+                ); }
             }
                 // put item to cookie
                 $json = json_encode($item_array, true);
