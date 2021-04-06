@@ -111,7 +111,7 @@ Products
 	</div>
 	<br>
 
-	<ul id="products" class="w3-ul card" style="background-color:lightgray">
+	<ul id="products" class="w3-ul w3-card-4" style="background-color:lightgray">
 		@foreach ($products as $product)
 		<li class="w3-bar w3-hover-blue-gray">
 			<input type="submit" name="add_to_cart" class="btn btn-success w3-bar-item w3-button w3-right" value="Add to Cart +">
