@@ -116,7 +116,7 @@ Products
 		<li class="w3-bar w3-hover-blue-gray">
 			<input type="submit" name="add_to_cart" class="btn btn-success w3-bar-item w3-button w3-right" value="Add to Cart +">
 			<div id="product" class="w3-bar-item">
-				<span style="font-size:24px">{{ $product['name'] }}</span> <span>({{ $product['productSKU'] }})</span></br>
+                <a href="/newproducts?sku=<?php echo $product['sku']; ?>"><span style="font-size:24px">{{ $product['name'] }}</span></a> <span>({{ $product['productSKU'] }})</span></br>
 				<span>${{ number_format($product['price'], 2) }}</span></br>
 				<span>{{ $product['itemdesc'] }}</span><br>
 			</div>
