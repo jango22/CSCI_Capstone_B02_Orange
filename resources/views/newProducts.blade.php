@@ -34,6 +34,7 @@ Add a Product
             <p class="price">${{number_format($product['price'], 2) }}</p>
             <p>{{ $product['itemdesc'] }}</p>
             <form method="post">
+                @csrf
                 <input type="number" name="quantity" class="form-control" id="descid" placeholder="Quantity" min="1" required>
                 <input type="submit" name="addCart" value="Add to Cart" />
             </form>
