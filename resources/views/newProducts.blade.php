@@ -56,7 +56,11 @@ Add a Product
         $qnt = $dbqnt['quantity'];
         if($qnt > 0) {        
 		//check if a $_COOKIE[cart] exists
-        
+        $item_array = array (
+                'item_name' => $product['name'],
+                'item_quant' => $quantity,
+                'item_total' => $quantity * $price
+                );
             
             $cookie = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "";
             $cookie = stripslashes($cookie);
@@ -71,11 +75,13 @@ Add a Product
                 header('Location: /products');
             }
             else {
+            foreach (saved_cart_items as $row)
                 $item_array = array (
-                'item_name' => $product['name'],
-                'item_quant' => $quantity,
-                'item_total' => $quantity * $price
+                'item_name' => $row['item_name'],
+                'item_quant' => $row['item_quant'],
+                'item_total' => $row['item_total']
                 );
+                printf($item_array[0]);
                 // put item to cookie
                 $json = json_encode($item_array, true);
                 setcookie("cart", $json, time() + (86400 * 30), '/'); // 86400 = 1 day
