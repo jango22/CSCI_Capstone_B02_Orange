@@ -68,7 +68,7 @@ Add a Product
             }
             if(array_key_exists($sku, $saved_cart_items)){
                 // redirect to product list and tell the user it was added to cart
-                header('Location: /newproducts?sku=$product['productSKU']&action=exists');
+                header('Location: /newproducts?sku=$sku&action=exists');
             }
         }
         else {
