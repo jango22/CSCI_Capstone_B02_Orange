@@ -58,7 +58,7 @@ Add a Product
         else {
             $item_array = array (
                 'item_name' => $product['name'],
-                'item_quant' => ,
+                'item_quant' => $_POST['quantity'],
                 'item_total' => $total
                 );
         }
