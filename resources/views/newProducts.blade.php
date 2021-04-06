@@ -53,11 +53,7 @@ Add a Product
         if($qnt > 0) {        
 		//check if a $_COOKIE[cart] exists
         
-            $item_array = array (
-                'item_name' => $product['name'],
-                'item_quant' => $_POST['quantity'],
-                'item_total' => $quantity * $price
-                );
+            
             $cookie = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "";
             $cookie = stripslashes($cookie);
             $saved_cart_items = json_decode($cookie, true);
@@ -66,15 +62,26 @@ Add a Product
             if(!$saved_cart_items){
                 $saved_cart_items=array();
             }
-            if(array_key_exists($sku, $saved_cart_items)){
+            if(array_key_exists($product['name'], $saved_cart_items)){
                 // redirect to product list and tell the user it was added to cart
                 header('Location: /newproducts?sku=$sku&action=exists');
             }
+            else {
+                $item_array = array (
+                'item_name' => $product['name'],
+                'item_quant' => $_POST['quantity'],
+                'item_total' => $quantity * $price
+                );
+            }       
         }
         else {
             echo "<script>alert('The item you want is out of stock! Please check back later.');</script>";
         }
-	}
+        // put item to cookie
+        $json = json_encode($item_array, true);
+        setcookie("cart", $json, time() + (86400 * 30), '/'); // 86400 = 1 day
+        $_COOKIE['cart']=$json;
+	    }
 	else {
         echo "<script>alert('You must be signed in to add an item to a cart.');</script>";
 	}
