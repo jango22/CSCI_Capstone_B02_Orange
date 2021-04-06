@@ -69,10 +69,11 @@ Add a Product
                 "quantity" => $quantity,
                 "total" => $price * $quantity
             );
+            echo "<script>alert('Item added successfully');</script>";  
             }
             
             setcookie("cart",json_encode($cart));
-              echo "<script>alert('Item added successfully');</script>";  
+              
         }
         else {
             echo "<script>alert('The item you want is out of stock! Please check back later.');</script>";
