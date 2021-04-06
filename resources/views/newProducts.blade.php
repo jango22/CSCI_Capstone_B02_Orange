@@ -33,7 +33,7 @@ Add a Product
             <h1>{{ $product['name'] }}</h1><span>({{ $product['productSKU'] }})</span></br>
             <p class="price">${{number_format($product['price'], 2) }}</p>
             <p>{{ $product['itemdesc'] }}</p>
-            <form action="" method="post">
+            <form method="post">
                 <input type="number" name="quantity" class="form-control" id="descid" placeholder="Quantity" min="1" required>
                 <input type="submit" name="addCart" value="Add to Cart" />
             </form>
