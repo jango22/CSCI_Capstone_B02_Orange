@@ -73,7 +73,7 @@ Add a Product
             }
             for($i=0;$i<=count($saved_cart_items)-1;$i++)
             {
-                if($saved_cart_items[i]['name']==$product['name'])
+                if($saved_cart_items[$i]['name']==$product['name'])
                 {
                     echo "Item already exists in cart";
                 }
