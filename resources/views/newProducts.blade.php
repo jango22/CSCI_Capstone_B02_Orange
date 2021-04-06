@@ -78,7 +78,7 @@ Add a Product
             else {
             if(count($saved_cart_items)>0){
                 foreach($saved_cart_items as $row) {
-                    item_array[] = $row;
+                    $item_array[] = $row;
                 }
             }
                 // put item to cookie
