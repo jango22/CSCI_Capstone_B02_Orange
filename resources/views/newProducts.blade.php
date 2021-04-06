@@ -26,7 +26,7 @@ Add a Product
     <br >
     
    
-        <div class="w3-card"" style="background:lightgray">
+        <div class="card" style="background:lightgray">
         
             
             <h1>{{ $product['name'] }}</h1><span>({{ $product['productSKU'] }})</span></br>
