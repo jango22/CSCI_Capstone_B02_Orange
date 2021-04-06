@@ -25,6 +25,7 @@
 		<a href="/products" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-shopping-basket"></i>Products</a>
 		<a href="/contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-fw fa-envelope"></i>Contact Us</a>
 		<a href="/faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-question-circle"></i>FAQ</a>
+		<a href="/cart" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Cart</a>
 
 		<?php 
 			if (isset($_SESSION['username'])) { 
