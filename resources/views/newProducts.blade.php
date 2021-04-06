@@ -7,7 +7,7 @@ $dbname = "OrangeDB";
 $port = "1433";
 $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
 //Get array of products
-$sql = $conn-> query("SELECT * FROM INVENTORY");
+$sql = $conn-> query("SELECT * FROM INVENTORY WHERE productSku = $_GET['sku']");
 $products = $sql-> fetchAll();
 ?>
 @extends('layout')
@@ -26,15 +26,15 @@ Add a Product
     
    
     <div class="row" style="background:lightgray">
-     @foreach ($products as $product)
-    <div class="card column" style="background:lightgray">
-    <img src="https://i.imgur.com/uVymdir.png" alt="Product Image" style="width:100%" class="responsive">
-    <h1>{{ $product['name'] }}</h1><span>({{ $product['productSKU'] }})</span></br>
-    <p class="price">${{number_format($product['price'], 2) }}</p>
-    <p>{{ $product['itemdesc'] }}</p>
-    <p><button>Add to Cart</button></p>
-    </div>
-     @endforeach
+        <div class="card column" style="background:lightgray">
+        
+            <img src="https://i.imgur.com/uVymdir.png" alt="Product Image" style="width:100%" class="responsive">
+            <h1>{{ $product['name'] }}</h1><span>({{ $product['productSKU'] }})</span></br>
+            <p class="price">${{number_format($product['price'], 2) }}</p>
+            <p>{{ $product['itemdesc'] }}</p>
+            <p><button>Add to Cart</button></p>
+            
+        </div>
     </div>
 
    
