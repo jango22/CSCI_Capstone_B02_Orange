@@ -33,6 +33,7 @@ Add a Product
             <form method="post">
                 @csrf
                 <input type="number" name="quantity" class="form-control" id="descid" placeholder="Quantity" min="1" required>
+                @csrf
                 <input type="submit" name="addCart" value="Add to Cart" />
             </form>
             
@@ -63,6 +64,7 @@ Add a Product
                 "quantity" => $quantity,
                 "price" => $price
             );
+            print_r($cart);
             echo "<script>alert('Item added successfully');</script>";  
             }
             
