@@ -33,7 +33,7 @@ Add a Product
             <p class="price">${{number_format($product['price'], 2) }}</p>
             <p>{{ $product['itemdesc'] }}</p>
             <form action="" method="post">
-                <input type="number" name="quantity" class="form-control" id="descid" placeholder="Quantity" min="0" required>
+                <input type="number" name="quantity" class="form-control" id="descid" placeholder="Quantity" min="1" required>
                 <input type="submit" name="addCart" value="Add to Cart" />
             </form>
             
@@ -46,23 +46,30 @@ Add a Product
 <?php
 	//checks if the button addCart has been pressed and if the user is logged in.
 	//if user isnt logged in, the session variable username gets set to guest
+    $price = number_format($product['price'], 2)
 	if(isset($_POST['addCart']) && isset($_SESSION['username'])) {
 		//check if the item being added is in stock
 		$qnt = $conn->query('SELECT quantity FROM Inventory WHERE productSKU = $sku');
         if($qnt > 0) {        
-		//check if a $_SESSION[cart] exists
-            if(isset($_SESSION['cart'])) {
-            
-            }
-		//create one if not
-        else {
+		//check if a $_COOKIE[cart] exists
+        
             $item_array = array (
                 'item_name' => $product['name'],
                 'item_quant' => $_POST['quantity'],
-                'item_total' => $total
+                'item_total' => $quantity * $price
                 );
-        }
-		//add the item or quantity to the cart, quantity increases if item exists
+            $cookie = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "";
+            $cookie = stripslashes($cookie);
+            $saved_cart_items = json_decode($cookie, true);
+            
+            //checks if saved cart is null and correct the error if it is.
+            if(!$saved_cart_items){
+                $saved_cart_items=array();
+            }
+            if(array_key_exists($sku, $saved_cart_items)){
+                // redirect to product list and tell the user it was added to cart
+                header('Location: /newproducts?sku=$product['productSKU']&action=exists');
+            }
         }
         else {
             echo "<script>alert('The item you want is out of stock! Please check back later.');</script>";
