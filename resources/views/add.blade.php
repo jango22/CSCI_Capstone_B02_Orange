@@ -59,7 +59,7 @@ else {
     <div class="form-group row">
         <label for="descid" class="col-sm-1 col-form-label">Quantity</label>
         <div class="col-sm-3">
-            <input type="number" name="quantity" class="form-control" rows="6" id="descid" placeholder="Quantity" required></textarea>
+            <input type="number" name="quantity" class="form-control" rows="6" id="descid" placeholder="Quantity" required>
         </div>
     </div>
     
