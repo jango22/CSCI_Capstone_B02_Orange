@@ -47,7 +47,7 @@ Add a Product
 	if(isset($_POST['addCart']) && isset($_SESSION['username'])) {
 		//check if the item being added is in stock
 		$conn->query('SELECT quantity FROM Inventory WHERE );
-		//check if a $_SESSION['cart'] exists
+		//check if a $_SESSION[cart] exists
 		//create one if not
 		//add the item or quantity to the cart, quantity increases if item exists
 	}
