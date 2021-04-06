@@ -61,7 +61,7 @@ Add a Product
                 $cart[] = array(
                 "productName" => $name,
                 "quantity" => $quantity,
-                "total" => $price * $quantity
+                "price" => $price
             );
             print_r($cart);
             echo "<script>alert('Item added successfully');</script>";  
