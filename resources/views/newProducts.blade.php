@@ -23,9 +23,7 @@ Add a Product
     <div class="w3-card-4 w3-blue-gray" >
     <h2 class="w3-center" >Products List</h2 >
     </div >
-    <br >
-    
-   
+    <br>
         <div class="card" style="background:lightgray">
         
             <img src="https://i.imgur.com/uVymdir.png" alt="Product Image" style="width:100%">
@@ -65,6 +63,7 @@ Add a Product
                 "quantity" => $quantity,
                 "total" => $price * $quantity
             );
+            print_r($cart);
             echo "<script>alert('Item added successfully');</script>";  
             }
             
