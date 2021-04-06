@@ -45,52 +45,26 @@ Add a Product
 
 @stop
 
-<?php
-	
+<?php	
     $price = number_format($product['price'], 2);
-	if(isset($_POST['addCart']) && isset($_SESSION['username'])) {
+	if(isset($_POST['addCart'])) {
 		//check if the item being added is in stock
         $quantity = $_POST['quantity'];
 		$sql2 = $conn->query("SELECT quantity FROM Inventory WHERE productSKU = '$sku'");
         $dbqnt = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
         $qnt = $dbqnt['quantity'];
-        if($qnt > 0) {        
-		//check if a $_COOKIE[cart] exists
-        
-            $cookie = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "";
-            $cookie = stripslashes($cookie);
-            $saved_cart_items = json_decode($cookie, true);
-            //adds item to cart
-            $item_array = array (
-                'item_name' => $product['name'],
-                'item_quant' => $quantity,
-                'item_total' => $quantity * $price
-            );
+        $name = $product['name'];
+        if($qnt > 0) {
+            $cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "[]";
+            $cart = json_decode($cart);
             
-            //checks if saved cart is null and correct the error if it is.
-            if(!$saved_cart_items){
-                $saved_cart_items=array();
-            }
-            for($i=0;$i<=count($saved_cart_items)-1;$i++)
-            {
-                if($saved_cart_items[$i]['item_name']==$product['name'])
-                {
-                    echo "Item already exists in cart";
-                }
-                else {
-                    if(count($saved_cart_items)>0){
-                        foreach($saved_cart_items as $row) {
-                        $item_array[] = $row;
-                    }
-                    echo $item_array[0]['name'];
-                    }
-            }
-            
-                // put item to cookie
-                $json = json_encode($item_array, true);
-                setcookie("cart", $json, time() + (86400 * 30), '/'); // 86400 = 1 day
-                $_COOKIE['cart']=$json;
-            }       
+            array_push($cart, array(
+                "productName" => $name,
+                "quantity" => $quantity,
+                "total" => $price * $quantity
+            ));
+            setcookie("cart",json_encode($cart));
+              echo "<script>alert('Item added successfully');</script>";  
         }
         else {
             echo "<script>alert('The item you want is out of stock! Please check back later.');</script>";
