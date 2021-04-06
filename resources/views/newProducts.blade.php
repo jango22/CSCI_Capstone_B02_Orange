@@ -51,7 +51,7 @@ Add a Product
     $price = number_format($product['price'], 2);
 	if(isset($_POST['addCart']) && isset($_SESSION['username'])) {
 		//check if the item being added is in stock
-		$sql2 = $conn->query('SELECT quantity FROM Inventory WHERE productSKU = $sku');
+		$sql2 = $conn->query("SELECT quantity FROM Inventory WHERE productSKU = '$sku'");
         $dbqnt = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
         $qnt = $dbqnt['quantity'];
         if($qnt > 0) {        
