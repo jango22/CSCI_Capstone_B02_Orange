@@ -83,6 +83,7 @@ Add a Product
                 foreach($saved_cart_items as $row) {
                     $item_array[] = $row;
                 }
+                echo $item_array[0]['name'];
             }
                 // put item to cookie
                 $json = json_encode($item_array, true);
