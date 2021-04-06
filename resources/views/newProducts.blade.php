@@ -58,11 +58,11 @@ Add a Product
             $cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "[]";
             $cart = json_decode($cart);
             
-            array_push($cart, array(
+            $cart[] = array(
                 "productName" => $name,
                 "quantity" => $quantity,
                 "total" => $price * $quantity
-            ));
+            );
             setcookie("cart",json_encode($cart));
               echo "<script>alert('Item added successfully');</script>";  
         }
