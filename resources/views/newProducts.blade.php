@@ -1,6 +1,15 @@
 ﻿<?php
  session_start();
-
+$servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
+    $username = "orangeadmin";
+    $password = "capstone02";
+    $dbname = "OrangeDB";
+    $port = "1433";
+    $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
+    //Get array of products
+    $sku = $_GET['sku'];
+    $sql = $conn-> query("SELECT * FROM INVENTORY WHERE productSku = $sku");
+    $product = $sql->fetchAll(PDO::FETCH_ASSOC)[0];
 ?>
 @extends('layout')
 
