@@ -64,7 +64,7 @@ Add a Product
             }
             if(array_key_exists($product['name'], $saved_cart_items)){
                 // redirect to product list and tell the user it was added to cart
-                header('Location: /newproducts?sku=$sku&action=exists');
+                header('Location: /products');
             }
             else {
                 $item_array = array (
