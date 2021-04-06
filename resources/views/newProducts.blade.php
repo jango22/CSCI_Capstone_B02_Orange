@@ -75,13 +75,14 @@ Add a Product
                 header('Location: /products');
             }
             else {
-            foreach ($saved_cart_items as $row)
-                $item_array = array (
-                'item_name' => $row['item_name'],
-                'item_quant' => $row['item_quant'],
-                'item_total' => $row['item_total']
+            if(count($saved_cart_items)>0){
+                foreach ($saved_cart_items as $row)
+                    $item_array = array (
+                    'item_name' => $row['item_name'],
+                    'item_quant' => $row['item_quant'],
+                    'item_total' => $row['item_total']
                 );
-                printf($item_array[0]);
+            }
                 // put item to cookie
                 $json = json_encode($item_array, true);
                 setcookie("cart", $json, time() + (86400 * 30), '/'); // 86400 = 1 day
