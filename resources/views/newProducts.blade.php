@@ -45,19 +45,6 @@ Add a Product
 @stop
 
 <?php
-    //Connect to database
-    $servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
-    $username = "orangeadmin";
-    $password = "capstone02";
-    $dbname = "OrangeDB";
-    $port = "1433";
-    $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
-    //Get array of products
-    $sku = $_GET['sku'];
-    $sql = $conn-> query("SELECT * FROM INVENTORY WHERE productSku = $sku");
-    $product = $sql->fetchAll(PDO::FETCH_ASSOC)[0];
-
-
     $price = number_format($product['price'], 2);
 	if(isset($_POST['addCart'])) {
 		//check if the item being added is in stock
