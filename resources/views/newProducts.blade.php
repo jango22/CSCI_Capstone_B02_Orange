@@ -32,7 +32,9 @@ Add a Product
             <h1>{{ $product['name'] }}</h1><span>({{ $product['productSKU'] }})</span></br>
             <p class="price">${{number_format($product['price'], 2) }}</p>
             <p>{{ $product['itemdesc'] }}</p>
-            <p><button name="addCart">Add to Cart</button></p>
+            <form action="" method="post">
+                <input type="submit" name="addCart" value="Add to Cart" />
+            </form>
             
         </div>
    
@@ -45,7 +47,7 @@ Add a Product
 	//if user isnt logged in, the session variable username gets set to guest
 	if(isset($_POST['addCart']) && isset($_SESSION['username'])) {
 		//check if the item being added is in stock
-		$conn->query('SELECT quantity FROM Inventory WHERE');
+		$conn->query('SELECT quantity FROM Inventory WHERE productSKU = $sku');
 		//check if a $_SESSION[cart] exists
 		//create one if not
 		//add the item or quantity to the cart, quantity increases if item exists
