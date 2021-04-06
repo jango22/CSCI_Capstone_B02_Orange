@@ -9,7 +9,7 @@ $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, 
 //Get array of products
 $sku = $_GET['sku'];
 $sql = $conn-> query("SELECT * FROM INVENTORY WHERE productSku = $sku");
-$products = $sql-> fetchAll();
+$product = $sql-> fetchAll();
 ?>
 @extends('layout')
 
