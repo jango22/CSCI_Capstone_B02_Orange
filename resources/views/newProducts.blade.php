@@ -37,6 +37,9 @@ Add a Product
         </div>
    
 </div>
+
+@stop
+
 <?php
 	//checks if the button addCart has been pressed and if the user is logged in.
 	//if user isn't logged in, the session variable username gets set to "guest"
@@ -51,5 +54,3 @@ Add a Product
 
 	}
 ?>
-
-@stop
