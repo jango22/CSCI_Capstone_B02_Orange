@@ -1,4 +1,5 @@
 ﻿<?php
+ session_start();
 //Connect to database
 $servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
 $username = "orangeadmin";
