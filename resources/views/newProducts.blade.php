@@ -27,7 +27,7 @@ Add a Product
     
    
     <div class="row" style="background:lightgray">
-        <div class="card column" style="background:lightgray">
+        <div class="w3-card"" style="background:lightgray">
         
             <img src="https://i.imgur.com/uVymdir.png" alt="Product Image" style="width:100%" class="responsive">
             <h1>{{ $product['name'] }}</h1><span>({{ $product['productSKU'] }})</span></br>
