@@ -77,14 +77,15 @@ Add a Product
                 {
                     echo "Item already exists in cart";
                 }
+                else {
+                    if(count($saved_cart_items)>0){
+                        foreach($saved_cart_items as $row) {
+                        $item_array[] = $row;
+                    }
+                    echo $item_array[0]['name'];
+                    }
             }
-            else {
-            if(count($saved_cart_items)>0){
-                foreach($saved_cart_items as $row) {
-                    $item_array[] = $row;
-                }
-                echo $item_array[0]['name'];
-            }
+            
                 // put item to cookie
                 $json = json_encode($item_array, true);
                 setcookie("cart", $json, time() + (86400 * 30), '/'); // 86400 = 1 day
