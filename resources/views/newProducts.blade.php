@@ -75,7 +75,7 @@ Add a Product
                 header('Location: /products');
             }
             else {
-            foreach (saved_cart_items as $row)
+            foreach ($saved_cart_items as $row)
                 $item_array = array (
                 'item_name' => $row['item_name'],
                 'item_quant' => $row['item_quant'],
