@@ -54,7 +54,7 @@ Add a Product
         $name = $product['name'];
         if($qnt > 0) {
             $cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "[]";
-            $cart = json_decode($cart);
+            $cart = json_decode($cart, true);
             if (count($cart) == 0) {
                 $cart[] = array(
                             "productName" => $name,
