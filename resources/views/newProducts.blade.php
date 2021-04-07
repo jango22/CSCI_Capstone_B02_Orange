@@ -53,7 +53,7 @@ Add a Product
         $qnt = $dbqnt['quantity'];
         $name = $product['name'];
         if($qnt > 0) {
-            array $cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "[]";
+            $cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "[]";
             $cart = json_decode($cart);
             if (count($cart) == 0) {
                 $cart[] = array(
