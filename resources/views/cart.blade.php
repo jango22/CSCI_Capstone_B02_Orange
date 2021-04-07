@@ -10,8 +10,9 @@ My Cart
 <!-- Retrieve cart cookie -->
 <?php
 	$cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : '[]';
-	$cart = json_decode($cart);
-	$runningtotal=0
+	$cartArray = json_decode($cart, true);
+	$cart = json_decode($cart); // need to change this to an array
+	$runningtotal=0;
 ?>
 
 <div class="container-sm" id="wrapper">
