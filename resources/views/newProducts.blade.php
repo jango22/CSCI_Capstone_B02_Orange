@@ -55,17 +55,23 @@ Add a Product
         if($qnt > 0) {
             $cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : "[]";
             $cart = json_decode($cart);
-            if(in_array($name,$cart)) {
-                echo "<script>alert('Item is already in your cart');</script>";
+            for($i=0; $i<count($cart); i++)
+            {
+                if($cart[i][productName] == $name)
+                {
+                    $cart[i][quantity] += $quantity;
+                }
+                else if ($i == count($cart) - 1 && $cart[i][productName] != $name) {
+                    $cart[] = array(
+                        "productName" => $name,
+                        "quantity" => $quantity,
+                        "price" => $price
+                    );
+                    echo "<script>alert('Item added successfully');</script>";
+                }
+                      
             }
-            else {
-                $cart[] = array(
-                    "productName" => $name,
-                    "quantity" => $quantity,
-                    "price" => $price
-                );
-            echo "<script>alert('Item added successfully');</script>";  
-            }
+            
             
             setcookie("cart",json_encode($cart));
               
