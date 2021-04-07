@@ -93,7 +93,7 @@ Login
                 else {
                     $_SESSION['usertype'] = 'user';
                 }
-                header("Location: http://capstoneclass-php.eba-c2wjtm2e.us-east-1.elasticbeanstalk.com/");
+                header("Location: /");
             }
             else {
             echo 'Your username and password are incorrect';

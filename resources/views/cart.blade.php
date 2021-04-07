@@ -7,6 +7,7 @@ My Cart
 
 @section('content')
 
+<!-- Retrieve cart cookie -->
 <?php
 	$cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : '[]';
 	$cart = json_decode($cart);
@@ -22,6 +23,7 @@ My Cart
 		<h2 class="w3-center">My Cart</h2>
 	</div>
 	
+	<!-- Clear cart button -->
 	<div class="w3-center">
 		<form method="post">
 		@csrf
@@ -29,6 +31,7 @@ My Cart
 		</form>
 	</div>
 
+	<!-- Output each item in the cart -->
 	<ul id="products" class="w3-ul card" style="background-color:lightgray">
 	@foreach ($cart as $cartitem)
 		<li class="w3-bar w3-hover-blue-gray">
@@ -47,9 +50,12 @@ My Cart
 	<h3 class="w3-center">Total: ${{ $runningtotal }}</h2>
 </div>
 
+<!-- Empty the cart cookie if the clear cart button was pressed -->
 <?php
 	if(isset($_POST['clearCart'])) {
-		unset($_COOKIE['cart']);
+		setcookie('cart');
+		header('Refresh: 0');
+		echo "<script>alert('Your cart has been cleared');</script>"; 
 	}
 ?>
 
