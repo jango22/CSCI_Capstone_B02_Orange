@@ -69,6 +69,7 @@ Add a Product
                     if($cart[$i]["productName"] == $name)
                     {
                         $cart[$i]["quantity"] += $quantity;
+                        echo "<script>alert('Item quantity updated successfully');</script>";
                     }
                     else if ($i == count($cart) - 1 && $cart[$i]["productName"] != $name) {
                         $cart[] = array(
