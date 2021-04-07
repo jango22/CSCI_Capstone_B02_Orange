@@ -62,7 +62,7 @@ Add a Product
                             "price" => $price
                         );
                         echo "<script>alert('Item added successfully');</script>";
-                
+                    }   
              else {
                 for($i=0; $i<count($cart); $i++)
                 {
