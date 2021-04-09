@@ -32,9 +32,9 @@ Add a Product
             <p>{{ $product['itemdesc'] }}</p>
             <form method="post">
                 @csrf
-                <input type="number" name="quantity" class="form-control" id="descid" placeholder="Quantity" min="1" required>
+                <input type="number" name="quantity" class="newproducts-input" id="descid" placeholder="Quantity" min="1" required>
                 @csrf
-                <input type="submit" name="addCart" value="Add to Cart" />
+                <input type="submit" name="addCart" class="newproducts-input" value="Add to Cart" />
             </form>
             
         </div>
@@ -70,6 +70,7 @@ Add a Product
                     {
                         $cart[$i]["quantity"] += $quantity;
                         echo "<script>alert('Item quantity updated successfully');</script>";
+                        break;
                     }
                     else if ($i == count($cart) - 1 && $cart[$i]["productName"] != $name) {
                         $cart[] = array(
@@ -78,6 +79,7 @@ Add a Product
                             "price" => $price
                         );
                         echo "<script>alert('Item added successfully');</script>";
+                        break;
                     }
                       
                 }

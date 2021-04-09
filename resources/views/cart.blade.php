@@ -28,36 +28,69 @@ My Cart
 	<div class="w3-center">
 		<form method="post">
 		@csrf
-		<input type="submit" name="clearCart" value="Clear Cart">
+		<input type="submit" name="clear-cart" value="Clear Cart">
 		</form>
 	</div>
 
 	<!-- Output each item in the cart -->
-	<ul id="products" class="w3-ul card" style="background-color:lightgray">
+	<ul id="products" class="w3-ul card cart" style="background-color:lightgray">
 	@foreach ($cart as $cartitem)
-		<li class="w3-bar w3-hover-blue-gray">
+		<li class="w3-bar">
 			<div id="product" class="w3-bar-item">
 				<span style="font-size:24px">{{ $cartitem->productName }}</span><br>
-				Quantity: {{ $cartitem->quantity }}<br>
 				Price: {{ $cartitem->price }}<br>
-				Subtotal: ${{ $cartitem->price * $cartitem->quantity }}
-				@php
-				$runningtotal = $runningtotal + $cartitem->price*$cartitem->quantity;
-				@endphp
+				Subtotal: ${{ $cartitem->price * $cartitem->quantity }}<br>
+				<form method="POST">
+				@csrf
+					Qty:
+            		<input type="number" class="form-control" name="quantity" id="quantity" maxlength="2" size="2" value="{{ $cartitem->quantity }}" min="0" style="width: 35px;">
+					<input type="hidden" name="productName" value="{{ $cartitem->productName }}">
+					<input type="submit" name="update-quantity" value="Update">
+					<input type="submit" name="delete-item" value="Delete">   
+				</form>
 			</div>
 		</li>
-		@endforeach
+		@php
+		$runningtotal = $runningtotal + $cartitem->price*$cartitem->quantity;
+		@endphp
+	@endforeach
 	</ul>
 	<h3 class="w3-center">Total: ${{ $runningtotal }}</h2>
 </div>
 
-<!-- Empty the cart cookie if the clear cart button was pressed -->
 <?php
-	if(isset($_POST['clearCart'])) {
+if (!empty($_POST)) {
+	/* Empty the cart if the clear cart button was pressed */
+	if(isset($_POST['clear-cart'])) {
 		setcookie('cart');
-		header('Refresh: 0');
-		echo "<script>alert('Your cart has been cleared');</script>"; 
+		echo "<script>alert('Your cart has been cleared.');</script>"; 
 	}
+
+	/* Update quantity of an item if the update quantity button was pressed */
+	else if(isset($_POST['update-quantity'])) {
+		for($i=0; $i<count($cart); $i++) {
+			if($cart[$i]->productName == $_POST['productName'] and $cart[$i]->quantity != $_POST['quantity']) {
+				$cart[$i]->quantity = $_POST['quantity'];
+				setcookie("cart",json_encode($cart));
+				echo "<script>alert('Item updated successfully.');</script>";
+			}
+		}
+	}
+
+	/* Delete an item if the delete button was pressed */
+	else if(isset($_POST['delete-item'])) {
+		for($i=0; $i<count($cart); $i++) {
+			if($cart[$i]->productName == $_POST['productName']) {
+				unset($cart[$i]);
+				setcookie("cart",json_encode($cart));
+				echo "<script>alert('Item deleted successfully.');</script>";
+			}
+		}
+	}
+
+	/* Refresh the page when done */
+	header('Refresh: 0');
+}
 ?>
 
 @stop

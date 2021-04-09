@@ -42,6 +42,11 @@ Route::any('/products', function () {
     return view('products');
 });
 
+//Individual Product Page
+Route::any('/product', function () {
+    return view('newProducts');
+});
+
 //Contact Us
 Route::any('/contact', function () {
     return view('contact');
@@ -113,14 +118,4 @@ Route::any('/button', function () {
 //Products (Hardcoded)
 Route::any('/HProducts', function () {
     return view('HProducts');
-});
-
-//test for new product page
-Route::any('/newproducts', function () {
-    return view('newProducts');
-});
-
-//test for cart page
-Route::any('/newcart', function () {
-    return view('newcart');
 });
