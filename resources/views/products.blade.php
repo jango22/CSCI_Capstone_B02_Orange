@@ -34,7 +34,11 @@ Products
 		@foreach ($products as $product)
 		<li class="w3-bar w3-hover-blue-gray">
 			<div id="product" class="w3-bar-item">
-                <a href="/product?sku=<?php echo $product['productSKU']; ?>"><span style="font-size:24px">{{ $product['name'] }}</span></a> <span>({{ $product['productSKU'] }})</span></br>
+				@if ($product['quantity'] > 0)
+					<a href="/product?sku=<?php echo $product['productSKU']; ?>"><span id="product-title">{{ $product['name'] }}</span></a> <span>({{ $product['productSKU'] }})</span></br>
+				@else
+					<span id="product-title"><s>{{ $product['name'] }}</s></span> <span id="Out-of-stock">Out of Stock!</span></br>
+				@endif
 				<span>${{ number_format($product['price'], 2) }}</span></br>
 				<span>{{ $product['itemdesc'] }}</span><br>
 			</div>

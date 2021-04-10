@@ -26,16 +26,23 @@ Add a Product
     <br>
         <div class="card" style="background:lightgray">
         
-            <img src="https://i.imgur.com/uVymdir.png" alt="Product Image" style="width:100%">
-            <h1>{{ $product['name'] }}</h1><span>({{ $product['productSKU'] }})</span></br>
+            <img src="https://i.imgur.com/uVymdir.png" alt="Product Image" style="width:100px">
+            @if ($product['quantity'] > 0)
+                <h1>{{ $product['name'] }}</h1>
+            @else
+                <h1><s>{{ $product['name'] }}</s></h1>
+                <span id="Out-of-stock">Out of Stock!</span></br>
+			@endif
+            <span>({{ $product['productSKU'] }})</span></br>
             <p class="price">${{number_format($product['price'], 2) }}</p>
-            <p>{{ $product['itemdesc'] }}</p>
-            <form method="post">
-                @csrf
-                <input type="number" name="quantity" class="newproducts-input" id="descid" placeholder="Quantity" min="1" required>
-                @csrf
-                <input type="submit" name="addCart" class="newproducts-input" value="Add to Cart" />
-            </form>
+            <p>{{ $product['itemdesc'] }}</p><br>
+            @if ($product['quantity'] > 0)
+                <form method="post">
+                    @csrf
+                    <input type="number" name="quantity" class="newproducts-input" id="descid" placeholder="Quantity" min="1" required>
+                    <input type="submit" name="addCart" class="newproducts-input" value="Add to Cart" />
+                </form>
+            @endif
             
         </div>
    

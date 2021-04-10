@@ -122,6 +122,15 @@ form{
 	color: #000000;
 }
 
+#product-title {
+	font-size:24px;
+}
+
+#Out-of-stock {
+	font-size:24px;
+	color: red;
+}
+
 
 /*
 |--------------------------------------------------------------------------
