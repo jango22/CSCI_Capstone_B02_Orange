@@ -64,12 +64,12 @@ My Cart
 	@endforeach
 	</ul>
 	<h3 class="w3-center">Total: ${{ $runningtotal }}</h2> <br>
-    
-    //Checkout button
+    <div class="w3-center">
     <form method="post">
+    @csrf
         <input type="submit" name="checkout" value="Checkout">
     </form>
-    
+    </div>
 </div>
 
 <?php
