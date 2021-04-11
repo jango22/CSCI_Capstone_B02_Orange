@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    $servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
+    $username = "orangeadmin";
+    $password = "capstone02";
+    $dbname = "OrangeDB";
+    $port = "1433";
+    $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
+?>
 @extends('layout')
 
 @section('title')
@@ -55,7 +63,13 @@ My Cart
 		@endphp
 	@endforeach
 	</ul>
-	<h3 class="w3-center">Total: ${{ $runningtotal }}</h2>
+	<h3 class="w3-center">Total: ${{ $runningtotal }}</h2> <br>
+    
+    //Checkout button
+    <form method="post">
+        <input type="submit" name="checkout" value="Checkout">
+    </form>
+    
 </div>
 
 <?php
@@ -87,7 +101,28 @@ if (!empty($_POST)) {
 			}
 		}
 	}
-
+    
+    //Checkout funcitonality
+    if (isset($_POST('checkout')) {
+    $outofstock = 0;
+    $oosItems = array();
+        for ($i=0; $i<count($cart); $i++) {
+            $sql2 = $conn->query("SELECT quantity FROM Inventory WHERE productSKU = '$cart[i]->sku'");
+            $dbqnt = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
+            $stock = $dbqnt['quantity'];
+            if ($cart[i]->quantity > $stock) {
+                outofstock++;
+                $oosItems[] = $cart[i]->productName;
+            }
+        }
+        if ($outofstock > 0) {
+            echo "<script type='text/javascript'> alert('The following items need their quantities reduced in order to checkout:".json_encode($oosItems)."') </script>";
+            unset($oosItems);
+        }
+        else {
+            echo "<script>alert('All items are safe to be checked out.');</script>";
+        }
+    }
 	/* Refresh the page when done */
 	header('Refresh: 0');
 }
