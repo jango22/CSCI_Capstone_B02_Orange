@@ -146,7 +146,7 @@ if (!empty($_POST)) {
 	        setcookie("cart");
         }
     }
-    else {
+    else if (count($cart) == 0) {
         echo "<script>alert('YOU HAVE NO ITEMS IN YOUR CART!!!');</script>";
     }
 	/* Refresh the page when done */
