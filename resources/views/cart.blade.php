@@ -145,8 +145,8 @@ if (!empty($_POST)) {
              }
             
             unset($cart);
-	        setcookie("cart",json_encode($cart))
-        
+	        setcookie("cart",json_encode($cart));
+        }
     }
 	/* Refresh the page when done */
 	header('Refresh: 0');
