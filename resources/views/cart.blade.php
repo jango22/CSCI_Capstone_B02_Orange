@@ -121,7 +121,31 @@ if (!empty($_POST)) {
             unset($oosItems);
         }
         else {
-            echo "<script>alert('All items are safe to be checked out.');</script>";
+            echo "<script>alert('All items are safe to be checked out. Cart has been cleared and inventory reduced.');</script>";
+            
+             for ($i=0; $i<count($cart); $i++) {
+                //quantity of item in cart
+                $itemQuant = $cart[$i]->quantity;
+                
+                //item sku
+                $sku = $cart[$i]->sku;
+                
+                //Query to grab quantity from db
+                $sql2 = $conn->query("SELECT quantity FROM Inventory WHERE productSKU = '$sku'");
+                $dbqnt = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
+                
+                //quantity of item in DB
+                $oldStock = $dbqnt['quantity'];
+                
+                //new quantity to be stored in DB
+                $newStock = $oldStock - $itemQuant;
+                
+                //sets the inventory quantity to new value
+                $sql2 = $conn->query("UPDATE INVENTORY SET quantity='$newStock" WHERE productSKU = '$sku'");
+             }
+            
+            unset($cart[$i]);
+	        setcookie("cart",json_encode($cart))
         }
     }
 	/* Refresh the page when done */
