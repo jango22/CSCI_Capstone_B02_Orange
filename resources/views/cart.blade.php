@@ -107,7 +107,8 @@ if (!empty($_POST)) {
     $outofstock = 0;
     $oosItems = array();
         for ($i=0; $i<count($cart); $i++) {
-            $sql2 = $conn->query("SELECT quantity FROM Inventory WHERE productSKU = '$cart[$i]->sku'");
+            $sku = $cart[$i]->sku;
+            $sql2 = $conn->query("SELECT quantity FROM Inventory WHERE productSKU = '$sku'");
             $dbqnt = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
             $stock = $dbqnt['quantity'];
             if ($cart[i]->quantity > $stock) {
