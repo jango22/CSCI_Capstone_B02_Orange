@@ -103,7 +103,7 @@ if (!empty($_POST)) {
 	}
     
     //Checkout funcitonality
-    if (isset($_POST['checkout']) {
+    if (isset($_POST['checkout'])) {
     $outofstock = 0;
     $oosItems = array();
         for ($i=0; $i<count($cart); $i++) {
