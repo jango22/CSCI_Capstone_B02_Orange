@@ -144,7 +144,7 @@ if (!empty($_POST)) {
                 $sql2 = $conn->query("UPDATE INVENTORY SET quantity='$newStock" WHERE productSKU = '$sku'");
              }
             
-            unset($cart[$i]);
+            unset($cart);
 	        setcookie("cart",json_encode($cart))
         }
     }
