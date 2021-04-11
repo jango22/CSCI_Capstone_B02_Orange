@@ -111,7 +111,7 @@ if (!empty($_POST)) {
             $dbqnt = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
             $stock = $dbqnt['quantity'];
             if ($cart[i]->quantity > $stock) {
-                outofstock++;
+                $outofstock++;
                 $oosItems[] = $cart[i]->productName;
             }
         }
