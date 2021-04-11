@@ -73,7 +73,7 @@ My Cart
 </div>
 
 <?php
-if (!empty[$_POST]) {
+if (!empty($_POST)) {
 	/* Empty the cart if the clear cart button was pressed */
 	if(isset($_POST['clear-cart'])) {
 		setcookie('cart');
@@ -103,7 +103,7 @@ if (!empty[$_POST]) {
 	}
     
     //Checkout funcitonality
-    if (isset($_POST('checkout')) {
+    if (isset($_POST['checkout']) {
     $outofstock = 0;
     $oosItems = array();
         for ($i=0; $i<count($cart); $i++) {
