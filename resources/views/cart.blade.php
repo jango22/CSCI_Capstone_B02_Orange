@@ -73,7 +73,7 @@ My Cart
 </div>
 
 <?php
-if (!empty($_POST)) {
+if (!empty[$_POST]) {
 	/* Empty the cart if the clear cart button was pressed */
 	if(isset($_POST['clear-cart'])) {
 		setcookie('cart');
