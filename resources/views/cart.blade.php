@@ -141,7 +141,7 @@ if (!empty($_POST)) {
                 $newStock = $oldStock - $itemQuant;
                 
                 //sets the inventory quantity to new value
-                $sql2 = $conn->query("UPDATE INVENTORY SET quantity='$newStock" WHERE productSKU = '$sku'");
+                $sql2 = $conn->query("UPDATE INVENTORY SET quantity='$newStock' WHERE productSKU = '$sku'");
              }
             
             unset($cart);
