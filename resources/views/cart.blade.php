@@ -103,7 +103,7 @@ if (!empty($_POST)) {
 	}
     
     //Checkout funcitonality
-    if (isset($_POST['checkout'])) {
+    if (isset($_POST['checkout']) && $count($cart) > 0) {
     $outofstock = 0;
     $oosItems = array();
         for ($i=0; $i<count($cart); $i++) {
@@ -145,6 +145,9 @@ if (!empty($_POST)) {
              }
 	        setcookie("cart");
         }
+    }
+    else {
+        echo "<script>alert('YOU HAVE NO ITEMS IN YOUR CART!!!');</script>";
     }
 	/* Refresh the page when done */
 	header('Refresh: 0');
