@@ -66,7 +66,8 @@ Add a Product
                 $cart[] = array(
                             "productName" => $name,
                             "quantity" => $quantity,
-                            "price" => $price
+                            "price" => $price,
+                            "sku" => $sku
                         );
                         echo "<script>alert('Item added successfully');</script>";
                     }   
@@ -83,7 +84,8 @@ Add a Product
                         $cart[] = array(
                             "productName" => $name,
                             "quantity" => $quantity,
-                            "price" => $price
+                            "price" => $price,
+                            "sku" => $sku
                         );
                         echo "<script>alert('Item added successfully');</script>";
                         break;
