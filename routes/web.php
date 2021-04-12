@@ -50,6 +50,7 @@ Route::any('/product', function () {
 //Receipt page
 Route::any('/receipt', function () {
     return view('receipt');
+});
 
 //Contact Us
 Route::any('/contact', function () {
