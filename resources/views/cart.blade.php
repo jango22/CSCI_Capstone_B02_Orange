@@ -122,8 +122,37 @@ if (!empty($_POST)) {
         }
         else {
             echo "<script>alert('All items are safe to be checked out. Cart has been cleared and inventory reduced.');</script>";
+            //checks is username is set so their userID can be pulled from the db to generate a unique orderID
+            if (isset($_SESSION['userID'])) {
+                $userID = $_SESSION['userID'];
+                
+                //generate unique order id and sets username
+                $uniqueID = time() . mt_rand() . $userID;
+                $_SESSION['orderID'] = $uniqueID;
+                $username = $_SESSION['username'];
+            }
+            else {
+                //generates a semi unique id for guests. Not as unique but still incredibly rare to have a duplicate.
+                $guest = "guest";
+                $uniqueID = time() . mt_rand() . $guest;
+                $_SESSION['orderID'] = $uniqueID;
+                $username = "guest";
+            }
+            //this loop send the cart items into the DB 
+            foreach($cart as $items) {
+                //variable that must be unique per item
+                $productName = $items->name;
+                $itemQuant = $items->quantity;
+                $total = $items->price * $items->quantity;
+                
+                //insert items into orders table with unqiue order id
+                $sql2 = $conn->query("INSERT INTO Orders (orderID, username, productName, itemQuant, totalPrice)
+                VALUES ($uniqueId, $username, $productName, $itemQuant, $total);");
+                
+            }
             
-             for ($i=0; $i<count($cart); $i++) {
+            //this loop updates quantity in db to reflect the quantity loss at checkout
+            for ($i=0; $i<count($cart); $i++) {
                 //quantity of item in cart
                 $itemQuant = $cart[$i]->quantity;
                 
@@ -144,6 +173,7 @@ if (!empty($_POST)) {
                 $sql2 = $conn->query("UPDATE INVENTORY SET quantity='$newStock' WHERE productSKU = '$sku'");
              }
 	        setcookie("cart");
+            header("Location: /receipt");
         }
     }
     else if (isset($_POST['checkout']) && count($cart) == 0) {
