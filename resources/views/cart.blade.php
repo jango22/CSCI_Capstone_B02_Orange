@@ -77,7 +77,28 @@ if (!empty($_POST)) {
 	/* Empty the cart if the clear cart button was pressed */
 	if(isset($_POST['clear-cart'])) {
 		setcookie('cart');
-		echo "<script>alert('Your cart has been cleared.');</script>"; 
+		echo "<script>alert(            
+            <ul id="products" class="w3-ul card cart" style="background-color:lightgray">
+	@foreach ($cart as $cartitem)
+		<li class="w3-bar">
+			<div id="product" class="w3-bar-item">
+				<span style="font-size:24px">{{ $cartitem->productName }}</span><br>
+				Price: {{ $cartitem->price }}<br>
+				Subtotal: ${{ $cartitem->price * $cartitem->quantity }}<br>
+				<form method="POST">
+				@csrf
+					Qty:
+            		<input type="number" class="form-control" name="quantity" id="quantity" maxlength="2" size="2" value="{{ $cartitem->quantity }}" min="0" style="width: 35px;">
+					<input type="hidden" name="productName" value="{{ $cartitem->productName }}">
+					<input type="submit" name="update-quantity" value="Update">
+					<input type="submit" name="delete-item" value="Delete">   
+				</form>
+			</div>
+		</li>
+		@php
+		$runningtotal = $runningtotal + $cartitem->price*$cartitem->quantity;
+		@endphp
+	@endforeach);</script>"; 
 	}
 
 	/* Update quantity of an item if the update quantity button was pressed */
@@ -116,7 +137,7 @@ if (!empty($_POST)) {
                 $oosItems[] = $cart[$i]->productName;
             }
         }
-        if ($outofstock > 0) {
+        if ($outofstock > 0) {           
             echo "<script type='text/javascript'> alert('The following items need their quantities reduced in order to checkout:".json_encode($oosItems)."') </script>";
             unset($oosItems);
         }
