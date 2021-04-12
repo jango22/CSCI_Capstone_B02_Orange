@@ -141,7 +141,7 @@ if (!empty($_POST)) {
             //this loop send the cart items into the DB 
             foreach($cart as $items) {
                 //variable that must be unique per item
-                $productName = $items->name;
+                $productName = $items->productName;
                 $itemQuant = $items->quantity;
                 $total = $items->price * $items->quantity;
                 
