@@ -40,7 +40,7 @@ Products
 			</div>
 		</li>
 		@php
-		$runningtotal = $runningtotal + $cartitem->price*$cartitem->quantity;
+		$runningtotal = $runningtotal + $transaction->price*$transaction->quantity;
 		@endphp
 	@endforeach
 	</ul>
