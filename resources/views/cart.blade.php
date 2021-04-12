@@ -130,6 +130,19 @@ if (!empty($_POST)) {
                 $uniqueID = time() . mt_rand() . $userID;
                 $_SESSION['orderID'] = $uniqueID;
                 $username = $_SESSION['username'];
+                
+                //this loop send the cart items into the DB
+                foreach($cart as $items) {
+                    //variable that must be unique per item
+                    $productName = $items->productName;
+                    $itemQuant = $items->quantity;
+                    $total = $items->price * $items->quantity;
+                
+                    //insert items into orders table with unqiue order id
+                    $sql2 = $conn->query("INSERT INTO Orders (orderID, username, productName, itemQuant, totalPrice)
+                    VALUES ($uniqueId, $username, $productName, $itemQuant, $total);");
+                
+                }
             }
             else {
                 //generates a semi unique id for guests. Not as unique but still incredibly rare to have a duplicate.
@@ -137,19 +150,21 @@ if (!empty($_POST)) {
                 $uniqueID = time() . mt_rand() . $guest;
                 $_SESSION['orderID'] = $uniqueID;
                 $username = "guest";
-            }
-            //this loop send the cart items into the DB 
-            foreach($cart as $items) {
-                //variable that must be unique per item
-                $productName = $items->productName;
-                $itemQuant = $items->quantity;
-                $total = $items->price * $items->quantity;
                 
-                //insert items into orders table with unqiue order id
-                $sql2 = $conn->query("INSERT INTO Orders (orderID, username, productName, itemQuant, totalPrice)
-                VALUES ($uniqueId, $username, $productName, $itemQuant, $total);");
+                //this loop send the cart items into the DB
+                foreach($cart as $items) {
+                    //variable that must be unique per item
+                    $productName = $items->productName;
+                    $itemQuant = $items->quantity;
+                    $total = $items->price * $items->quantity;
                 
+                    //insert items into orders table with unqiue order id
+                    $sql2 = $conn->query("INSERT INTO Orders (orderID, username, productName, itemQuant, totalPrice)
+                    VALUES ($uniqueId, $username, $productName, $itemQuant, $total);");
+                
+                }
             }
+ 
             
             //this loop updates quantity in db to reflect the quantity loss at checkout
             for ($i=0; $i<count($cart); $i++) {
