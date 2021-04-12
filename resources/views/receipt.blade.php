@@ -45,6 +45,7 @@ Products
 		@endphp
 	@endforeach
 	</ul>
+    <h3 class="w3-center">Total: ${{ $runningtotal }}</h2> <br>
 </div>
 
 @stop
