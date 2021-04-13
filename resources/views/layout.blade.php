@@ -35,7 +35,7 @@
 
 					echo
 					'<div class="dropdown show w3-bar-item w3-button w3-padding-large w3-hide-small">
-                            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                            <button onclick="myFunction()" class="dropbtn">Employee</button>
                                 <div id="myDropdown" class="dropdown-content">
                                     <a href="/add">Add Product</a>
                                     <a href="/update">Update Product</a>
