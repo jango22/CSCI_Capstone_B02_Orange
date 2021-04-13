@@ -25,8 +25,15 @@ Add a Product
     </div >
     <br>
         <div class="card" style="background:lightgray">
-        
-            <img src="https://i.imgur.com/uVymdir.png" alt="Product Image" style="width:100px">
+            <!-- Product image -->
+            <br>
+            @if ($product['imageURL'])
+                <img src="{{ $product['imageURL'] }}" alt="Product Image" style="width:180px">
+            @else
+                <img src="https://i.imgur.com/h1VYuuO.png" alt="Product Image" style="width:150px">
+            @endif
+
+            <!-- Product information -->
             @if ($product['quantity'] > 0)
                 <h1>{{ $product['name'] }}</h1>
             @else

@@ -34,6 +34,14 @@ Products
 		@foreach ($products as $product)
 		<li class="w3-bar w3-hover-blue-gray">
 			<div id="product" class="w3-bar-item">
+				<!-- Product image -->
+				@if ($product['imageURL'])
+					<img src="{{ $product['imageURL'] }}" alt="Product Image" style="width:100px">
+				@else
+					<img src="https://i.imgur.com/h1VYuuO.png" alt="Product Image" style="width:80px">
+				@endif
+
+				<!-- Product information -->
 				@if ($product['quantity'] > 0)
 					<a href="/product?sku=<?php echo $product['productSKU']; ?>"><span id="product-title">{{ $product['name'] }}</span></a> <span>({{ $product['productSKU'] }})</span></br>
 				@else
