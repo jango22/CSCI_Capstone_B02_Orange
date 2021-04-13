@@ -39,11 +39,11 @@
 							Employee Only<i class="fa fa-caret-down"></i>
 						</a>
 
-						<div class="dropdown-content" aria-labelledby="dropdownMenuLink">
-							<a href="/registeremployee" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register Employee</a>
-							<a href="/add" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Add Product</a>
-							<a href="/update" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update Product</a>
-						</div>
+						<div id="myDropdown" class="dropdown-content">
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#contact">Contact</a>
+                        </div>
 					</div>';
 
 					/* echo '<a href="/registeremployee" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register Employee</a>'; 
@@ -71,4 +71,24 @@
 <br><br>
 </body>
 </html>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
