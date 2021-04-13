@@ -35,16 +35,13 @@
 
 					echo
 					'<div class="dropdown show w3-bar-item w3-button w3-padding-large w3-hide-small">
-						<a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Employee Only<i class="fa fa-caret-down"></i>
-						</a>
-
-						<div id="myDropdown" class="dropdown-content">
-                            <a href="#home">Home</a>
-                            <a href="#about">About</a>
-                            <a href="#contact">Contact</a>
-                        </div>
-					</div>';
+                            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="/add">Add Product</a>
+                                    <a href="/update">Update Product</a>
+                                    <a href="registerEmp">Add User</a>
+                                </div>
+                     </div>';
 
 					/* echo '<a href="/registeremployee" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register Employee</a>'; 
 					echo '<a href="/add" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Add Product</a>';
