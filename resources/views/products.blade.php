@@ -35,20 +35,23 @@ Products
 		<li class="w3-bar w3-hover-blue-gray">
 			<div id="product" class="w3-bar-item">
 				<!-- Product image -->
-				@if ($product['imageURL'])
-					<img src="{{ $product['imageURL'] }}" alt="Product Image" style="width:100px">
-				@else
-					<img src="https://i.imgur.com/h1VYuuO.png" alt="Product Image" style="width:80px">
-				@endif
-
+				<div class="w3-bar-item w3-left">
+					@if ($product['imageURL'])
+						<img src="{{ $product['imageURL'] }}" alt="Product Image" style="width:80px;">
+					@else
+						<img src="https://i.imgur.com/h1VYuuO.png" alt="Product Image" style="width:80px;">
+					@endif
+				</div>
 				<!-- Product information -->
-				@if ($product['quantity'] > 0)
-					<a href="/product?sku=<?php echo $product['productSKU']; ?>"><span id="product-title">{{ $product['name'] }}</span></a> <span>({{ $product['productSKU'] }})</span></br>
-				@else
-					<span id="product-title"><s>{{ $product['name'] }}</s></span> <span id="Out-of-stock">Out of Stock!</span></br>
-				@endif
-				<span>${{ number_format($product['price'], 2) }}</span></br>
-				<span>{{ $product['itemdesc'] }}</span><br>
+				<div class="w3-bar-item w3-left">
+					@if ($product['quantity'] > 0)
+						<a href="/product?sku=<?php echo $product['productSKU']; ?>"><span id="product-title">{{ $product['name'] }}</span></a> <span>({{ $product['productSKU'] }})</span></br>
+					@else
+						<span id="product-title"><s>{{ $product['name'] }}</s></span> <span id="Out-of-stock">Out of Stock!</span></br>
+					@endif
+					<span>${{ number_format($product['price'], 2) }}</span></br>
+					<span>{{ $product['itemdesc'] }}</span><br>
+				</div>
 			</div>
 		</li>
 		@endforeach
