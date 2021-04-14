@@ -109,9 +109,15 @@ else {
         </div>
     </div>
     <div class="form-group row">
-        <label for="priceid" class="col-sm-1 col-form-label">Quantity:</label>
+        <label for="quantityid" class="col-sm-1 col-form-label">Quantity:</label>
         <div class="col-sm-3">
-            <input type="number" class="form-control" name="quantity" placeholder="Quantity" id="quantid"  value="<?php echo $quant ?? ''; ?>" required <?php echo $status; ?>>
+            <input type="number" class="form-control" name="quantity" placeholder="Quantity" id="quantityid"  value="<?php echo $data['quantity'] ?? ''; ?>" required <?php echo $status; ?>>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="imageid" class="col-sm-1 col-form-label">Image URL:</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="image" placeholder="Image URL" id="imageid"  value="<?php echo $data['imageURL'] ?? ''; ?>" required <?php echo $status; ?>>
         </div>
     </div>
     
@@ -130,15 +136,16 @@ else {
 
     //Get values from POST
     if(isset($_POST['submit'])){
+        $productID = $_POST['productID'];
         $name = $_POST['name'];
         $SKU = $_POST['SKU'];
         $price = $_POST['price'];
         $desc = $_POST['desc'];
-        $productID = $_POST['productID'];
         $quant = $_POST['quantity'];
+        $image = $_POST['image'];
 
-        $conn->query("UPDATE INVENTORY SET name='$name',productSKU='$SKU',price='$price',itemdesc='$desc', quantity='$quant' WHERE productID='$productID';");
-        $msg = "Added to inventory successfully.";
+        $conn->query("UPDATE INVENTORY SET name='$name',productSKU='$SKU',price='$price',itemdesc='$desc', quantity='$quant', imageURL='$image' WHERE productID='$productID';");
+        $msg = "Updated successfully.";
         echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                 $msg

@@ -47,7 +47,7 @@ Products
 					@if ($product['quantity'] > 0)
 						<a href="/product?sku=<?php echo $product['productSKU']; ?>"><span id="product-title">{{ $product['name'] }}</span></a> <span>({{ $product['productSKU'] }})</span></br>
 					@else
-						<span id="product-title"><s>{{ $product['name'] }}</s></span> <span id="Out-of-stock">Out of Stock!</span></br>
+						<span id="product-title"><s>{{ $product['name'] }}</s></span>&nbsp;&nbsp;<span id="Out-of-stock">Out of Stock!</span></br>
 					@endif
 					<span>${{ number_format($product['price'], 2) }}</span></br>
 					<span>{{ $product['itemdesc'] }}</span><br>

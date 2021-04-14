@@ -62,6 +62,12 @@ else {
             <input type="number" name="quantity" class="form-control" rows="6" id="descid" placeholder="Quantity" required>
         </div>
     </div>
+    <div class="form-group row">
+        <label for="imageid" class="col-sm-1 col-form-label">Image URL:</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="image" placeholder="Image URL" id="imageid"  required>
+        </div>
+    </div>
     
     <div class="form-group row">
         <label for="descid" class="col-sm-1 col-form-label"></label>
@@ -88,6 +94,7 @@ else {
         $price = $_POST['price'];
         $desc = $_POST['desc'];
         $quant = $_POST['quantity'];
+        $image = $_POST['image'];
 
         //Check for duplicate name
         $sql = $conn->query("SELECT Name FROM INVENTORY;");
@@ -111,7 +118,7 @@ else {
         } 
         //Insert values into INVENTORY table
         else {
-            $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc, quantity) VALUES ('$name', $SKU, $price, '$desc', $quant);");
+            $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc, quantity, imageURL) VALUES ('$name', $SKU, $price, '$desc', $quant, '$image');");
             $msg = "Added to inventory successfully.";
             echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
