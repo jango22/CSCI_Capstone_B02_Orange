@@ -29,54 +29,27 @@ else {
 <h2 style="text-indent: 10px;">Add a Product to Inventory</h2>
 <form method="POST" enctype="multipart/form-data">
 @csrf
-    <div class="form-group row">
-        <label for="nameid" class="col-sm-1 col-form-label">Name:</label>
-        <div class="col-sm-3">
-            <input type="text" class="form-control" name="name" id="nameid" placeholder="Product Name" maxlength="255" required>
-        </div>
-    </div>
+    <label for="nameid" class="col-sm-1 col-form-label">Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input type="text" class="form-control" name="name" id="nameid" placeholder="Product Name" maxlength="255" style="width: 180px;" required><br><br>
 
-    <div class="form-group row">
-        <label for="SKUid" class="col-sm-1 col-form-label">SKU:</label>
-        <div class="col-sm-3">
-            <input type="number" class="form-control" name="SKU" id="SKUid" placeholder="Product SKU" min="0" max="9999999999" required>
-        </div>
-    </div>
+    <label for="SKUid" class="col-sm-1 col-form-label addinput">SKU:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input type="number" class="form-control" name="SKU" id="SKUid" placeholder="Product SKU" min="0" max="9999999999" size="20" style="width: 180px;" required><br><br>
 
-    <div class="form-group row">
-        <label for="priceid" class="col-sm-1 col-form-label">Price:</label>
-        <div class="col-sm-3">
-            <input type="number" step="0.01" class="form-control" name="price" placeholder="Price" id="priceid" min="0" max="9999999999" required>
-        </div>
-    </div>
+    <label for="priceid" class="col-sm-1 col-form-label addinput">Price:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input type="number" step="0.01" class="form-control" name="price" placeholder="Price" id="priceid" min="0" max="9999999999" style="width: 180px;" required><br><br>
 
-    <div class="form-group row">
-        <label for="descid" class="col-sm-1 col-form-label">Desc:</label>
-        <div class="col-sm-3">
-            <textarea name="desc" class="form-control" rows="6" id="descid" placeholder="Description" maxlength="255" required></textarea>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="descid" class="col-sm-1 col-form-label">Quantity</label>
-        <div class="col-sm-3">
-            <input type="number" name="quantity" class="form-control" rows="6" id="descid" placeholder="Quantity" required>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="imageid" class="col-sm-1 col-form-label">Image URL:</label>
-        <div class="col-sm-3">
-            <input type="text" class="form-control" name="image" placeholder="Image URL" id="imageid"  required>
-        </div>
-    </div>
+    <label for="descid" class="col-sm-1 col-form-label">Description:&nbsp&nbsp
+    <textarea name="desc" class="form-control" rows="6" id="descid" placeholder="Description" maxlength="255" style="vertical-align: top;" style="width: 150px;" required></textarea><br><br></label>
+
+    <label for="descid" class="col-sm-1 col-form-label">Quantity:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input type="number" name="quantity" class="form-control" rows="6" id="descid" placeholder="Quantity" style="width: 180px;" required><br><br>
+
+    <label for="imageid" class="col-sm-1 col-form-label">Image URL:</label>&nbsp
+    <input type="text" class="form-control" name="image" placeholder="Image URL" id="imageid" style="width: 180px;" required><br><br>
     
-    <div class="form-group row">
-        <label for="descid" class="col-sm-1 col-form-label"></label>
-        <div class="offset-sm-3 col-sm-9 indent">
-            <button type="submit" name="submit" class="btn btn-primary">Add Product</button>
-        </div>
-    </div>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <button type="submit" name="submit" class="btn btn-primary">Add Product</button>
 </form>
-<br>
 
 <?php
     //Connect to database

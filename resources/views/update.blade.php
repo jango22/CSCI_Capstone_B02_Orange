@@ -81,52 +81,26 @@ else {
 @csrf
     <input type="hidden" name="productID" value="<?php echo $data['productID'] ?? ''; ?>"/>
 
-    <div class="form-group row">
-        <label for="nameid" class="col-sm-1 col-form-label">Name:</label>
-        <div class="col-sm-3">
-            <input type="text" class="form-control" name="name" id="nameid" placeholder="Product Name" maxlength="255" value="<?php echo $data['name'] ?? ''; ?>" required <?php echo $status; ?>>
-        </div>
-    </div>
+    <label for="nameid" class="col-sm-1 col-form-label">Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input type="text" class="form-control" name="name" id="nameid" placeholder="Product Name" maxlength="255" style="width: 180px;" value="<?php echo $data['name'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
+        
+    <label for="SKUid" class="col-sm-1 col-form-label">SKU:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input type="number" class="form-control" name="SKU" id="SKUid" placeholder="Product SKU" min="0" max="9999999999" style="width: 180px;" value="<?php echo $data['productSKU'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
 
-    <div class="form-group row">
-        <label for="SKUid" class="col-sm-1 col-form-label">SKU:</label>
-        <div class="col-sm-3">
-            <input type="number" class="form-control" name="SKU" id="SKUid" placeholder="Product SKU" min="0" max="9999999999" value="<?php echo $data['productSKU'] ?? ''; ?>" required <?php echo $status; ?>>
-        </div>
-    </div>
+    <label for="priceid" class="col-sm-1 col-form-label">Price:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input type="number" step="0.01" class="form-control" name="price" placeholder="Price" id="priceid" min="0" max="9999999999" style="width: 180px;" value="<?php echo $price ?? ''; ?>" required <?php echo $status; ?>><br><br>
 
-    <div class="form-group row">
-        <label for="priceid" class="col-sm-1 col-form-label">Price:</label>
-        <div class="col-sm-3">
-            <input type="number" step="0.01" class="form-control" name="price" placeholder="Price" id="priceid" min="0" max="9999999999" value="<?php echo $price ?? ''; ?>" required <?php echo $status; ?>>
-        </div>
-    </div>
+    <label for="descid" class="col-sm-1 col-form-label">Description:&nbsp&nbsp
+    <textarea name="desc" class="form-control" rows="6" id="descid" placeholder="Description" maxlength="255" style="vertical-align: top;" required <?php echo $status; ?>><?php echo $data['itemdesc'] ?? ''; ?></textarea><br><br></label>
 
-    <div class="form-group row">
-        <label for="descid" class="col-sm-1 col-form-label">Desc:</label>
-        <div class="col-sm-3">
-            <textarea name="desc" class="form-control" rows="6" id="descid" placeholder="Description" maxlength="255" required <?php echo $status; ?>><?php echo $data['itemdesc'] ?? ''; ?></textarea>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="quantityid" class="col-sm-1 col-form-label">Quantity:</label>
-        <div class="col-sm-3">
-            <input type="number" class="form-control" name="quantity" placeholder="Quantity" id="quantityid"  value="<?php echo $data['quantity'] ?? ''; ?>" required <?php echo $status; ?>>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="imageid" class="col-sm-1 col-form-label">Image URL:</label>
-        <div class="col-sm-3">
-            <input type="text" class="form-control" name="image" placeholder="Image URL" id="imageid"  value="<?php echo $data['imageURL'] ?? ''; ?>" required <?php echo $status; ?>>
-        </div>
-    </div>
+    <label for="quantityid" class="col-sm-1 col-form-label">Quantity:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input type="number" class="form-control" name="quantity" placeholder="Quantity" id="quantityid" style="width: 180px;" value="<?php echo $data['quantity'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
+
+    <label for="imageid" class="col-sm-1 col-form-label">Image URL:</label>&nbsp
+    <input type="text" class="form-control" name="image" placeholder="Image URL" id="imageid" style="width: 180px;" value="<?php echo $data['imageURL'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
     
-    <div class="form-group row">
-        <label for="descid" class="col-sm-1 col-form-label"></label>
-        <div class="offset-sm-3 col-sm-9 indent">
-            <button type="submit" name="submit" class="btn btn-primary" <?php echo $status; ?>>Update Product</button>
-        </div>
-    </div>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <button type="submit" name="submit" class="btn btn-primary" <?php echo $status; ?>>Update Product</button>
 </form>
 <br>
 
