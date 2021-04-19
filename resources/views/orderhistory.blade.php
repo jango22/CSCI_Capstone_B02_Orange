@@ -37,13 +37,13 @@ Products
         <php>
             foreach ($userHist as $transaction)
             {
-            <li class="w3-bar">
+            echo "<li class="w3-bar">
                 <div id="product" class="w3-bar-item">
                     <span style="font-size:24px">{{ $transaction['orderID'] }}</span><br>
                     Date: {{ $transaction['dateCreated'] }}<br>
                     Order Total: {{ $transaction['cartTotal']}}<br>
                 </div>
-            </li>
+            </li>"
             }
 
         </php>
