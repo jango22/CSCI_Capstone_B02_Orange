@@ -147,8 +147,8 @@ if (!empty($_POST)) {
                 $total = $items->price * $items->quantity;
      
                 //insert items into orders table with unqiue order id
-                $sql2 = $conn->query("INSERT INTO Orders (orderID, username, productName, itemQuant, totalPrice)
-                VALUES ('$uniqueID', '$username', '$productName', $itemQuant, $total);");
+                $sql2 = $conn->query("INSERT INTO Orders (orderID, username, productName, itemQuant, totalPrice, cartTotal)
+                VALUES ('$uniqueID', '$username', '$productName', $itemQuant, $total, $runningTotal);");
             
             }
             
