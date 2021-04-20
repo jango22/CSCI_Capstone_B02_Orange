@@ -26,7 +26,7 @@ Products
     </div>
 
     <div class="w3-card-4 w3-blue-gray">
-        <h2 class="w3-center">Order ID : {{$orderID}}</h2>
+        <h2 class="w3-center">Order ID : {{$id}}</h2>
     </div>
     <br>
 
