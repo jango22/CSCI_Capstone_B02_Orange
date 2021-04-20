@@ -46,7 +46,7 @@ Products
                     $sql = $conn->query("SELECT DISTINCT cartTotal FROM Orders WHERE orderID =  '$orderID'");
 	                $totals = $sql->fetchAll();
                     
-                @foreach ($dates as $rows
+                @foreach ($dates as $rows)
                 Date: {{ $rows['dateCreated'] }}<br>
                 @endforeach
                 
