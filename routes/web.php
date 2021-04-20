@@ -109,6 +109,10 @@ Route::any('/registeremployee', function () {
     return view('registerEmp');
 });
 
+//Order History
+Route::any('/userhist', function () {
+    return view('orderhistory');
+});
 
 /*
 |--------------------------------------------------------------------------
