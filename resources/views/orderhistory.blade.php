@@ -50,7 +50,7 @@ Products
                 Date: {{ $rows['dateCreated'] }}<br>
                 @endforeach
                 
-                @foreach (totals as $rows)
+                @foreach ($totals as $rows)
                 Order Total: {{ $rows['cartTotal']}}<br>
                 @endforeach
             </div>
