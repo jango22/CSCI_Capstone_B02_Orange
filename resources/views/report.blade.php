@@ -32,7 +32,7 @@ else {
     <form method="POST" id="searchsubmit">
     @csrf
         <div class="form-group row">
-            <label for="searchSKUid:" class="col-sm-1 col-form-label">Choose Date (Must be Sunday):</label>
+            <label for="searchSKUid:" class="col-sm-1 col-form-label">Choose Date (Must be Monday):</label>
             <div class="col-sm-3">
                 <input type="date" name="date" id="date" required>
             </div>
@@ -47,8 +47,8 @@ else {
 
     <?php
     if(isset($_POST['date'])) {
-        if (date('w', strtotime($_POST['date']))  != 0) {
-            echo "<script>alert('Error: Please enter a Sunday.');</script>";
+        if (date('w', strtotime($_POST['date']))  != 1) {
+            echo "<script>alert('Error: Please enter a Monday.');</script>";
         }
         else {
             echo "-Insert Weekly Report Here-";
