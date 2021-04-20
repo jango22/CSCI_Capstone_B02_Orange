@@ -34,19 +34,15 @@ Products
     <br>
 
     <ul id="products" class="w3-ul w3-card-4" style="background-color:lightgray">
-        <php>
-            foreach ($userHist as $transaction)
-            {
-            echo "<li class='w3-bar'>
-                <div id="product" class="w3-bar-item">
-                    <a href="/order?orderID=<?php echo '$transaction['orderID'];' ?>"><span id='product-title'>{{ $transaction['orderID'] }}</span></a><br> 
-                    Date: {{ $transaction['dateCreated'] }}<br>
-                    Order Total: {{ $transaction['cartTotal']}}<br>
-                </div>
-            </li>"
-            }
-
-        </php>
+        @foreach ($userHist as $transaction)
+		<li class='w3-bar'>
+            <div id="product" class="w3-bar-item">
+                <a href="/order?orderID=<?php echo '$transaction['orderID'];' ?>"><span id='product-title'>{{ $transaction['orderID'] }}</span></a><br> 
+                Date: {{ $transaction['dateCreated'] }}<br>
+                Order Total: {{ $transaction['cartTotal']}}<br>
+            </div>
+        </li>>
+		@endforeach
     </ul>
     
 </div>
