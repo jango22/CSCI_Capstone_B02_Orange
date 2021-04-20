@@ -19,7 +19,7 @@ Products
     {
         $username = $_SESSION['username'];
     }
-	$sql = $conn->query("SELECT DISTINCT orderID FROM Orders WHERE username = '$username'");
+	$sql = $conn->query("SELECT DISTINCTROW orderID FROM Orders WHERE username = '$username'");
 	$userHist = $sql->fetchAll();
 ?>
 
