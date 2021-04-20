@@ -18,6 +18,7 @@ Products
     $id = $_GET['orderID'];
     $sql = $conn-> query("SELECT * FROM Orders WHERE orderID = '$id'");
     $order = $sql->fetchAll();
+    $runningtotal=0;
 ?>
 
 <div class="container-sm" id="wrapper">
