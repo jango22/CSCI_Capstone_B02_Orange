@@ -6,7 +6,7 @@ Add a Product
 @stop
 
 @section('content')
-<!-- Make sure user is logged in -->
+<!-- Make sure user is a logged in employee -->
 <?php 
 if(isset($_SESSION['username'])){
     if ($_SESSION['usertype'] !== 'admin') {

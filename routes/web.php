@@ -114,11 +114,16 @@ Route::any('/userhist', function () {
     return view('orderhistory');
 });
 
+//Weekly Report
+Route::any('/report', function () {
+    return view('report');
+});
 
 //Individual order information
 Route::any('/order', function () {
     return view('order');
 });
+
 /*
 |--------------------------------------------------------------------------
 Secret Pages

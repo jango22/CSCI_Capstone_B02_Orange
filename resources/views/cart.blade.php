@@ -51,7 +51,7 @@ My Cart
 				<form method="POST">
 				@csrf
 					Qty:
-            		<input type="number" class="form-control" name="quantity" id="quantity" maxlength="2" size="2" value="{{ $cartitem->quantity }}" min="0" style="width: 35px;">
+            		<input type="number" class="form-control" name="quantity" id="quantity" maxlength="2" size="2" value="{{ $cartitem->quantity }}" min="0" style="width: 45px;">
 					<input type="hidden" name="productName" value="{{ $cartitem->productName }}">
 					<input type="submit" name="update-quantity" value="Update">
 					<input type="submit" name="delete-item" value="Delete">   

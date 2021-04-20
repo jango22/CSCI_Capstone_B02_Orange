@@ -6,7 +6,7 @@ Update a Product
 @stop
 
 @section('content')
-<!-- Make sure user is logged in -->
+<!-- Make sure user is a logged in employee -->
 <?php 
 if(isset($_SESSION['username'])){
     if ($_SESSION['usertype'] !== 'admin') {
@@ -32,13 +32,10 @@ else {
     });
 });
 </script>
-<style>
-    h2 {text-indent: 10px;}
-    .btn.btn-primary:disabled{background-color: #858585;}
-</style>
+
 <?php $status = "disabled"; ?>
 
-<h2>Update a Product</h2>
+<h2>&nbspUpdate a Product</h2>
 
 <!-- Search Product by SKU -->
 <form method="POST" id="searchsubmit">
