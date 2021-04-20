@@ -37,7 +37,7 @@ Products
         @foreach ($userHist as $transaction)
 		<li class='w3-bar'>
             <div id="product" class="w3-bar-item">
-                <a href="/product?sku=<?php echo $transaction['orderID']; ?>"><span id="product-title">{{ $transaction['orderID'] }}</span></a></br>
+                <a href="/ordert?orderID=<?php echo $transaction['orderID']; ?>"><span id="product-title">{{ $transaction['orderID'] }}</span></a></br>
                 <?php
                     $orderID =  $transaction['orderID'];
                     $sql = $conn->query("SELECT DISTINCT dateCreated FROM Orders WHERE orderID =  '$orderID'");
