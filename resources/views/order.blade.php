@@ -16,7 +16,7 @@ Products
     $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
     //Get array of products
     $id = $_GET['orderID'];
-    $sql = $conn-> query("SELECT * FROM Orders WHERE orderID = $id");
+    $sql = $conn-> query("SELECT * FROM Orders WHERE orderID = '$id'");
     $order = $sql->fetchAll();
 ?>
 
