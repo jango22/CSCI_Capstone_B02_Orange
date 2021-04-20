@@ -38,8 +38,21 @@ Products
 		<li class='w3-bar'>
             <div id="product" class="w3-bar-item">
                 <a href="/product?sku=<?php echo $transaction['orderID']; ?>"><span id="product-title">{{ $transaction['orderID'] }}</span></a></br>
-                Date: {{ $transaction['dateCreated'] }}<br>
-                Order Total: {{ $transaction['cartTotal']}}<br>
+                <?php
+                    $orderID =  $transaction['orderID'];
+                    $sql = $conn->query("SELECT DISTINCT dateCreated FROM Orders WHERE orderID =  '$orderID'");
+	                $dates = $sql->fetchAll();
+                    
+                    $sql = $conn->query("SELECT DISTINCT cartTotal FROM Orders WHERE orderID =  '$orderID'");
+	                $totals = $sql->fetchAll();
+                ?>
+                @foreach ($dates as $rows
+                Date: {{ $rows['dateCreated'] }}<br>
+                @endforeach
+                
+                @foreach (totals as $rows)
+                Order Total: {{ $rows['cartTotal']}}<br>
+                @endforeach
             </div>
         </li>>
 		@endforeach
