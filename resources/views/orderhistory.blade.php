@@ -39,7 +39,7 @@ Products
             {
             echo "<li class="w3-bar">
                 <div id="product" class="w3-bar-item">
-                    <span style="font-size:24px">{{ $transaction['orderID'] }}</span><br>
+                    <a href="/product?sku=<?php echo $transaction['orderID']; ?>"><span id="product-title">{{ $transaction['orderID'] }}</span></a><br> 
                     Date: {{ $transaction['dateCreated'] }}<br>
                     Order Total: {{ $transaction['cartTotal']}}<br>
                 </div>
