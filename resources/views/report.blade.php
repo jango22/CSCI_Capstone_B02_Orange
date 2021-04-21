@@ -75,8 +75,6 @@ else {
         </div>
     </form>
     <br>
-    
-    TEST
 
     <?php
     if(isset($_POST['date'])) {
