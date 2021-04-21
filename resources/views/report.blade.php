@@ -14,8 +14,10 @@ Weekly Report
 .grid-item {
   background-color: #ddd;
   border: 1px solid rgba(0, 0, 0, 0.8);
-  font-size: 20px;
   text-align: center;
+}
+.top-row{
+  background-color: #687c8c;
 }
 </style>
 
@@ -31,11 +33,22 @@ else {
 }
 ?>
 
+<?php
+	//Connect to database
+	$servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
+	$username = "orangeadmin";
+	$password = "capstone02";
+	$dbname = "OrangeDB";
+	$port = "1433";
+	$conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
+?>
+
 <div class="container-sm" id="wrapper">
 	<div class="jumbotron-fluid container">
 		<img src="https://i.imgur.com/uVymdir.png" height="120" width="120" title="Logo" alt="Logo" class="center">
 	</div>
 
+    <!-- Page Header -->
 	<div class="w3-card-4 w3-blue-gray">
 		<h2 class="w3-center">Weekly Report</h2>
 	</div>
@@ -57,30 +70,68 @@ else {
             </div>
         </div>
     </form>
-
-    <!-- Weekly Report Output -->
-    <div class="grid-container">
-  <div class="grid-item">1</div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>
-  <div class="grid-item">4</div>
-  <div class="grid-item">5</div>
-  <div class="grid-item">6</div>
-  <div class="grid-item">7</div>
-  <div class="grid-item">8</div>
-  <div class="grid-item">9</div>
-</div>
-
-</div>
-
+    <br>
 
     <?php
     if(isset($_POST['date'])) {
-        if (date('w', strtotime($_POST['date']))  != 1) {
+
+        /* Generate header with dates (Mon-Sun) */
+        $date = strtotime($_POST['date']);
+        $Monday = date("M d", $date);
+        $Tuesday = date("M d", strtotime("+1 day", $date));
+        $Wednesday = date("M d", strtotime("+2 day", $date));
+        $Thursday = date("M d", strtotime("+3 day", $date));
+        $Friday = date("M d", strtotime("+4 day", $date));
+        $Saturday = date("M d", strtotime("+5 day", $date));
+        $Sunday = date("M d", strtotime("+6 day", $date));
+        if (date('w', $date) != 1) {
             echo "<script>alert('Error: Please enter a Monday.');</script>";
-        }
-        else {
-            echo "-Insert Weekly Report Here-";
+        } else {
+            echo "
+            <div class='grid-container'>
+                <div class='grid-item'></div>
+                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Monday</div></div>
+                <div class='grid-item w3-blue-grey'><div>Tuesday</div><div>$Tuesday</div></div>
+                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Wednesday</div></div>
+                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Thursday</div></div>
+                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Friday</div></div>
+                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Saturday</div></div>
+                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Sunday</div></div>
+            </div>";
+
+            /* Generate array of products sold in the date range */
+            $sql = $conn->query("SELECT productName,dateCreated,username,totalPrice FROM ORDERS WHERE dateCreated BETWEEN '2021-04-18' AND '2021-04-19';");
+            $orders = $sql->fetchAll();
+            $products = [];
+            for ($i=0; $i < count($orders); $i++) {
+                $productName = $orders[$i]['productName'];
+                if (!in_array($productName, $products)) {
+                    array_push($products, $productName);
+                }
+            }
+            
+            /* Echo a row for each product */
+            for ($i=0; $i < count($products); $i++) {
+                $productName = $products[$i];
+                echo "
+                <div class='grid-container'>
+                    <div class='grid-item'>$productName</div>
+                    <div class='grid-item'></div>
+                    <div class='grid-item'></div>
+                    <div class='grid-item'></div>
+                    <div class='grid-item'></div>
+                    <div class='grid-item'></div>
+                    <div class='grid-item'></div>
+                    <div class='grid-item'></div>
+                </div>";
+            }
+
+
+
+
+
+
+
         }
     }
     ?>
