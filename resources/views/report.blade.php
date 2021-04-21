@@ -106,38 +106,62 @@ else {
             </div>";
 
             /* Generate array of products sold in the date range */
-            $sql = $conn->query("SELECT productName,dateCreated,username,totalPrice FROM ORDERS WHERE dateCreated BETWEEN '2021-04-18' AND '2021-04-19';");
-            $orders = $sql->fetchAll();
+            $start = date("Y M d", $date);
+            $end = date("Y M d", strtotime("+7 day", $date));
+            $sql = $conn->query("SELECT productName FROM ORDERS WHERE dateCreated BETWEEN '$start' AND '$end';");
+            $sqlproducts = $sql->fetchAll();
             $products = [];
-            for ($i=0; $i < count($orders); $i++) {
-                $productName = $orders[$i]['productName'];
+            for ($i=0; $i < count($sqlproducts); $i++) {
+                $productName = $sqlproducts[$i]['productName'];
                 if (!in_array($productName, $products)) {
                     array_push($products, $productName);
                 }
             }
             
-            /* Echo a row for each product */
+            /* Output a row of daily total sales for each product */
             for ($i=0; $i < count($products); $i++) {
                 $productName = $products[$i];
+
+                $sql = $conn->query("SELECT dateCreated, totalPrice FROM ORDERS WHERE productName='$productName' AND dateCreated BETWEEN '$start' AND '$end';");
+                $datetotals = $sql->fetchAll();
+
+                $MondayTotal = 0;
+                $TuesdayTotal = 0;
+                $WednesdayTotal = 0;
+                $ThursdayTotal = 0;
+                $FridayTotal = 0;
+                $SaturdayTotal= 0;
+                $SundayTotal = 0;
+                for ($j=0; $j < count($datetotals); $j++) {
+                    $tempdate = date("M d", strtotime($datetotals[$j]['dateCreated']));
+                    if ($tempdate < $Tuesday) {
+                        $MondayTotal += $datetotals[$j]['totalPrice'];
+                    } else if ($tempdate < $Wednesday) {
+                        $TuesdayTotal += $datetotals[$j]['totalPrice'];
+                    } else if ($tempdate < $Thursday) {
+                        $WednesdayTotal += $datetotals[$j]['totalPrice'];
+                    } else if ($tempdate < $Friday) {
+                        $ThursdayTotal += $datetotals[$j]['totalPrice'];
+                    } else if ($tempdate < $Saturday) {
+                        $FridayTotal += $datetotals[$j]['totalPrice'];
+                    } else if ($tempdate < $Sunday) {
+                        $SaturdayTotal += $datetotals[$j]['totalPrice'];
+                    } else {
+                        $SundayTotal += $datetotals[$j]['totalPrice'];
+                    }
+                }
                 echo "
                 <div class='grid-container'>
-                    <div class='grid-item'>$productName</div>
-                    <div class='grid-item'></div>
-                    <div class='grid-item'></div>
-                    <div class='grid-item'></div>
-                    <div class='grid-item'></div>
-                    <div class='grid-item'></div>
-                    <div class='grid-item'></div>
-                    <div class='grid-item'></div>
+                    <div class='grid-item'><div>Total for</div><div>$productName</div></div>
+                    <div class='grid-item'>$$MondayTotal</div>
+                    <div class='grid-item'>$$TuesdayTotal</div>
+                    <div class='grid-item'>$$WednesdayTotal</div>
+                    <div class='grid-item'>$$ThursdayTotal</div>
+                    <div class='grid-item'>$$FridayTotal</div>
+                    <div class='grid-item'>$$SaturdayTotal</div>
+                    <div class='grid-item'>$$SundayTotal</div>
                 </div>";
             }
-
-
-
-
-
-
-
         }
     }
     ?>
