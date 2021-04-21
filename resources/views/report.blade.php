@@ -6,6 +6,19 @@ Weekly Report
 @stop
 
 @section('content')
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+}
+.grid-item {
+  background-color: #ddd;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+  text-align: center;
+}
+</style>
+
 <!-- Make sure user is a logged in employee -->
 <?php 
 if(isset($_SESSION['username'])){
@@ -44,6 +57,22 @@ else {
             </div>
         </div>
     </form>
+
+    <!-- Weekly Report Output -->
+    <div class="grid-container">
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+</div>
+
+</div>
+
 
     <?php
     if(isset($_POST['date'])) {

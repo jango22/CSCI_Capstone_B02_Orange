@@ -39,17 +39,13 @@
                                 <div id="myDropdown" class="dropdown-content">
                                     <a href="/add">Add Product</a>
                                     <a href="/update">Update Product</a>
-                                    <a href="registerEmp">Add User</a>
+                                    <a href="/registeremployee">Add Employee</a>
                                 </div>
                      </div>';
 
-					/* echo '<a href="/registeremployee" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Register Employee</a>'; 
-					echo '<a href="/add" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Add Product</a>';
-					echo '<a href="/update" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update Product</a>'; */
-
 				}
 				/* Only show up for users who are logged in */
-                echo '<a href="/userhist" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Order History</a>';
+                echo '<a href="/userhist" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">History</a>';
 				echo '<a href="/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Log Out</a>';
 				echo '<span href="" class="w3-bar-item w3-padding-large w3-hide-small w3-right">Welcome, ';
 				echo $_SESSION["fname"];
