@@ -15,6 +15,10 @@ Weekly Report
   background-color: #ddd;
   border: 1px solid rgba(0, 0, 0, 0.8);
   text-align: center;
+  align-self: stretch;
+  grid-template-areas: none;
+
+  
 }
 .top-row{
   background-color: #687c8c;
@@ -94,11 +98,11 @@ else {
                 <div class='grid-item'></div>
                 <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Monday</div></div>
                 <div class='grid-item w3-blue-grey'><div>Tuesday</div><div>$Tuesday</div></div>
-                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Wednesday</div></div>
-                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Thursday</div></div>
-                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Friday</div></div>
-                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Saturday</div></div>
-                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Sunday</div></div>
+                <div class='grid-item w3-blue-grey'><div>Wednesday</div><div>$Wednesday</div></div>
+                <div class='grid-item w3-blue-grey'><div>Thursday</div><div>$Thursday</div></div>
+                <div class='grid-item w3-blue-grey'><div>Friday</div><div>$Friday</div></div>
+                <div class='grid-item w3-blue-grey'><div>Saturday</div><div>$Saturday</div></div>
+                <div class='grid-item w3-blue-grey'><div>Sunday</div><div>$Sunday</div></div>
             </div>";
 
             /* Generate array of products sold in the date range */
