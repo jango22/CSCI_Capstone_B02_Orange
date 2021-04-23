@@ -66,9 +66,12 @@ else {
     if(isset($_POST['searchSKU'])){
         $searchSKU = $_POST['searchSKU'];
         $sql = $conn->query("SELECT * FROM INVENTORY WHERE productSKU = $searchSKU;");
-        $data = $sql->fetchAll(PDO::FETCH_ASSOC)[0];
-        $price = number_format(floatval($data['price']),2);
-
+        try {
+            $data = $sql->fetchAll(PDO::FETCH_ASSOC)[0];
+            $price = number_format(floatval($data['price']),2);
+        } catch (Exception $e) {
+            echo "<script>alert('Error: SKU not found.');</script>";
+        }
         //Enable forms on the rest of the page
         $status = "enabled";
     }
