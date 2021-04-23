@@ -8,20 +8,19 @@ Weekly Report
 @section('content')
 <style>
 .grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
 }
 .grid-item {
-  background-color: #ddd;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  text-align: center;
-  align-self: stretch;
-  grid-template-areas: none;
-
-  
+    background-color: #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    text-align: center;
+    align-self: stretch;
+    grid-template-areas: none;
 }
 .top-row{
-  background-color: #687c8c;
+    background-color: #687c8c;
 }
 </style>
 
