@@ -19,6 +19,7 @@ Products
 	$sql = $conn->query("SELECT * FROM Orders WHERE orderID = '$orderID'");
 	$order = $sql->fetchAll();
     $runningtotal=0;
+    $dateCreated = date("F j, Y, g:i a");
 ?>
 
 <div class="container-sm" id="wrapper">
