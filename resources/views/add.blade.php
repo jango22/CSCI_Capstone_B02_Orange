@@ -26,6 +26,16 @@ else {
     }
 </script>
 
+<div class="container-sm" id="wrapper">
+	<div class="jumbotron-fluid container">
+		<img src="https://i.imgur.com/uVymdir.png" height="120" width="120" title="Logo" alt="Logo" class="center">
+	</div>
+
+	<div class="w3-card-4 w3-blue-gray">
+		<h2 class="w3-center">Add a Product to Inventory</h2>
+	</div>
+	<br>
+
 <h2 style="text-indent: 10px;">Add a Product to Inventory</h2>
 <form method="POST" enctype="multipart/form-data">
 @csrf

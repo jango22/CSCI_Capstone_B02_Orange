@@ -35,6 +35,16 @@ else {
 
 <?php $status = "disabled"; ?>
 
+<div class="container-sm" id="wrapper">
+	<div class="jumbotron-fluid container">
+		<img src="https://i.imgur.com/uVymdir.png" height="120" width="120" title="Logo" alt="Logo" class="center">
+	</div>
+
+	<div class="w3-card-4 w3-blue-gray">
+		<h2 class="w3-center">Update a Product</h2>
+	</div>
+	<br>
+    
 <h2>&nbspUpdate a Product</h2>
 
 <!-- Search Product by SKU -->
