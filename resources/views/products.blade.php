@@ -44,12 +44,13 @@ Products
 		    <h2 class="w3-center">{{$cat['category']}}</h2>
 	    </div>
         <br>
-        @foreach ($search as $row)
+        <ul id="products" class="w3-ul w3-card-4" style="background-color:lightgray">
+        @foreach ($search as $product)
             <li class="w3-bar w3-hover-blue-gray">
 			<div id="product" class="w3-bar-item">
 				<!-- Product image -->
 				<div class="w3-bar-item w3-left">
-					@if ($product['imageURL'])
+					@if ($['imageURL'])
 						<img src="{{ $product['imageURL'] }}" alt="Product Image" style="width:80px;">
 					@else
 						<img src="https://i.imgur.com/h1VYuuO.png" alt="Product Image" style="width:80px;">
@@ -68,6 +69,7 @@ Products
 			</div>
 		    </li>
 		@endforeach
+        </ul>
     @endforeach
     
 	<br>
