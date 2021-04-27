@@ -37,7 +37,6 @@ Products
 		<li class="w3-bar">
 			<div id="product" class="w3-bar-item">
 				<span style="font-size:24px">{{ $transaction['productName'] }}</span><br>
-                Date: {{ $transaction['dateCreated'] }}<br>
 				Quantity: {{ $transaction['itemQuant'] }}<br>
 				Subtotal: {{ $transaction['totalPrice']}}<br>
 			</div>
