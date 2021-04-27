@@ -50,7 +50,7 @@ Products
 			<div id="product" class="w3-bar-item">
 				<!-- Product image -->
 				<div class="w3-bar-item w3-left">
-					@if ($['imageURL'])
+					@if ($product['imageURL'])
 						<img src="{{ $product['imageURL'] }}" alt="Product Image" style="width:80px;">
 					@else
 						<img src="https://i.imgur.com/h1VYuuO.png" alt="Product Image" style="width:80px;">
