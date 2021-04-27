@@ -41,7 +41,10 @@ else {
 @csrf
     <label for="nameid" class="col-sm-1 col-form-label">Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="text" class="form-control" name="name" id="nameid" placeholder="Product Name" maxlength="255" style="width: 180px;" required><br><br>
-
+    
+    <label for="catid" class="col-sm-1 col-form-label">Category:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input type="text" class="form-control" name="category" id="catid" placeholder="Category" maxlength="255" style="width: 180px;" required><br><br>
+    
     <label for="SKUid" class="col-sm-1 col-form-label addinput">SKU:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="number" class="form-control" name="SKU" id="SKUid" placeholder="Product SKU" min="0" max="9999999999" size="20" style="width: 180px;" required><br><br>
 
@@ -78,6 +81,7 @@ else {
         $desc = $_POST['desc'];
         $quant = $_POST['quantity'];
         $image = $_POST['image'];
+        $category = $_POST['category'];
 
         //Check for duplicate name
         $sql = $conn->query("SELECT Name FROM INVENTORY;");
@@ -101,7 +105,7 @@ else {
         } 
         //Insert values into INVENTORY table
         else {
-            $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc, quantity, imageURL) VALUES ('$name', $SKU, $price, '$desc', $quant, '$image');");
+            $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc, quantity, imageURL, category) VALUES ('$name', $SKU, $price, '$desc', $quant, '$image', $category);");
             $msg = "Added to inventory successfully.";
             echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
