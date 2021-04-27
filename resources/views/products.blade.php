@@ -33,7 +33,7 @@ Products
 		<h2 class="w3-center">Products List</h2>
 	</div>
     
-    //sorts the product list into categories
+
     @foreach ($inv as $cat)
     <?php
     $category = $cat['category'];
