@@ -29,7 +29,7 @@ Products
     </div>
 
     <div class="w3-card-4 w3-blue-gray">
-        <h2 class="w3-center">Order History For User {{$_SESSION['username']}} </h2>
+        <h2 class="w3-center">Order History For User: {{$_SESSION['username']}} </h2>
     </div>
     <br>
 
@@ -47,7 +47,7 @@ Products
 	                $totals = $sql->fetchAll();
 
                     //Output date
-                    $date = date("Y-M-d g:i A", strtotime($dates[0]['dateCreated']));
+                    $date = date("M d, Y g:i A", strtotime($dates[0]['dateCreated']));
                     echo "Date: $date<br>";
                 ?>
                 

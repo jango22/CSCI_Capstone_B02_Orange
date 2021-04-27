@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    ob_start();
     $servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
     $username = "orangeadmin";
     $password = "capstone02";
@@ -193,6 +194,7 @@ if (!empty($_POST)) {
              }
 	        setcookie("cart");
             header("Location: /receipt");
+            exit;
         }
     }
     else if (isset($_POST['checkout']) && count($cart) == 0) {
@@ -201,6 +203,7 @@ if (!empty($_POST)) {
 	/* Refresh the page when done */
 	header('Refresh: 0');
 }
+ob_end_flush();
 ?>
 
 @stop
