@@ -35,9 +35,11 @@ Products
     
     //sorts the product list into categories
     @foreach ($inv as $cat)
+    <?php
     $category = $cat['category'];
     $sql = $conn->query("SELECT * FROM INVENTORY WHERE category = '$category'");
 	$search = $sql->fetchAll();
+    ?>
         <div class="w3-card-4 w3-blue-gray">
 		    <h2 class="w3-center">{{$cat['category']}}</h2>
 	    </div>
