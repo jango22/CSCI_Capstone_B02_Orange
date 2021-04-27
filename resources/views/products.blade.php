@@ -18,6 +18,10 @@ Products
 	//Get array of products
 	$sql = $conn->query("SELECT * FROM INVENTORY");
 	$products = $sql->fetchAll();
+    
+    //get category for sorting
+    $sql = $conn->query("SELECT DISTINCT category FROM INVENTORY");
+	$inv = $sql->fetchAll();
 ?>
 
 <div class="container-sm" id="wrapper">
@@ -28,6 +32,10 @@ Products
 	<div class="w3-card-4 w3-blue-gray">
 		<h2 class="w3-center">Products List</h2>
 	</div>
+    @foreach ($inv as $cat)
+        <div class="w3-card-4 w3-blue-gray">
+		    <h2 class="w3-center">{{$cat['category']}}</h2>
+	    </div>
 	<br>
 
 	<ul id="products" class="w3-ul w3-card-4" style="background-color:lightgray">
