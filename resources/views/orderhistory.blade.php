@@ -55,7 +55,7 @@ Products
                 Order Total: ${{ $rows['cartTotal']}}<br>
                 @endforeach
             </div>
-        </li>>
+        </li>
 		@endforeach
     </ul>
     
