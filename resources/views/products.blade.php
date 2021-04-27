@@ -36,6 +36,8 @@ Products
         <div class="w3-card-4 w3-blue-gray">
 		    <h2 class="w3-center">{{$cat['category']}}</h2>
 	    </div>
+        <br>
+    @endforeach
 	<br>
 
 	<ul id="products" class="w3-ul w3-card-4" style="background-color:lightgray">
