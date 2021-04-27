@@ -95,7 +95,7 @@ else {
     <input type="text" class="form-control" name="name" id="nameid" placeholder="Product Name" maxlength="255" style="width: 180px;" value="<?php echo $data['name'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
     
     <label for="catid" class="col-sm-1 col-form-label">Category:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <input type="text" class="form-control" name="category" id="catid" placeholder="Category" maxlength="255" style="width: 180px;" required <?php echo $status; ?>><br><br>
+    <input type="text" class="form-control" name="category" id="catid" placeholder="Category" maxlength="255" style="width: 180px;" value="<?php echo $data['category'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
     
     <label for="SKUid" class="col-sm-1 col-form-label">SKU:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="number" class="form-control" name="SKU" id="SKUid" placeholder="Product SKU" min="0" max="9999999999" style="width: 180px;" value="<?php echo $data['productSKU'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
