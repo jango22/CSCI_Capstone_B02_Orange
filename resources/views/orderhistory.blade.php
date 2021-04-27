@@ -47,7 +47,7 @@ Products
 	                $totals = $sql->fetchAll();
 
                     //Output date
-                    $date = date("Y-M-d", strtotime($dates[0]['dateCreated']));
+                    $date = date("Y-M-d g:i A", strtotime($dates[0]['dateCreated']));
                     echo "Date: $date<br>";
                 ?>
                 
