@@ -19,8 +19,18 @@ My Cart
 <?php
 	$cart = isset($_COOKIE['cart']) ? $_COOKIE['cart'] : '[]';
 	$cartArray = json_decode($cart, true);
-	$cart = json_decode($cart); // need to change this to an array
+	$cart = json_decode($cart);
 	$runningtotal=0;
+?>
+
+<?php
+	//Connect to database
+	$servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
+	$username = "orangeadmin";
+	$password = "capstone02";
+	$dbname = "OrangeDB";
+	$port = "1433";
+	$conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
 ?>
 
 <div class="container-sm" id="wrapper">
@@ -38,13 +48,21 @@ My Cart
 		@csrf
 		<input type="submit" name="clear-cart" value="Clear Cart">
 		</form>
-	</div>
+	</div><br>
 
 	<!-- Output each item in the cart -->
 	<ul id="products" class="w3-ul card cart" style="background-color:lightgray">
 	@foreach ($cart as $cartitem)
 		<li class="w3-bar">
 			<div id="product" class="w3-bar-item">
+                <!-- Grab image from database -->
+                <?php
+                    $sql = $conn->query("SELECT imageURL FROM INVENTORY WHERE name = '$cartitem->productName';");
+                    $imageURL = $sql->fetchAll();
+                    $realimageURL = $imageURL[0][0];
+                    echo "<img src='$realimageURL' alt='Product Image' style='width:120px;'>";
+                ?><br><br>
+                <!-- Output the rest of the values from the cart cookie -->
 				<span style="font-size:24px">{{ $cartitem->productName }}</span><br>
 				Price: {{ $cartitem->price }}<br>
 				Subtotal: ${{ $cartitem->price * $cartitem->quantity }}<br>
