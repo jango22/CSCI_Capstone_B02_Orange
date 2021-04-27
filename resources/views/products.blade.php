@@ -65,7 +65,6 @@ Products
 				</div>
 			</div>
 		    </li>
-        @endforeach
 		@endforeach
     @endforeach
     
