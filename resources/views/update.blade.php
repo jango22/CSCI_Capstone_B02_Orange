@@ -44,8 +44,8 @@ else {
 		<h2 class="w3-center">Update a Product</h2>
 	</div>
 	<br>
-    
-<h2>&nbspUpdate a Product</h2>
+
+
 
 <!-- Search Product by SKU -->
 <form method="POST" id="searchsubmit">

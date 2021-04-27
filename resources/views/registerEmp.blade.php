@@ -39,7 +39,7 @@ else {
 	</div>
 	<br>
 
-<h2>Register</h2>
+
     <div>
         <form method="post" id="loginform">
             @csrf

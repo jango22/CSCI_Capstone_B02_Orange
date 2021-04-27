@@ -36,7 +36,7 @@ else {
 	</div>
 	<br>
 
-<h2 style="text-indent: 10px;">Add a Product to Inventory</h2>
+
 <form method="POST" enctype="multipart/form-data">
 @csrf
     <label for="nameid" class="col-sm-1 col-form-label">Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
