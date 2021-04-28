@@ -61,7 +61,7 @@ else {
     <form method="POST" id="searchsubmit">
     @csrf
         <div class="form-group row">
-            <label for="searchSKUid:" class="col-sm-1 col-form-label">Choose Date (Must be Monday):</label>
+            <label for="searchSKUid:" class="col-sm-1 col-form-label">Choose Date:</label>
             <div class="col-sm-3">
                 <input type="date" name="date" id="date" required>
             </div>
@@ -80,6 +80,11 @@ else {
 
         /* Generate header with dates (Mon-Sun) */
         $date = strtotime($_POST['date']);
+
+        /* Adjust date if not Monday */
+        $adjustment = date('w', $date) - 1;
+        $date = strtotime(date("M d", strtotime("-$adjustment day", $date)));
+
         $Monday = date("M d", $date);
         $Tuesday = date("M d", strtotime("+1 day", $date));
         $Wednesday = date("M d", strtotime("+2 day", $date));
@@ -87,78 +92,75 @@ else {
         $Friday = date("M d", strtotime("+4 day", $date));
         $Saturday = date("M d", strtotime("+5 day", $date));
         $Sunday = date("M d", strtotime("+6 day", $date));
-        if (date('w', $date) != 1) {
-            echo "<script>alert('Error: Please enter a Monday.');</script>";
-        } else {
+
+        echo "
+        <div class='grid-container'>
+            <div class='grid-item'></div>
+            <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Monday</div></div>
+            <div class='grid-item w3-blue-grey'><div>Tuesday</div><div>$Tuesday</div></div>
+            <div class='grid-item w3-blue-grey'><div>Wednesday</div><div>$Wednesday</div></div>
+            <div class='grid-item w3-blue-grey'><div>Thursday</div><div>$Thursday</div></div>
+            <div class='grid-item w3-blue-grey'><div>Friday</div><div>$Friday</div></div>
+            <div class='grid-item w3-blue-grey'><div>Saturday</div><div>$Saturday</div></div>
+            <div class='grid-item w3-blue-grey'><div>Sunday</div><div>$Sunday</div></div>
+        </div>";
+
+        /* Generate array of products sold in the date range */
+        $start = date("Y M d", $date);
+        $end = date("Y M d", strtotime("+7 day", $date));
+        $sql = $conn->query("SELECT productName FROM ORDERS WHERE dateCreated BETWEEN '$start' AND '$end';");
+        $sqlproducts = $sql->fetchAll();
+        $products = [];
+        for ($i=0; $i < count($sqlproducts); $i++) {
+            $productName = $sqlproducts[$i]['productName'];
+            if (!in_array($productName, $products)) {
+                array_push($products, $productName);
+            }
+        }
+        
+        /* Output a row of daily total sales for each product */
+        for ($i=0; $i < count($products); $i++) {
+            $productName = $products[$i];
+
+            $sql = $conn->query("SELECT dateCreated, totalPrice FROM ORDERS WHERE productName='$productName' AND dateCreated BETWEEN '$start' AND '$end';");
+            $datetotals = $sql->fetchAll();
+
+            $MondayTotal = 0;
+            $TuesdayTotal = 0;
+            $WednesdayTotal = 0;
+            $ThursdayTotal = 0;
+            $FridayTotal = 0;
+            $SaturdayTotal= 0;
+            $SundayTotal = 0;
+            for ($j=0; $j < count($datetotals); $j++) {
+                $tempdate = date("M d", strtotime($datetotals[$j]['dateCreated']));
+                if ($tempdate < $Tuesday) {
+                    $MondayTotal += $datetotals[$j]['totalPrice'];
+                } else if ($tempdate < $Wednesday) {
+                    $TuesdayTotal += $datetotals[$j]['totalPrice'];
+                } else if ($tempdate < $Thursday) {
+                    $WednesdayTotal += $datetotals[$j]['totalPrice'];
+                } else if ($tempdate < $Friday) {
+                    $ThursdayTotal += $datetotals[$j]['totalPrice'];
+                } else if ($tempdate < $Saturday) {
+                    $FridayTotal += $datetotals[$j]['totalPrice'];
+                } else if ($tempdate < $Sunday) {
+                    $SaturdayTotal += $datetotals[$j]['totalPrice'];
+                } else {
+                    $SundayTotal += $datetotals[$j]['totalPrice'];
+                }
+            }
             echo "
             <div class='grid-container'>
-                <div class='grid-item'></div>
-                <div class='grid-item w3-blue-grey'><div>Monday</div><div>$Monday</div></div>
-                <div class='grid-item w3-blue-grey'><div>Tuesday</div><div>$Tuesday</div></div>
-                <div class='grid-item w3-blue-grey'><div>Wednesday</div><div>$Wednesday</div></div>
-                <div class='grid-item w3-blue-grey'><div>Thursday</div><div>$Thursday</div></div>
-                <div class='grid-item w3-blue-grey'><div>Friday</div><div>$Friday</div></div>
-                <div class='grid-item w3-blue-grey'><div>Saturday</div><div>$Saturday</div></div>
-                <div class='grid-item w3-blue-grey'><div>Sunday</div><div>$Sunday</div></div>
+                <div class='grid-item'><div>Total for</div><div>$productName</div></div>
+                <div class='grid-item'>$$MondayTotal</div>
+                <div class='grid-item'>$$TuesdayTotal</div>
+                <div class='grid-item'>$$WednesdayTotal</div>
+                <div class='grid-item'>$$ThursdayTotal</div>
+                <div class='grid-item'>$$FridayTotal</div>
+                <div class='grid-item'>$$SaturdayTotal</div>
+                <div class='grid-item'>$$SundayTotal</div>
             </div>";
-
-            /* Generate array of products sold in the date range */
-            $start = date("Y M d", $date);
-            $end = date("Y M d", strtotime("+7 day", $date));
-            $sql = $conn->query("SELECT productName FROM ORDERS WHERE dateCreated BETWEEN '$start' AND '$end';");
-            $sqlproducts = $sql->fetchAll();
-            $products = [];
-            for ($i=0; $i < count($sqlproducts); $i++) {
-                $productName = $sqlproducts[$i]['productName'];
-                if (!in_array($productName, $products)) {
-                    array_push($products, $productName);
-                }
-            }
-            
-            /* Output a row of daily total sales for each product */
-            for ($i=0; $i < count($products); $i++) {
-                $productName = $products[$i];
-
-                $sql = $conn->query("SELECT dateCreated, totalPrice FROM ORDERS WHERE productName='$productName' AND dateCreated BETWEEN '$start' AND '$end';");
-                $datetotals = $sql->fetchAll();
-
-                $MondayTotal = 0;
-                $TuesdayTotal = 0;
-                $WednesdayTotal = 0;
-                $ThursdayTotal = 0;
-                $FridayTotal = 0;
-                $SaturdayTotal= 0;
-                $SundayTotal = 0;
-                for ($j=0; $j < count($datetotals); $j++) {
-                    $tempdate = date("M d", strtotime($datetotals[$j]['dateCreated']));
-                    if ($tempdate < $Tuesday) {
-                        $MondayTotal += $datetotals[$j]['totalPrice'];
-                    } else if ($tempdate < $Wednesday) {
-                        $TuesdayTotal += $datetotals[$j]['totalPrice'];
-                    } else if ($tempdate < $Thursday) {
-                        $WednesdayTotal += $datetotals[$j]['totalPrice'];
-                    } else if ($tempdate < $Friday) {
-                        $ThursdayTotal += $datetotals[$j]['totalPrice'];
-                    } else if ($tempdate < $Saturday) {
-                        $FridayTotal += $datetotals[$j]['totalPrice'];
-                    } else if ($tempdate < $Sunday) {
-                        $SaturdayTotal += $datetotals[$j]['totalPrice'];
-                    } else {
-                        $SundayTotal += $datetotals[$j]['totalPrice'];
-                    }
-                }
-                echo "
-                <div class='grid-container'>
-                    <div class='grid-item'><div>Total for</div><div>$productName</div></div>
-                    <div class='grid-item'>$$MondayTotal</div>
-                    <div class='grid-item'>$$TuesdayTotal</div>
-                    <div class='grid-item'>$$WednesdayTotal</div>
-                    <div class='grid-item'>$$ThursdayTotal</div>
-                    <div class='grid-item'>$$FridayTotal</div>
-                    <div class='grid-item'>$$SaturdayTotal</div>
-                    <div class='grid-item'>$$SundayTotal</div>
-                </div>";
-            }
         }
     }
     ?>

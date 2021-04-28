@@ -16,6 +16,18 @@ if(isset($_SESSION['username'])){
 else {
     die(header("Location: /login"));
 }
+
+//Connect to database
+$servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
+$username = "orangeadmin";
+$password = "capstone02";
+$dbname = "OrangeDB";
+$port = "1433";
+$conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
+
+//get each product category
+$sql = $conn->query("SELECT DISTINCT category FROM INVENTORY");
+$categories = $sql->fetchAll();
 ?>
 
 <script>
@@ -94,8 +106,14 @@ else {
     <label for="nameid" class="col-sm-1 col-form-label">Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="text" class="form-control" name="name" id="nameid" placeholder="Product Name" maxlength="255" style="width: 180px;" value="<?php echo $data['name'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
     
-    <label for="catid" class="col-sm-1 col-form-label">Category:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <input type="text" class="form-control" name="category" id="catid" placeholder="Category" maxlength="255" style="width: 180px;" value="<?php echo $data['category'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
+    <label for="catid" class="col-sm-1 col-form-label">Category:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input type="text" class="form-control" name="category" list="catid" placeholder="Category" maxlength="255" style="width: 180px;" value="<?php echo $data['category'] ?? ''; ?>" required <?php echo $status; ?>/>
+        <datalist id="catid">
+            @foreach ($categories as $category)
+                <option value="{{ $category['category'] }}">{{ $category['category'] }}</option>
+            @endforeach
+        </datalist>
+    <br><br>
     
     <label for="SKUid" class="col-sm-1 col-form-label">SKU:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="number" class="form-control" name="SKU" id="SKUid" placeholder="Product SKU" min="0" max="9999999999" style="width: 180px;" value="<?php echo $data['productSKU'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
@@ -118,9 +136,6 @@ else {
 <br>
 
 <?php
-    //Connect to database
-    $conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password); 
-
     //Get values from POST
     if(isset($_POST['submit'])){
         $productID = $_POST['productID'];
