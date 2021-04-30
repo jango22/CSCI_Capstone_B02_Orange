@@ -127,4 +127,11 @@ if (isset($_POST['submit'])){
      
 }
 ?>
+
+</div>
+<footer class="w3-blue-gray" style="padding:5px;text-align:center;">     
+  <p>Nuts and Bolts<br>
+  <a href="mailto:nutsandboltsb02@gmail.com">nutsandboltsb02@gmail.com</a></p>
+</footer>
+</div>
 @stop
