@@ -49,13 +49,13 @@ $categories = $sql->fetchAll();
 
 <form method="POST" enctype="multipart/form-data">
 @csrf
-    <label for="codeid" class="col-sm-1 col-form-label">Code Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <label for="codeid" class="col-sm-1 col-form-label">Code Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="text" class="form-control" name="code" id="codeid" placeholder="Code Name" minlength="5" maxlength="15" style="width: 180px;" required><br><br>
     
-    <label for="minTot" class="col-sm-1 col-form-label addinput">Minimum Total:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <label for="minTot" class="col-sm-1 col-form-label addinput">Minimum Total:</label>&nbsp&nbsp&nbsp&nbsp
     <input type="number" class="form-control" name="minTotal" id="minid" placeholder="Minimum Total" min="0" max="1000" size="20" style="width: 180px;" required><br><br>
 
-    <label for="amtOff" class="col-sm-1 col-form-label addinput">Amount Off:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <label for="amtOff" class="col-sm-1 col-form-label addinput">Amount Off:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="number" step="0.01" class="form-control" name="amtOff" placeholder="Amount Off" id="amtid" min="0" max="9999999999" style="width: 180px;" required><br><br>
     
     <label for="startDate" class="col-sm-1 col-form-label addinput">Start Date:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
