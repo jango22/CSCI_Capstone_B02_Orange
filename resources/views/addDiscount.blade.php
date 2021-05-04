@@ -42,7 +42,7 @@ $categories = $sql->fetchAll();
 	</div>
 
 	<div class="w3-card-4 w3-blue-gray">
-		<h2 class="w3-center">Add a Product to Inventory</h2>
+		<h2 class="w3-center">Add a Discount Code</h2>
 	</div>
 	<br>
 
