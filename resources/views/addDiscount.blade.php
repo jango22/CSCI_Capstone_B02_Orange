@@ -28,14 +28,6 @@ $sql = $conn->query("SELECT DISTINCT category FROM INVENTORY");
 $categories = $sql->fetchAll();
 ?>
 
-<script>
-    var msg = '{{Session::get('alert')}}';
-    var exist = '{{Session::has('alert')}}';
-    if(exist){
-        alert(msg);
-    }
-</script>
-
 <div class="container-sm" id="wrapper">
 	<div class="jumbotron-fluid container">
 		<img src="https://i.imgur.com/uVymdir.png" height="120" width="120" title="Logo" alt="Logo" class="center">
@@ -82,28 +74,14 @@ $categories = $sql->fetchAll();
         $sql = $conn->query("SELECT code FROM Discount;");
         $codes = $sql->fetchAll(PDO::FETCH_COLUMN);
         if (in_array($code, $codes)) {
-            $msg = "The code name '$code' is already taken. Please choose a different one.";
-            echo "<div class='alert alert-danger alert-dismissable fade in' role='alert'>
-                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                    $msg
-                </div>";
+            echo "<script>alert('The code name $code is already taken. Please choose a different one.');</script>";
         } 
         //Insert values into INVENTORY table
         else {
             $conn->query("INSERT INTO Discount (code, minTotal, amtOff, startDate, endDate) VALUES ('$code', '$min', '$amtOff', '$start', '$end');");
-            $msg = "The dsicount code hass been added succesfully and is ready to use!";
-            echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
-                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                    $msg
-                </div>";
+            echo "<script>alert('The discount code has been added succesfully and is ready to use!');</script>";
         }
     }
 ?>
-
-</div>
-<footer class="w3-blue-gray" style="padding:5px;text-align:center;">     
-  <p>Nuts and Bolts<br>
-  <a href="mailto:nutsandboltsb02@gmail.com">nutsandboltsb02@gmail.com</a></p>
-</footer>
 </div>
 @stop

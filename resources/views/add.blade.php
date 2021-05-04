@@ -99,36 +99,18 @@ $categories = $sql->fetchAll();
         $sql = $conn->query("SELECT ProductSKU FROM INVENTORY;");
         $SKUs = $sql->fetchAll(PDO::FETCH_COLUMN);
         if (in_array($name, $names)) {
-            $msg = "The name '$name' is already taken. Please choose a different one.";
-            echo "<div class='alert alert-danger alert-dismissable fade in' role='alert'>
-                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                    $msg
-                </div>";
+            echo "<script>alert('The name $name is already taken. Please choose a different one.');</script>";
         }
         //Check for duplicate SKU
         elseif (in_array($SKU, $SKUs)) {
-            $msg = "The product SKU '$SKU' is already taken. Please choose a different one.";
-            echo "<div class='alert alert-danger alert-dismissable fade in' role='alert'>
-                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                    $msg
-                </div>";
+            echo "<script>alert('The product SKU $SKU is already taken. Please choose a different one.');</script>";
         } 
         //Insert values into INVENTORY table
         else {
             $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc, quantity, imageURL, category, greatDeal) VALUES ('$name', $SKU, $price, '$desc', $quant, '$image', '$category', 'no');");
-            $msg = "Added to inventory successfully.";
-            echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
-                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                    $msg
-                </div>";
+            echo "<script>alert('dded to inventory successfully.');</script>";
         }
     }
 ?>
-
-</div>
-<footer class="w3-blue-gray" style="padding:5px;text-align:center;">     
-  <p>Nuts and Bolts<br>
-  <a href="mailto:nutsandboltsb02@gmail.com">nutsandboltsb02@gmail.com</a></p>
-</footer>
 </div>
 @stop

@@ -49,11 +49,4 @@ Products
     <h3 class="w3-center">Total: ${{ $runningtotal }}</h2> <br>
     <h3 class = "w3-center">Date: {{ $transaction['dateCreated'] }}</h2> <br>
 </div>
-
-</div>
-<footer class="w3-blue-gray" style="padding:5px;text-align:center;">     
-  <p>Nuts and Bolts<br>
-  <a href="mailto:nutsandboltsb02@gmail.com">nutsandboltsb02@gmail.com</a></p>
-</footer>
-</div>
 @stop

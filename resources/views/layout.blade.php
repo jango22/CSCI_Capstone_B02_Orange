@@ -69,7 +69,13 @@
 @yield('content')
 <br><br>
 </body>
+	<!-- Footer Content -->
+	<footer class="w3-blue-gray" style="padding:5px;text-align:center;">     
+	<p>Nuts and Bolts<br>
+	<a href="mailto:nutsandboltsb02@gmail.com">nutsandboltsb02@gmail.com</a></p>
+	</footer>
 </html>
+
 <script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */

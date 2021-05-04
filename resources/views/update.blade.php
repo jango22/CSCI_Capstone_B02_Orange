@@ -31,12 +31,6 @@ $categories = $sql->fetchAll();
 ?>
 
 <script>
-    /* Dismissable alert script */
-    var msg = '{{Session::get('alert')}}';
-    var exist = '{{Session::has('alert')}}';
-    if(exist){
-        alert(msg);
-    }
     /* Enable forms script */
     $(document).ready(function() {
     $(".remove-attr").click(function(){            
@@ -165,18 +159,8 @@ $categories = $sql->fetchAll();
         }
 
         $conn->query("UPDATE INVENTORY SET name='$name',productSKU='$SKU',price='$price',itemdesc='$desc', quantity='$quant', imageURL='$image', category='$category', greatDeal='$deal' WHERE productID='$productID';");
-        $msg = "Updated successfully.";
-        echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
-                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                $msg
-            </div>";
+        echo "<script>alert('Updated successfully');</script>";
     }
 ?>
-
-</div>
-<footer class="w3-blue-gray" style="padding:5px;text-align:center;">     
-  <p>Nuts and Bolts<br>
-  <a href="mailto:nutsandboltsb02@gmail.com">nutsandboltsb02@gmail.com</a></p>
-</footer>
 </div>
 @stop
