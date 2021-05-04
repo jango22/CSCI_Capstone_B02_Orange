@@ -2,7 +2,7 @@
 @extends('layout')
 
 @section('title')
-Add a Product
+Add a Discount Code
 @stop
 
 @section('content')
