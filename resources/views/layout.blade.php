@@ -40,6 +40,7 @@
                                     <a href="/add">Add Product</a>
                                     <a href="/update">Update Product</a>
                                     <a href="/registeremployee">Add Employee</a>
+                                    <a href="/discount">Add Discount</a>
 									<a href="/report">Weekly Report</a>
                                 </div>
                      </div>';
