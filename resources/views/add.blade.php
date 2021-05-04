@@ -115,7 +115,7 @@ $categories = $sql->fetchAll();
         } 
         //Insert values into INVENTORY table
         else {
-            $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc, quantity, imageURL, category) VALUES ('$name', $SKU, $price, '$desc', $quant, '$image', '$category');");
+            $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc, quantity, imageURL, category, greatDeal) VALUES ('$name', $SKU, $price, '$desc', $quant, '$image', '$category', 'no');");
             $msg = "Added to inventory successfully.";
             echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>

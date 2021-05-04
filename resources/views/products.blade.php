@@ -54,12 +54,14 @@ Products
 				</div>
 				<!-- Product information -->
 				<div class="w3-bar-item w3-left">
-					@if ($product['quantity'] > 0)
-						<a href="/product?sku=<?php echo $product['productSKU']; ?>"><span id="product-title">{{ $product['name'] }}</span></a> <span>({{ $product['productSKU'] }})</span></br>
+					@if ($product['quantity'] > 0 && $product['greatDeal'] == "no")
+						<a href="/product?sku=<?php echo $product['productSKU']; ?>"><span id="product-title">{{ $product['name'] }}</span></a> <span>({{ $product['productSKU'] }})</span><br>
+					@elseif ($product['greatDeal'] == "yes")
+						<a href="/product?sku=<?php echo $product['productSKU']; ?>"><span id="product-title">{{ $product['name'] }}</span></a> <span id="Great-Deal">Great Deal!</span> <span>({{ $product['productSKU'] }})</span><br>
 					@else
-						<span id="product-title"><s>{{ $product['name'] }}</s></span>&nbsp;&nbsp;<span id="Out-of-stock">Out of Stock!</span></br>
+						<span id="product-title"><s>{{ $product['name'] }}</s></span>&nbsp;&nbsp;<span id="Out-of-stock">Out of Stock!</span><br>
 					@endif
-					<span>${{ number_format($product['price'], 2) }}</span></br>
+					<span>${{ number_format($product['price'], 2) }}</span><br>
 					<span>{{ $product['itemdesc'] }}</span><br>
 				</div>
 			</div>

@@ -129,11 +129,14 @@ $categories = $sql->fetchAll();
 
     <label for="imageid" class="col-sm-1 col-form-label">Image URL:</label>&nbsp
     <input type="text" class="form-control" name="image" placeholder="Image URL" id="imageid" style="width: 180px;" value="<?php echo $data['imageURL'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
+
+    <label for="greatdealid" class="col-sm-1 col-form-label">Set as Great Deal</label>&nbsp
+    <input type="checkbox" class="form-control" name="greatdeal" id="greatdealid" value="yes" <?php echo $status; ?>><br><br>
     
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <button type="submit" name="submit" class="btn btn-primary" <?php echo $status; ?>>Update Product</button>
 </form>
-<br>
+<br><br>
 
 <?php
     //Get values from POST
@@ -146,8 +149,13 @@ $categories = $sql->fetchAll();
         $quant = $_POST['quantity'];
         $image = $_POST['image'];
         $category = $_POST['category'];
+        $deal = "no";
 
-        $conn->query("UPDATE INVENTORY SET name='$name',productSKU='$SKU',price='$price',itemdesc='$desc', quantity='$quant', imageURL='$image', category='$category' WHERE productID='$productID';");
+        if($_POST['greatdeal']=="yes") {
+            $deal = "yes";
+        }
+
+        $conn->query("UPDATE INVENTORY SET name='$name',productSKU='$SKU',price='$price',itemdesc='$desc', quantity='$quant', imageURL='$image', category='$category', greatDeal='$deal' WHERE productID='$productID';");
         $msg = "Updated successfully.";
         echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
