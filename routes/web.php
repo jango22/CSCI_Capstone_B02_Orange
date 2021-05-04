@@ -47,6 +47,11 @@ Route::any('/product', function () {
     return view('newProducts');
 });
 
+//Great Deals Page
+Route::any('/greatdeals', function () {
+    return view('greatdeals');
+});
+
 //Receipt page
 Route::any('/receipt', function () {
     return view('receipt');

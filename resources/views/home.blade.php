@@ -38,11 +38,13 @@ Home
   </div>
 
   <!-- Great Deals Carousel -->
-  <div class="main slideshow-container">
+  <div class="main slideshow-container" style="text-align:center;">
+  <h3>Click a product to browse our Great Deals!</h3>
   @foreach ($products as $product)
     <div class="mySlides fade">
-      <img src="{{ $product['imageURL'] }}" alt="Product Image" style="width:300px;">
-      <div>{{ $product['name'] }} - ${{ number_format($product['price'], 2) }}</div>
+      <a href="/greatdeals"><img src="{{ $product['imageURL'] }}" alt="Product Image" style="width:220px;"></a>
+      <div><a href="/greatdeals"><span id="product-title">{{ $product['name'] }} - </span><span id="Great-Deal">Great Deal!</span></a></div>
+      <span>${{ number_format($product['price'], 2) }}</span><br>
     </div>
   @endforeach
 
