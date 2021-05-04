@@ -124,6 +124,11 @@ Route::any('/order', function () {
     return view('order');
 });
 
+//Add a dsicount code
+Route::any('/discount', function () {
+    return view('addDiscount');
+});
+
 /*
 |--------------------------------------------------------------------------
 Secret Pages
