@@ -52,7 +52,7 @@ $categories = $sql->fetchAll();
     <label for="codeid" class="col-sm-1 col-form-label">Code Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="text" class="form-control" name="code" id="codeid" placeholder="Code Name" minlength="5" maxlength="15" style="width: 180px;" required><br><br>
     
-    <label for="minTot" class="col-sm-1 col-form-label addinput">Minimum Total:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <label for="minTot" class="col-sm-1 col-form-label addinput">Minimum Total:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="number" class="form-control" name="minTotal" id="minid" placeholder="Minimum Total" min="0" max="1000" size="20" style="width: 180px;" required><br><br>
 
     <label for="amtOff" class="col-sm-1 col-form-label addinput">Amount Off:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -62,7 +62,7 @@ $categories = $sql->fetchAll();
     <input type="date" name="start" id="startdate" required>
     <label for="endDate" class="col-sm-1 col-form-label addinput">End Date:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="date" name="end" id="enddate" required>
-    
+    <br>
     
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <button type="submit" name="submit" class="btn btn-primary">Add Coupon</button>
