@@ -94,8 +94,8 @@ $categories = $sql->fetchAll();
         } catch (Exception $e) {
             echo "<script>alert('Error: SKU not found.');</script>";
         }
-        //Enable forms on the rest of the page
-        $status = "enabled";
+    //Enable forms on the rest of the page
+    $status = "enabled";
     }
 ?>
 
@@ -131,7 +131,16 @@ $categories = $sql->fetchAll();
     <input type="text" class="form-control" name="image" placeholder="Image URL" id="imageid" style="width: 180px;" value="<?php echo $data['imageURL'] ?? ''; ?>" required <?php echo $status; ?>><br><br>
 
     <label for="greatdealid" class="col-sm-1 col-form-label">Set as Great Deal</label>&nbsp
-    <input type="checkbox" class="form-control" name="greatdeal" id="greatdealid" value="yes" <?php echo $status; ?>><br><br>
+    <input type="checkbox" class="form-control" name="greatdeal" id="greatdealid" value="yes" <?php echo $status; ?>
+    
+    <?php
+        if (isset($data['greatDeal'])) {
+            if ($data['greatDeal']=='yes') {
+                echo ("checked");
+            }
+        }
+    ?>
+    ><br><br>
     
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <button type="submit" name="submit" class="btn btn-primary" <?php echo $status; ?>>Update Product</button>
@@ -151,7 +160,7 @@ $categories = $sql->fetchAll();
         $category = $_POST['category'];
         $deal = "no";
 
-        if($_POST['greatdeal']=="yes") {
+        if(isset($_POST['greatdeal']) && $_POST['greatdeal']=="yes") {
             $deal = "yes";
         }
 
