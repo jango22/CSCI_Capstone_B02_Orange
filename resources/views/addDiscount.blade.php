@@ -59,13 +59,14 @@ $categories = $sql->fetchAll();
     <input type="number" step="0.01" class="form-control" name="amtOff" placeholder="Amount Off" id="amtid" min="0" max="9999999999" style="width: 180px;" required><br><br>
     
     <label for="startDate" class="col-sm-1 col-form-label addinput">Start Date:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <input type="date" name="start" id="startdate" required>
-    <label for="endDate" class="col-sm-1 col-form-label addinput">End Date:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input type="date" name="start" id="startdate" required><br><br>
+
+    <label for="endDate" class="col-sm-1 col-form-label addinput">End Date:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="date" name="end" id="enddate" required>
-    <br>
+    <br><br>
     
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <button type="submit" name="submit" class="btn btn-primary">Add Coupon</button>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <button type="submit" name="submit" class="btn btn-primary">Add Code</button>
     
 </form>
 
