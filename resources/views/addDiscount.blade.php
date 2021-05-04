@@ -81,7 +81,7 @@ $categories = $sql->fetchAll();
         } 
         //Insert values into INVENTORY table
         else {
-            $conn->query("INSERT INTO Discount (code, minTot, amtOff) VALUES ('$code', '$min', '$amtOff');");
+            $conn->query("INSERT INTO Discount (code, minTotal, amtOff) VALUES ('$code', '$min', '$amtOff');");
             $msg = "The dsicount code hass been added succesfully and is ready to use!";
             echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
