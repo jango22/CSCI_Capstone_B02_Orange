@@ -59,8 +59,23 @@ $categories = $sql->fetchAll();
     <label for="amtOff" class="col-sm-1 col-form-label addinput">Amount Off:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="number" step="0.01" class="form-control" name="amtOff" placeholder="Amount Off" id="amtid" min="0" max="9999999999" style="width: 180px;" required><br><br>
     
+    <div class="form-group row">
+        <label for="searchSKUid:" class="col-sm-1 col-form-label">Choose Start Date:</label>
+        <div class="col-sm-3">
+            <input type="date" name="start" id="startdate" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="searchSKUid:" class="col-sm-1 col-form-label">Choose End Date:</label>
+        <div class="col-sm-3">
+            <input type="date" name="end" id="enddate" required>
+        </div>
+    </div>
+    
+    
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <button type="submit" name="submit" class="btn btn-primary">Add Coupon</button>
+    
 </form>
 
 <?php
@@ -69,6 +84,8 @@ $categories = $sql->fetchAll();
         $code = $_POST['code'];
         $min = $_POST['minTotal'];
         $amtOff = $_POST['amtOff'];
+        $start = $_POST['start'];
+        $end = $_POST['end'];
         //Check for duplicate name
         $sql = $conn->query("SELECT code FROM Discount;");
         $codes = $sql->fetchAll(PDO::FETCH_COLUMN);
@@ -81,7 +98,7 @@ $categories = $sql->fetchAll();
         } 
         //Insert values into INVENTORY table
         else {
-            $conn->query("INSERT INTO Discount (code, minTotal, amtOff) VALUES ('$code', '$min', '$amtOff');");
+            $conn->query("INSERT INTO Discount (code, minTotal, amtOff, startDate, endDate) VALUES ('$code', '$min', '$amtOff', '$start', "$end");");
             $msg = "The dsicount code hass been added succesfully and is ready to use!";
             echo "<div class='alert alert-success alert-dismissable fade in' role='alert'>
                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
