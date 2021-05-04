@@ -71,8 +71,8 @@ $categories = $sql->fetchAll();
         $amtOff = $_POST['amtOff'];
         //Check for duplicate name
         $sql = $conn->query("SELECT code FROM Discount;");
-        $names = $sql->fetchAll(PDO::FETCH_COLUMN);
-        if (in_array($name, $names)) {
+        $codes = $sql->fetchAll(PDO::FETCH_COLUMN);
+        if (in_array($code, $codes)) {
             $msg = "The code name '$code' is already taken. Please choose a different one.";
             echo "<div class='alert alert-danger alert-dismissable fade in' role='alert'>
                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
