@@ -81,11 +81,15 @@ My Cart
 		$runningtotal = $runningtotal + $cartitem->price*$cartitem->quantity;
 		@endphp
 	@endforeach
+    
 	</ul>
 	<h3 class="w3-center">Total: ${{ $runningtotal }}</h2> <br>
     <div class="w3-center">
     <form method="post">
     @csrf
+        <label for="codeid" class="col-sm-1 col-form-label">Code Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" class="form-control" name="code" id="codeid" placeholder="Code Name" minlength="5" maxlength="15" style="width: 180px;" required><br><br>
+        
         <input type="submit" name="checkout" value="Checkout">
     </form>
     </div>
@@ -129,12 +133,14 @@ if (!empty($_POST)) {
             $sku = $cart[$i]->sku;
             $sql2 = $conn->query("SELECT quantity FROM Inventory WHERE productSKU = '$sku'");
             $dbqnt = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
+            
             $stock = $dbqnt['quantity'];
             if ($cart[$i]->quantity > $stock) {
                 $outofstock++;
                 $oosItems[] = $cart[$i]->productName;
             }
         }
+
         if ($outofstock > 0) {           
             echo "<script type='text/javascript'> alert('The following items need their quantities reduced in order to checkout:".json_encode($oosItems)."') </script>";
             unset($oosItems);
@@ -159,6 +165,20 @@ if (!empty($_POST)) {
             }
             
             //this loop send the cart items into the DB
+            if (isset($_POST['code'])) {
+                $code = $_POST['code'];
+                $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
+                $check = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
+                if (in_array($code, $check)) {                  
+                    $sql3 = $conn->query("SELECT amtOff FROM Discount WHERE code = '$code'");
+                    $off = $sql3->fetchAll(PDO::FETCH_ASSOC)[0];
+                    echo "<script>alert('Discount code applied! you have '$off' dollars off! Yay!');</script>";
+                    $runningtotal = $runningtotal - $off;
+                }
+                else {
+                    echo "<script>alert('Hey uhh, we ran that code you inputted through our database and turned out its either expired or non-existent. Big yikes. Try again.');</script>";
+                }
+             }
             foreach($cart as $items) {
                 //variable that must be unique per item
                 $productName = $items->productName;
@@ -205,4 +225,11 @@ if (!empty($_POST)) {
 }
 ob_end_flush();
 ?>
+
+</div>
+<footer class="w3-blue-gray" style="padding:5px;text-align:center;">     
+  <p>Nuts and Bolts<br>
+  <a href="mailto:nutsandboltsb02@gmail.com">nutsandboltsb02@gmail.com</a></p>
+</footer>
+</div>
 @stop
