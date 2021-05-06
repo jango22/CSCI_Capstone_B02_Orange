@@ -117,9 +117,9 @@ if (!empty($_POST)) {
     //discount code
     if (isset($_POST['apply'])) {
        $code = $_POST['code'];
-                
+       $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");         
        try {
-           $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
+           
            $check = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];                   
        }
        catch (Except $e) {
