@@ -160,23 +160,24 @@ if (!empty($_POST)) {
                 try {
                     $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
                     $check = $sql2->fetchAll();
+                    $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
+                    $off = $sql3->fetchAll();
+                    foreach($off as $row) {
+                        $dollaramt = $row['amtOff'];
+                        $mintot = $row['minTotal'];
+                    }
+                    if ($runningtotal >= $mintot) {
+                        echo "Discount code applied! you have $dollaramt dollars off! Yay!";
+                        $runningtotal = $runningtotal - $dollaramt;
+                    }
+                    else {
+                        echo "The discount code you attempted requires you to have a minimum total of $mintot";
+                    }
                 }
                 catch (Except $e) {
                     echo "<script>alert('Error: SKU not found.');</script>";
                 }             
-                $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
-                $off = $sql3->fetchAll();
-                foreach($off as $row) {
-                    $dollaramt = $row['amtOff'];
-                    $mintot = $row['minTotal'];
-                }
-                if ($runningtotal >= $mintot) {
-                    echo "Discount code applied! you have $dollaramt dollars off! Yay!";
-                    $runningtotal = $runningtotal - $dollaramt;
-                }
-                else {
-                    echo "The discount code you attempted requires you to have a minimum total of $mintot";
-                }
+                
             }
             
             //this loop sends the cart items into the DB
