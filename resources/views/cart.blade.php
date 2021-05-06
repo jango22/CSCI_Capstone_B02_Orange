@@ -133,7 +133,7 @@ if (!empty($_POST)) {
            
            if ($runningtotal >= $mintot) {
                echo "document.getElementById('codeid').setAttribute('disabled','disabled');";
-               echo "<script type='text/javascript'> alert('Discount code applied') </script>";
+               echo "Discount code applied";
                $runningtotal = $runningtotal - $dollaramt;
                
            }
