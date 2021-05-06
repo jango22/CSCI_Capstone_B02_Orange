@@ -172,7 +172,7 @@ if (!empty($_POST)) {
                 if (in_array($code, $check)) {                  
                     $sql3 = $conn->query("SELECT amtOff FROM Discount WHERE code = '$code'");
                     $off = $sql3->fetchAll(PDO::FETCH_ASSOC)[0];
-                    echo "<script>alert('Discount code applied! you have '$off' dollars off! Yay!');</script>";
+                    echo "<script>alert('Discount code applied! you have $off dollars off! Yay!');</script>";
                     $runningtotal = $runningtotal - $off;
                 }
                 else {
