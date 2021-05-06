@@ -163,8 +163,8 @@ if (!empty($_POST)) {
                     $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
                     $off = $sql3->fetchAll();
                     foreach($off as $row) {
-                        $dollaramt = $row['amtOff'];
-                        $mintot = $row['minTotal'];
+                        $GLOBALS['dollaramt'] = $row['amtOff'];
+                        $GLOBALS['mintot'] = $row['minTotal'];
                     }
                     if ($runningtotal >= $mintot) {
                         echo "Discount code applied! you have $dollaramt dollars off! Yay!";
