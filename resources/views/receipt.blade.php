@@ -38,7 +38,7 @@ Products
 			<div id="product" class="w3-bar-item">
 				<span style="font-size:24px">{{ $transaction['productName'] }}</span><br>
 				Quantity: {{ $transaction['itemQuant'] }}<br>
-				Subtotal: {{ }}<br>
+				Subtotal: {{ $transaction['cartTotal'] }}<br>
 			</div>
 		</li>
 
