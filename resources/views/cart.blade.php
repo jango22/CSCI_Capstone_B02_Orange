@@ -114,37 +114,6 @@ if (!empty($_POST)) {
 		}
 	}
     
-   //discount code
-   if (isset($_POST['apply'])) {
-       $code = $_POST['code'];
-       $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");              
-       $check = $sql2->fetchAll(PDO::FETCH_COLUMN);                   
-       
-       if (in_array($code, $check)) {
-           $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
-           $off = $sql3->fetchAll();
-           $mintot = 0;
-           $dollaramt = 0;
-                   
-           foreach($off as $row) {
-               $dollaramt = $row['amtOff'];
-               $mintot = $row['minTotal'];
-           }
-           
-           if ($runningtotal >= $mintot) {
-               $runningtotal = $runningtotal - $dollaramt;
-               echo "<script>document.getElementById('codeid').setAttribute('disabled','disabled');</script>";
-               echo "Discount code applied";
-               
-           }
-           else {
-               echo "<script type='text/javascript'> alert('Discount code was not applied, total was too low.') </script>";
-           } 
-       }
-       else {
-           echo "<script type='text/javascript'> alert('Discount code is not valid.') </script>";
-       }               
-   }
     //Checkout funcitonality
     if (isset($_POST['checkout']) && count($cart) > 0) {
     $outofstock = 0;
@@ -183,7 +152,37 @@ if (!empty($_POST)) {
                 $_SESSION['orderID'] = $uniqueID;
                 $username = "guest";                
             }            
-                       
+            //discount code
+   if (isset($_POST['code'])) {
+       $code = $_POST['code'];
+       $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");              
+       $check = $sql2->fetchAll(PDO::FETCH_COLUMN);                   
+       
+       if (in_array($code, $check)) {
+           $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
+           $off = $sql3->fetchAll();
+           $mintot = 0;
+           $dollaramt = 0;
+                   
+           foreach($off as $row) {
+               $dollaramt = $row['amtOff'];
+               $mintot = $row['minTotal'];
+           }
+           
+           if ($runningtotal >= $mintot) {
+               $runningtotal = $runningtotal - $dollaramt;
+               echo "<script>document.getElementById('codeid').setAttribute('disabled','disabled');</script>";
+               echo "Discount code applied";
+               
+           }
+           else {
+               echo "<script type='text/javascript'> alert('Discount code was not applied, total was too low.') </script>";
+           } 
+       }
+       else {
+           echo "<script type='text/javascript'> alert('Discount code is not valid.') </script>";
+       }               
+   }           
             //this loop sends the cart items into the DB
             foreach($cart as $items) {
                 //variable that must be unique per item
