@@ -171,11 +171,11 @@ if (!empty($_POST)) {
                     }
                     
                     if ($runningtotal >= $mintot) {
-                        echo "Discount code applied! you have $dollaramt dollars off! Yay!";
+                        echo "<script type='text/javascript'> alert('Discount code applied') </script>";
                         $runningtotal = $runningtotal - $dollaramt;
                     }
                     else {
-                        echo "The discount code you attempted requires you to have a minimum total of $mintot";
+                        echo "<script type='text/javascript'> alert('Discount code was not applied, total was too low.') </script>";
                     }
                     
                 }
