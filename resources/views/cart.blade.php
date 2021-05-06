@@ -114,41 +114,35 @@ if (!empty($_POST)) {
 		}
 	}
     
-    //discount code
-    if (isset($_POST['apply'])) {
+   //discount code
+   if (isset($_POST['apply'])) {
        $code = $_POST['code'];
-       $sql2 = $conn->query("SELECT code FROM Discount WHERE code = $code;");         
-       try {        
-           $check = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];                   
-       }
-       catch (Except $e) {
-          echo "<script type='text/javascript'> alert('Discount code not found.') </script>";
-       }
+       $sql2 = $conn->query("SELECT code FROM Discount WHERE code = $code;");              
+       $check = $sql2->fetchAll(PDO::FETCH_COLUMN);                   
        
-       if ($code == $check['code']) {
-               $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
-               $off = $sql3->fetchAll();
-               $mintot = 0;
-               $dollaramt = 0;
+       if (in_array($code, $check)) {
+           $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
+           $off = $sql3->fetchAll();
+           $mintot = 0;
+           $dollaramt = 0;
                    
-               foreach($off as $row) {
-                   $dollaramt = $row['amtOff'];
-                   $mintot = $row['minTotal'];
-               }
+           foreach($off as $row) {
+               $dollaramt = $row['amtOff'];
+               $mintot = $row['minTotal'];
+           }
            
-               if ($runningtotal >= $mintot) {
-                   echo "<script type='text/javascript'> alert('Discount code applied') </script>";
-                   $runningtotal = $runningtotal - $dollaramt;
-                   echo "document.getElementById('codeid').setAttribute('disabled','disabled');";
-               }
-               else {
-                   echo "<script type='text/javascript'> alert('Discount code was not applied, total was too low.') </script>";
-               } 
+           if ($runningtotal >= $mintot) {
+               echo "<script type='text/javascript'> alert('Discount code applied') </script>";
+               $runningtotal = $runningtotal - $dollaramt;
+               echo "document.getElementById('codeid').setAttribute('disabled','disabled');";
            }
            else {
-               echo "<script type='text/javascript'> alert('Discount code is not valid.') </script>";
-           }
-                
+               echo "<script type='text/javascript'> alert('Discount code was not applied, total was too low.') </script>";
+           } 
+       }
+       else {
+           echo "<script type='text/javascript'> alert('Discount code is not valid.') </script>";
+       }               
    }
     //Checkout funcitonality
     if (isset($_POST['checkout']) && count($cart) > 0) {
