@@ -165,7 +165,7 @@ if (!empty($_POST)) {
                     echo "<script>alert('Error: SKU not found.');</script>";
                 }             
                 $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
-                $off = $sql3->fetchAll(PDO::FETCH_ASSOC)[0];
+                $off = $sql3->fetchAll();
                 foreach($off as $row) {
                     $dollaramt = $row['amtOff'];
                     $mintot = $row['minTotal'];
