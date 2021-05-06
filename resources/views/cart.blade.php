@@ -120,8 +120,13 @@ if (!empty($_POST)) {
                 
        try {
            $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
-           $check = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
-           if ($code == $check['code']) {
+           $check = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];                   
+       }
+       catch (Except $e) {
+          echo "<script type='text/javascript'> alert('Discount code not found.') </script>";
+       }
+       
+       if ($code == $check['code']) {
                $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
                $off = $sql3->fetchAll();
                $mintot = 0;
@@ -144,11 +149,6 @@ if (!empty($_POST)) {
            else {
                echo "<script type='text/javascript'> alert('Discount code is not valid.') </script>";
            }
-                   
-       }
-       catch (Except $e) {
-          echo "<script type='text/javascript'> alert('Discount code not found.') </script>";
-       }             
                 
    }
     //Checkout funcitonality
