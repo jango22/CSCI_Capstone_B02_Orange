@@ -161,10 +161,10 @@ if (!empty($_POST)) {
                     $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
                     $check = $sql2->fetchAll();
                     $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
-                    $off = $sql3->fetchAll();
+                    $off = $sql3->fetchAll(PDO::FETCH_ASSOC)[0];
                     foreach($off as $row) {
-                        $GLOBALS['$dollaramt'] = $row['amtOff'];
-                        $GLOBALS['$mintot'] = $row['minTotal'];
+                        $dollaramt = $row['amtOff'];
+                        $mintot = $row['minTotal'];
                     }
                     if ($runningtotal >= $mintot) {
                         echo "Discount code applied! you have $dollaramt dollars off! Yay!";
