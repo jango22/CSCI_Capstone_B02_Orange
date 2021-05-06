@@ -121,23 +121,28 @@ if (!empty($_POST)) {
        try {
            $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
            $check = $sql2->fetchAll();
-           $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
-           $off = $sql3->fetchAll();
-           $mintot = 0;
-           $dollaramt = 0;
+           if (in_array($code, $check)) {
+               $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
+               $off = $sql3->fetchAll();
+               $mintot = 0;
+               $dollaramt = 0;
                    
-           foreach($off as $row) {
-               $dollaramt = $row['amtOff'];
-               $mintot = $row['minTotal'];
-           }
+               foreach($off as $row) {
+                   $dollaramt = $row['amtOff'];
+                   $mintot = $row['minTotal'];
+               }
            
-          if ($runningtotal >= $mintot) {
-               echo "<script type='text/javascript'> alert('Discount code applied') </script>";
-               $runningtotal = $runningtotal - $dollaramt;
-               echo "document.getElementById('codeid').setAttribute('disabled','disabled');";
+               if ($runningtotal >= $mintot) {
+                   echo "<script type='text/javascript'> alert('Discount code applied') </script>";
+                   $runningtotal = $runningtotal - $dollaramt;
+                   echo "document.getElementById('codeid').setAttribute('disabled','disabled');";
+               }
+               else {
+                   echo "<script type='text/javascript'> alert('Discount code was not applied, total was too low.') </script>";
+               } 
            }
            else {
-               echo "<script type='text/javascript'> alert('Discount code was not applied, total was too low.') </script>";
+               echo "<script type='text/javascript'> alert('Discount code is not valid.') </script>";
            }
                    
        }
