@@ -147,7 +147,7 @@ if (!empty($_POST)) {
                    
        }
        catch (Except $e) {
-           echo "code not found";
+          echo "<script type='text/javascript'> alert('Discount code not found.') </script>";
        }             
                 
    }
