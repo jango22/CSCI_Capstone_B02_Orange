@@ -170,7 +170,7 @@ if (!empty($_POST)) {
                     $dollaramt = $row['amtOff'];
                 }
                 echo "<script>alert('Discount code applied! you have $dollaramt dollars off! Yay!');</script>";
-                $runningtotal = $runningtotal - $off;
+                $runningtotal = $runningtotal - $dollaramt;
             }
             
             //this loop sends the cart items into the DB
