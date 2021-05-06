@@ -164,21 +164,27 @@ if (!empty($_POST)) {
                 $username = "guest";                
             }
             
-            //this loop send the cart items into the DB
+            
             if (isset($_POST['code'])) {
                 $code = $_POST['code'];
-                $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
-                $check = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
-                if (in_array($code, $check)) {                  
-                    $sql3 = $conn->query("SELECT amtOff FROM Discount WHERE code = '$code'");
-                    $off = $sql3->fetchAll(PDO::FETCH_ASSOC)[0];
-                    echo "<script>alert('Discount code applied! you have $off[0] dollars off! Yay!');</script>";
-                    $runningtotal = $runningtotal - $off;
+                
+                try {
+                    $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
+                    $check = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
                 }
-                else {
-                    echo "<script>alert('Hey uhh, we ran that code you inputted through our database and turned out its either expired or non-existent. Big yikes. Try again.');</script>";
+                catch {
+                    echo "<script>alert('Error: SKU not found.');</script>";
+                }             
+                $sql3 = $conn->query("SELECT amtOff FROM Discount WHERE code = '$code'");
+                $off = $sql3->fetchAll(PDO::FETCH_ASSOC)[0];
+                foreach($off as $row) {
+                    $dollaramt = $row['amtOff'];
                 }
-             }
+                echo "<script>alert('Discount code applied! you have $dollaramt dollars off! Yay!');</script>";
+                $runningtotal = $runningtotal - $off;
+            }
+            
+            //this loop sends the cart items into the DB
             foreach($cart as $items) {
                 //variable that must be unique per item
                 $productName = $items->productName;
