@@ -77,7 +77,7 @@ My Cart
     <form method="post">
     @csrf
         <label for="codeid" class="col-sm-1 col-form-label">Code Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <input type="text" class="form-control" name="code" id="codeid" placeholder="Code Name" minlength="5" maxlength="15" style="width: 180px;" required><br><br>
+        <input type="text" class="form-control" name="code" id="codeid" placeholder="Code Name" minlength="5" maxlength="15" style="width: 180px;" required> <input type="button" name="apply" value="Apply Code"><br><br>
         
         <input type="submit" name="checkout" value="Checkout">
     </form>
@@ -114,6 +114,38 @@ if (!empty($_POST)) {
 		}
 	}
     
+    //discount code
+    if (isset($_POST['apply'])) {
+       $code = $_POST['code'];
+                
+       try {
+           $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
+           $check = $sql2->fetchAll();
+           $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
+           $off = $sql3->fetchAll();
+           $mintot = 0;
+           $dollaramt = 0;
+                   
+           foreach($off as $row) {
+               $dollaramt = $row['amtOff'];
+               $mintot = $row['minTotal'];
+           }
+           
+          if ($runningtotal >= $mintot) {
+               echo "<script type='text/javascript'> alert('Discount code applied') </script>";
+               $runningtotal = $runningtotal - $dollaramt;
+               echo "document.getElementById('code').disabled = true;";
+           }
+           else {
+               echo "<script type='text/javascript'> alert('Discount code was not applied, total was too low.') </script>";
+           }
+                   
+       }
+       catch (Except $e) {
+           echo "code not found";
+       }             
+                
+   }
     //Checkout funcitonality
     if (isset($_POST['checkout']) && count($cart) > 0) {
     $outofstock = 0;
@@ -151,40 +183,8 @@ if (!empty($_POST)) {
                 $uniqueID = time() . mt_rand() . $guest;
                 $_SESSION['orderID'] = $uniqueID;
                 $username = "guest";                
-            }
-            
-            
-            if (isset($_POST['code'])) {
-                $code = $_POST['code'];
-                
-                try {
-                    $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
-                    $check = $sql2->fetchAll();
-                    $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
-                    $off = $sql3->fetchAll();
-                    $mintot = 0;
-                    $dollaramt = 0;
-                    
-                    foreach($off as $row) {
-                        $dollaramt = $row['amtOff'];
-                        $mintot = $row['minTotal'];
-                    }
-                    
-                    if ($runningtotal >= $mintot) {
-                        echo "<script type='text/javascript'> alert('Discount code applied') </script>";
-                        $runningtotal = $runningtotal - $dollaramt;
-                    }
-                    else {
-                        echo "<script type='text/javascript'> alert('Discount code was not applied, total was too low.') </script>";
-                    }
-                    
-                }
-                catch (Except $e) {
-                    echo "code not found";
-                }             
-                
-            }
-            
+            }            
+                       
             //this loop sends the cart items into the DB
             foreach($cart as $items) {
                 //variable that must be unique per item
