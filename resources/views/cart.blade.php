@@ -120,8 +120,8 @@ if (!empty($_POST)) {
                 
        try {
            $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
-           $check = $sql2->fetchAll();
-           if (in_array($code, $check)) {
+           $check = $sql2->(PDO::FETCH_ASSOC)[0]);
+           if ($code == $check['code']) {
                $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
                $off = $sql3->fetchAll();
                $mintot = 0;
