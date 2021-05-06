@@ -162,10 +162,14 @@ if (!empty($_POST)) {
                     $check = $sql2->fetchAll();
                     $sql3 = $conn->query("SELECT * FROM Discount WHERE code = '$code'");
                     $off = $sql3->fetchAll();
+                    $mintot = 0;
+                    $dollaramt = 0;
+                    
                     foreach($off as $row) {
-                        $GLOBALS['dollaramt'] = $row['amtOff'];
-                        $GLOBALS['mintot'] = $row['minTotal'];
+                        $dollaramt = $row['amtOff'];
+                        $mintot = $row['minTotal'];
                     }
+                    
                     if ($runningtotal >= $mintot) {
                         echo "Discount code applied! you have $dollaramt dollars off! Yay!";
                         $runningtotal = $runningtotal - $dollaramt;
@@ -173,6 +177,7 @@ if (!empty($_POST)) {
                     else {
                         echo "The discount code you attempted requires you to have a minimum total of $mintot";
                     }
+                    
                 }
                 catch (Except $e) {
                     echo "code not found";
