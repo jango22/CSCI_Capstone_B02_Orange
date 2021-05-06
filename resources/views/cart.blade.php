@@ -23,17 +23,6 @@ My Cart
 	$cart = json_decode($cart);
 	$runningtotal=0;
 ?>
-
-<?php
-	//Connect to database
-	$servername = "aa189btph88nlyp.cps316w6axpe.us-east-1.rds.amazonaws.com";
-	$username = "orangeadmin";
-	$password = "capstone02";
-	$dbname = "OrangeDB";
-	$port = "1433";
-	$conn = new PDO("sqlsrv:Server=$servername,$port;Database=$dbname;", $username, $password);
-?>
-
 <div class="container-sm" id="wrapper">
 	<div class="jumbotron-fluid container">
 		<img src="https://i.imgur.com/uVymdir.png" height="120" width="120" title="Logo" alt="Logo" class="center">
@@ -176,7 +165,7 @@ if (!empty($_POST)) {
                     echo "<script>alert('Error: SKU not found.');</script>";
                 }             
                 $sql3 = $conn->query("SELECT amtOff FROM Discount WHERE code = '$code'");
-                $off = $sql3->fetchAll(PDO::FETCH_ASSOC)[0];
+                $off = $sql3->fetchAll();
                 foreach($off as $row) {
                     $dollaramt = $row['amtOff'];
                 }
