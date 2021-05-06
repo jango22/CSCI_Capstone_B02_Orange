@@ -172,7 +172,7 @@ if (!empty($_POST)) {
                     $sql2 = $conn->query("SELECT code FROM Discount WHERE code = '$code'");
                     $check = $sql2->fetchAll(PDO::FETCH_ASSOC)[0];
                 }
-                catch {
+                catch (Except $e) {
                     echo "<script>alert('Error: SKU not found.');</script>";
                 }             
                 $sql3 = $conn->query("SELECT amtOff FROM Discount WHERE code = '$code'");
