@@ -25,6 +25,7 @@
 	<div class="w3-bar w3-blue-gray w3-card">
 
 		<!-- Navbar items that are always present -->
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="/" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-fw fa-home"></i>Home</a>
 		<a href="/products" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-shopping-basket"></i>Products</a>
 		<a href="/contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-fw fa-envelope"></i>Contact Us</a>
