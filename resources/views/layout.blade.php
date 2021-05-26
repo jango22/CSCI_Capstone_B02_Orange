@@ -25,12 +25,21 @@
 	<div class="w3-bar w3-blue-gray w3-card">
 
 		<!-- Navbar items that are always present -->
-		<a href="/" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="/" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-fw fa-home"></i>Home</a>
 		<a href="/products" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-shopping-basket"></i>Products</a>
 		<a href="/contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-fw fa-envelope"></i>Contact Us</a>
 		<a href="/faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-question-circle"></i>FAQ</a>
 		<a href="/cart" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-shopping-cart"></i>Cart</a>
-
+        
+        <!-- Navbar items that are present when window size is too small -->
+        <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+		    <a href="/" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-fw fa-home"></i>Home</a>
+		    <a href="/products" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-shopping-basket"></i>Products</a>
+		    <a href="/contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-fw fa-envelope"></i>Contact Us</a>
+		    <a href="/faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-question-circle"></i>FAQ</a>
+		    <a href="/cart" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-shopping-cart"></i>Cart</a>
+        </div>
+        
 		<?php 
 			if (isset($_SESSION['username'])) { 
 				if ($_SESSION['usertype'] == 'admin') {
@@ -95,5 +104,18 @@ window.onclick = function(event) {
       }
     }
   }
+}
+</script>
+<script>
+function myFunction() {
+  var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1)
+    {
+        x.className += " w3-show";
+    }
+    else
+    { 
+        x.className = x.className.replace(" w3-show", "");
+    }
 }
 </script>
