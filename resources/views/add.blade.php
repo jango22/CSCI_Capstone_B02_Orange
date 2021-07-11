@@ -105,7 +105,7 @@ $categories = $sql->fetchAll();
         elseif (in_array($SKU, $SKUs)) {
             echo "<script>alert('The product SKU $SKU is already taken. Please choose a different one.');</script>";
         } 
-        //Insert values into INVENTORY table
+        //Insert values into the INVENTORY table
         else {
             $conn->query("INSERT INTO INVENTORY (name, productSKU, price, itemdesc, quantity, imageURL, category, greatDeal) VALUES ('$name', $SKU, $price, '$desc', $quant, '$image', '$category', 'no');");
             echo "<script>alert('dded to inventory successfully.');</script>";
